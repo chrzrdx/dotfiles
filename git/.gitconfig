@@ -7,3 +7,5 @@
 	email = abhinandan.lip@gmail.com
 [core]
 	editor = vim
+[push]
+	default = simple
