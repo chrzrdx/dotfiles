@@ -5,7 +5,8 @@ source! /home/ap/.vimperatorrc.local
 " vim: set ft=vimperator:
 
 set gui=none
-:noremap j 3j
-:noremap k 3k
+:noremap j 5j
+:noremap k 10k
 :noremap J gT
 :noremap K gt
+set hintchars=hjklasdfgyuiopqwertnmzxcvb

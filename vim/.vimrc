@@ -108,30 +108,11 @@ set wildmenu
 set wildchar=<Tab>              " default
 set wildignorecase
 
-
 " -------- [ folding ] -----------------------------------------
 set foldcolumn=0
 
 " -------- [ status line ] -------------------------------------
 set laststatus=2
-
-"" http://got-ravings.blogspot.in/2008/08/vim-pr0n-making-statuslines-that-own.html
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
-
-"" http://nion.modprobe.de/setup/vimrc
-"let s  = ""
-"let s .= "%<"               |  " truncate at the start
-"let s .= "%f%8* "           |  " file name
-"let s .= "%r"               |  " readonly flag
-"let s .= '%{&bomb?"!":""} ' |  " byte-order mark flag
-"let s .= "%*%="             |  " right-justify after here
-"let s .= "%9*%m%* "         |  " modified flag
-"let s .= "0x%02B "          |  " hex value of current byte
-"let s .= "%l"               |  " current line
-"let s .= ":%c%V"            |  " column number, virtual column (if different)
-"let s .= " %P"              |  " percentage
-"let s .= "/%LL"             |  " number of lines
-"set statusline=%!s
 
 " turn off swap/backup
 set noswapfile
@@ -150,9 +131,6 @@ set ttymouse=xterm2
 
 
 " ============================================================== VISUAL
-
-set t_Co=256
-"let base16colorspace=256  " Access colors present in 256 colorspace
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -177,6 +155,7 @@ set cursorline
 "set cc=80
 "highlight ColorColumn ctermbg=darkgray
 
+set t_Co=256
 colorscheme base16-monokai
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark             " let term use brighter colours
@@ -231,9 +210,7 @@ let g:syntastic_quiet_messages='warnings'    " don't care about warnings
 "let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 
 " -------- [ VIM-AIRLINE ] -------------------------------------
-"let g:airline_theme='solarized'          " set theme
 let g:bufferline_echo = 0            " prevent automatic echoing to buffer (vim-bufferline)
-"let g:airline_powerline_fonts = 1    " enable support for powerline symbols
 
 " -------- [ PYTHON-MODE ] -------------------------------------
 " fixed random hanging with new version of python-mode
