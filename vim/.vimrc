@@ -89,8 +89,8 @@ set autoindent
 set smartindent
 set expandtab
 set smarttab
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set tabstop=4
 
 " -------- [ scrolling  ] --------------------------------------
@@ -99,8 +99,8 @@ set sidescrolloff=15
 set sidescroll=1
 
 " -------- [ text wrap ]  --------------------------------------
-"set textwidth=72
-"set wrap linebreak nolist       " set soft wrap, use gj gk to scroll by screen lines
+set textwidth=72
+set wrap linebreak nolist       " set soft wrap, use gj gk to scroll by screen lines
 
 " -------- [ vim command line completion ] ---------------------
 set wildmode=longest:list,full
@@ -142,17 +142,15 @@ if has('gui_running')
   set guifontwide=DejaVu\ Sans\ Mono\ 10
 endif
 
-set encoding=utf-8
 set lazyredraw                  " redraw after executing macro (performance gains?)
 set listchars=tab:>\ ,eol:\
 set ruler                       " show cursor position
 set ttyfast
 set showmatch                   " highlight matching brackets
 set gcr=n:blinkon0              " disable cursor blink (doesn't seem to work?)
-
 set cursorline
 
-"set cc=80
+set cc=80
 "highlight ColorColumn ctermbg=darkgray
 
 set t_Co=256
@@ -211,7 +209,3 @@ let g:syntastic_quiet_messages='warnings'    " don't care about warnings
 
 " -------- [ VIM-AIRLINE ] -------------------------------------
 let g:bufferline_echo = 0            " prevent automatic echoing to buffer (vim-bufferline)
-
-" -------- [ PYTHON-MODE ] -------------------------------------
-" fixed random hanging with new version of python-mode
-"call pymode#default('g:pymode_rope_autoimport', 0)
