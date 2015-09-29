@@ -10,46 +10,41 @@ set shell=zsh
 " ================================================================ VUNDLE
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
+" to install vundle on fresh system
+" http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let vundle manage itself
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle' " let vundle manage itself
 
 " -------- [ vim plugins ] -------------------------------------
+Plugin 'scrooloose/nerdtree' " file navigator gutter
+Plugin 'scrooloose/nerdcommenter' " commenting
+Plugin 'scrooloose/syntastic' " awesome syntax highlighting
+Plugin 'chriskempson/base16-vim' " make it look amazing !
+Plugin 'bling/vim-airline' " status line
+Plugin 'vim-pandoc/vim-pandoc' " writing documents in pandoc
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-fugitive' " make git pervasive in vim 
+"Plugin 'Valloric/YouCompleteMe' " autocompletion engine
 
-" make git pervasive in vim ( :Gblame + Glog + many more )
-Bundle 'tpope/vim-fugitive'
-
-" file navigator gutter
-Bundle 'scrooloose/nerdtree'
-
-" commenting
-Bundle 'scrooloose/nerdcommenter'
-
-" awesome syntax highlighting
-Bundle 'scrooloose/syntastic'
-
-" autocompletion engine
-"Bundle 'Valloric/YouCompleteMe'
-
-" make it look amazing !
-"Bundle 'altercation/vim-colors-solarized'
-"Bundle 'jnurmine/Zenburn'
-Bundle 'chriskempson/base16-vim'
-
-" status line
-Bundle 'bling/vim-airline'
-
-" writing documents in pandoc
-Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'vim-pandoc/vim-pandoc-syntax'
-
-Bundle 'kien/ctrlp.vim'
-"Bundle 'tpope/vim-surround'
-
-" python-mode for vim, uses pyflakes, pylint, rope
-"Bundle 'klen/python-mode'
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
 
 " ============================================================== GENERAL
 
@@ -99,8 +94,9 @@ set sidescrolloff=15
 set sidescroll=1
 
 " -------- [ text wrap ]  --------------------------------------
-set textwidth=72
+set textwidth=80
 set wrap linebreak nolist       " set soft wrap, use gj gk to scroll by screen lines
+set showbreak=" "
 
 " -------- [ vim command line completion ] ---------------------
 set wildmode=longest:list,full
@@ -143,7 +139,7 @@ if has('gui_running')
 endif
 
 set lazyredraw                  " redraw after executing macro (performance gains?)
-set listchars=tab:>\ ,eol:\
+set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 set ruler                       " show cursor position
 set ttyfast
 set showmatch                   " highlight matching brackets
@@ -156,7 +152,7 @@ set cc=80
 set t_Co=256
 colorscheme base16-monokai
 let base16colorspace=256  " Access colors present in 256 colorspace
-set background=dark             " let term use brighter colours
+set background=dark       " let term use brighter colours
 
 " ============================================================== USEFUL BINDINGS
 
@@ -190,19 +186,41 @@ noremap <leader>mm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " ============================================================== FILETYPE SPECIFIC SETTINGS
 
 " set textwidth at 72chars for markdown, txt files
-au BufRead,BufNewFile *.md,*.txt setlocal textwidth=72
+au BufRead,BufNewFile *.md,*.txt setlocal textwidth=80
 
 " ============================================================== PLUGIN SPECIFIC SETTINGS
+
+
 
 " -------- [ NERDTree Mappings ] -------------------------------
 map <leader>n <esc>:NERDTreeToggle<cr>  " Open Nerd Tree with <Leader>n
 map <leader>r <esc>:NERDTreeFind<cr>    " Reveal current file in NERDTree with <Leader>r
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
 
 " -------- [ SYNTASTIC ] ---------------------------------------
 let g:syntastic_enable_signs=1               " mark syntax errors with :signs
-let g:syntastic_auto_jump=0                  " automatically jump to the error when saving the file
-let g:syntastic_auto_loc_list=1              " show the error list automatically
-let g:syntastic_quiet_messages='warnings'    " don't care about warnings
+"let g:syntastic_auto_jump=0                  " automatically jump to the error when saving the file
+"let g:syntastic_auto_loc_list=1              " show the error list automatically
+let g:syntastic_quiet_messages = {
+    \ "!level":  "errors",
+    \ "type":    "style" }
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+
+let g:syntastic_error_symbol = "X"
+let g:syntastic_style_error_symbol = ">"
+let g:syntastic_warning_symbol = "!"
+let g:syntastic_style_warning_symbol = ">"
+
+let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_no_include_search = 0
+" let g:syntastic_cpp_compiler_options = " -std=c++11"
+
 
 " -------- [ YOUCOMPLETEME ] -----------------------------------
 "let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
