@@ -13,7 +13,8 @@ exec_always --no-startup-id feh --bg-fill $(find ~/.wallpapers/* -type f | shuf 
 
 #exec --no-startup-id systemctl --user start psd
 exec --no-startup-id compton -CGb --backend glx --vsync opengl
-exec --no-startup-id redshift -O 3500 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+exec --no-startup-id redshift -O 3200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+exec xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -38,7 +39,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -10
 bindsym XF86MonBrightnessUp exec xbacklight +10
 
 # set media keys (printscr)
-bindsym --release Print exec --no-startup-id scrot -u
+bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/pic/ss'
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -110,11 +111,11 @@ set $tag4 "4:irc"
 set $tag5 "5:av"
 set $tag6 "6:music"
 
-#exec --no-startup-id i3-msg 'workspace $tag1 ; exec firefox' 
+exec --no-startup-id i3-msg 'workspace $tag1 ; exec firefox' 
 #exec --no-startup-id i3-msg 'workspace $tag4 ; exec urxvt -e irssi' 
 #exec --no-startup-id i3-msg 'workspace $tag6 ; exec urxvt -e cmus' 
 
-exec_always --no-startup-id xrandr --output DP1 --auto
+#exec_always --no-startup-id xrandr --output DP1 --auto
 #exec_always --no-startup-id xrandr --output eDP1 --auto  --right-of DP1
 
 #workspace "1:www" output DP1

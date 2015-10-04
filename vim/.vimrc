@@ -188,6 +188,17 @@ noremap <leader>mm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " set textwidth at 72chars for markdown, txt files
 au BufRead,BufNewFile *.md,*.txt setlocal textwidth=80
 
+
+" Forget about the arrow keys!
+nnoremap <UP>    <NOP>
+nnoremap <DOWN>  <NOP>
+nnoremap <LEFT>  <NOP>
+nnoremap <RIGHT> <NOP>
+inoremap <UP>    <NOP>
+inoremap <DOWN>  <NOP>
+inoremap <LEFT>  <NOP>
+inoremap <RIGHT> <NOP>
+
 " ============================================================== PLUGIN SPECIFIC SETTINGS
 
 
