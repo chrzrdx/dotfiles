@@ -57,18 +57,11 @@ set animations=false
 
 " hint styles
 hi Hint font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #333; padding: .25em; margin-top: -.25em; margin-left: -.5em;
-" hi Hint font-family: sans-serif; font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #333; padding: .25em; margin-top: -.25em; margin-left: -.5em;
 hi HintElem nothing: yes;
-
-" other styles
-" hi Normal font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 16px; background: white; color: black;
-" hi CmdLine>* font-family: Inconsolata, Consolas, Monaco, monospace; font-size: 14px;
-"set ani
 
 " ignorekeys
 "ignorekeys add mail\\.google\\.com
 "ignorekeys add drive\\.google\\.com
-
 
 " enable pipelining
 set! network.http.pipelining=true
