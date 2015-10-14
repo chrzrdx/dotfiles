@@ -116,3 +116,4 @@ alias kthxbai='halt'
 
 # other aliases
 #alias vim='gvim'
+alias matlab='/home/ap/bin/matlab_2013b/matlab/bin/matlab'
