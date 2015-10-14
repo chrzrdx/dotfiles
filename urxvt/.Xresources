@@ -27,7 +27,7 @@ URxvt.clipboard.pastecmd: xsel -ob
 URxvt*skipBuiltinGlyphs:    true
 
 !-- Xft settings -- !
-Xft.dpi:        113
+!Xft.dpi:        113
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
@@ -35,8 +35,8 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 
 ! -- Fonts -- !
-URxvt.font:xft:Inconsolata:size=10, xft:DejaVu Sans Mono:style=Book:antialias=false:size=9
-URxvt.boldfont:xft:Inconsolata:style=Bold:size=10, xft:DejaVu Sans Mono:style=Bold:antialias=false:size=9
+URxvt.font:xft:Inconsolata:size=12, xft:DejaVu Sans Mono:style=Book:antialias=false:size=9
+URxvt.boldfont:xft:Inconsolata:style=Bold:size=12, xft:DejaVu Sans Mono:style=Bold:antialias=false:size=9
 
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyOutput: false
@@ -50,7 +50,7 @@ URxvt.keysym.Control-Right: \033[1;5C
 
 !-----Xterm settings-----!
 xterm*faceName:xft:Inconsolata
-xterm*faceSize: 10
+xterm*faceSize: 12
 
 ! Base16 Brewer
 ! Scheme: Timothée Poisot (http://github.com/tpoisot)

@@ -34,6 +34,7 @@ Plugin 'scrooloose/syntastic' " awesome syntax highlighting
 Plugin 'chriskempson/base16-vim' " make it look amazing !
 Plugin 'bling/vim-airline' " status line
 Plugin 'vim-pandoc/vim-pandoc' " writing documents in pandoc
+Plugin 'vim-pandoc/vim-pandoc-after' " writing documents in pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'tpope/vim-surround'
@@ -238,3 +239,12 @@ let g:syntastic_cpp_no_include_search = 0
 
 " -------- [ VIM-AIRLINE ] -------------------------------------
 let g:bufferline_echo = 0            " prevent automatic echoing to buffer (vim-bufferline)
+
+" -------- [ VIM-PANDOC] ---------------------------------------
+let g:pandoc#formatting#mode = "hA"
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
+let g:pandoc#folding#level = 3
+let g:pandoc#folding#mode = "relative"
+let g:pandoc#after#modules#enabled = ["nrrwrgn", "tablemode"]
+let g:pandoc#completion#bib#mode = 'citeproc'
+let g:pandoc#syntax#colorcolumn = 1
