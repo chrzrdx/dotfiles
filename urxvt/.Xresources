@@ -36,8 +36,6 @@ Xft.lcdfilter:  lcddefault
 ! -- Fonts -- !
 URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono:style=Book:size=9
 URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono:size=9
-!URxvt*font:  -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
-!URxvt*boldFont:  -*-terminus-bold-*-*-*-16-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
 !URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
 
