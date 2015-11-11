@@ -28,8 +28,8 @@ call vundle#rc()
 Plugin 'gmarik/vundle' " let vundle manage itself
 
 " -------- [ vim plugins ] -------------------------------------
-Plugin 'scrooloose/nerdtree' " file navigator gutter
-Plugin 'scrooloose/nerdcommenter' " commenting
+"Plugin 'scrooloose/nerdtree' " file navigator gutter
+"Plugin 'scrooloose/nerdcommenter' " commenting
 Plugin 'scrooloose/syntastic' " awesome syntax highlighting
 Plugin 'chriskempson/base16-vim' " make it look amazing !
 Plugin 'bling/vim-airline' " status line
@@ -37,7 +37,8 @@ Plugin 'vim-pandoc/vim-pandoc' " writing documents in pandoc
 Plugin 'vim-pandoc/vim-pandoc-after' " writing documents in pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 "Plugin 'kien/ctrlp.vim'
-"Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 "Plugin 'tpope/vim-fugitive' " make git pervasive in vim 
 "Plugin 'Valloric/YouCompleteMe' " autocompletion engine
 
@@ -135,7 +136,8 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 if has('gui_running')
-  set guifont=Inconsolata\ 10
+  "set guifont=Source\ Code\ Pro\ 10
+  set guifont=Anonymous\ Pro\ 12
   set guifontwide=DejaVu\ Sans\ Mono\ 10
 endif
 
@@ -151,14 +153,14 @@ set cc=80
 "highlight ColorColumn ctermbg=darkgray
 
 set t_Co=256
-colorscheme base16-monokai
+colorscheme base16-brewer
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark       " let term use brighter colours
 
 " ============================================================== USEFUL BINDINGS
 
 " quick ESC in insert mode
-imap jj <ESC>
+imap jk <ESC>
 
 " jump to the next row on long lines
 map <Down> gj
@@ -212,8 +214,6 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " -------- [ SYNTASTIC ] ---------------------------------------
 let g:syntastic_enable_signs=1               " mark syntax errors with :signs
-"let g:syntastic_auto_jump=0                  " automatically jump to the error when saving the file
-"let g:syntastic_auto_loc_list=1              " show the error list automatically
 let g:syntastic_quiet_messages = {
     \ "!level":  "errors",
     \ "type":    "style" }
@@ -228,14 +228,15 @@ let g:syntastic_style_error_symbol = ">"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_style_warning_symbol = ">"
 
-let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 0
 " let g:syntastic_cpp_compiler_options = " -std=c++11"
 
 
 " -------- [ YOUCOMPLETEME ] -----------------------------------
-"let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " -------- [ VIM-AIRLINE ] -------------------------------------
 let g:bufferline_echo = 0            " prevent automatic echoing to buffer (vim-bufferline)

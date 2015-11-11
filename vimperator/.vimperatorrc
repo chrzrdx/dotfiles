@@ -11,7 +11,7 @@ set gui=none
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
 
 map <silent> <C-F9> :emenu Tools.Web Developer.Web Console<CR>
-map <silent> <C-F8> :js toggle_bottombar()<CR>
+map <silent> <F8> :js toggle_bottombar()<CR>
 
 :js << EOF
 function toggle_bottombar() {
@@ -58,10 +58,6 @@ set animations=false
 " hint styles
 hi Hint font-weight: bold; text-transform: uppercase; color: black; background: #f0f0f0; border: 1px solid #333; padding: .25em; margin-top: -.25em; margin-left: -.5em;
 hi HintElem nothing: yes;
-
-" ignorekeys
-"ignorekeys add mail\\.google\\.com
-"ignorekeys add drive\\.google\\.com
 
 " enable pipelining
 set! network.http.pipelining=true

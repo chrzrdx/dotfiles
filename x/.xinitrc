@@ -13,8 +13,13 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+# disable speaker beep
+xset -b
+
+export QT_STYLE_OVERRIDE=GTK+
+
 # exec gnome-session
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
-exec i3
+exec dbus-launch --exit-with-session i3

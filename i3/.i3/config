@@ -6,7 +6,7 @@ set $modalt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Inconsolata, FontAwesome 10
+font pango:Terminus, FontAwesome 9
 
 #set wallpaper using feh
 exec_always --no-startup-id feh --bg-fill $(find ~/.wallpapers/* -type f | shuf -n 1)
@@ -39,7 +39,7 @@ bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/pic/ss'
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'Terminus'
 
 # change focus
 bindsym $mod+h focus left
@@ -127,10 +127,6 @@ mode "resize" {
         bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
