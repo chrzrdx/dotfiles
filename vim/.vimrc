@@ -34,9 +34,11 @@ Plugin 'scrooloose/syntastic' " awesome syntax highlighting
 Plugin 'chriskempson/base16-vim' " make it look amazing !
 Plugin 'bling/vim-airline' " status line
 Plugin 'vim-pandoc/vim-pandoc' " writing documents in pandoc
+Plugin 'vim-pandoc/vim-pandoc-after' " writing documents in pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 "Plugin 'kien/ctrlp.vim'
-"Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 "Plugin 'tpope/vim-fugitive' " make git pervasive in vim 
 "Plugin 'Valloric/YouCompleteMe' " autocompletion engine
 
@@ -157,7 +159,7 @@ set background=dark       " let term use brighter colours
 " ============================================================== USEFUL BINDINGS
 
 " quick ESC in insert mode
-imap jj <ESC>
+imap jk <ESC>
 
 " jump to the next row on long lines
 map <Down> gj
@@ -225,7 +227,7 @@ let g:syntastic_style_error_symbol = ">"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_style_warning_symbol = ">"
 
-let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 0
 let g:syntastic_cpp_compiler_options = " -std=c++11"
@@ -236,3 +238,12 @@ let g:syntastic_cpp_compiler_options = " -std=c++11"
 
 " -------- [ VIM-AIRLINE ] -------------------------------------
 let g:bufferline_echo = 0            " prevent automatic echoing to buffer (vim-bufferline)
+
+" -------- [ VIM-PANDOC] ---------------------------------------
+let g:pandoc#formatting#mode = "hA"
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
+let g:pandoc#folding#level = 3
+let g:pandoc#folding#mode = "relative"
+let g:pandoc#after#modules#enabled = ["nrrwrgn", "tablemode"]
+let g:pandoc#completion#bib#mode = 'citeproc'
+let g:pandoc#syntax#colorcolumn = 1

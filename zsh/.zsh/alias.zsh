@@ -116,4 +116,5 @@ alias kthxbai='halt'
 
 # other aliases
 #alias vim='gvim'
+#alias setdate ='sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"'
 alias matlab='/home/ap/bin/matlab_2013b/matlab/bin/matlab'

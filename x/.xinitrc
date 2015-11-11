@@ -15,6 +15,9 @@ xset fp+ /usr/share/fonts/local
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+# disable speaker beep
+xset -b
+
 export QT_STYLE_OVERRIDE=GTK+
 
 # exec gnome-session
