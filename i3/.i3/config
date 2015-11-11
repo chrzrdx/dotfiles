@@ -6,15 +6,15 @@ set $modalt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Terminus, FontAwesome 8 
+font pango:Terminus, FontAwesome 9
 
 #set wallpaper using feh
 exec_always --no-startup-id feh --bg-fill $(find ~/.wallpapers/* -type f | shuf -n 1)
 
 #exec --no-startup-id systemctl --user start psd
 exec --no-startup-id compton -CGb --backend glx --vsync opengl
-exec --no-startup-id redshift -O 3200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
-exec xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+exec --no-startup-id redshift -O 3500 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -111,7 +111,7 @@ set $tag4 "4:irc"
 set $tag5 "5:av"
 set $tag6 "6:music"
 
-exec --no-startup-id i3-msg 'workspace $tag1 ; exec firefox' 
+#exec --no-startup-id i3-msg 'workspace $tag1 ; exec firefox' 
 #exec --no-startup-id i3-msg 'workspace $tag4 ; exec urxvt -e irssi' 
 #exec --no-startup-id i3-msg 'workspace $tag6 ; exec urxvt -e cmus' 
 
@@ -199,6 +199,7 @@ bar {
             inactive_workspace #333333 #333333 #888888
             urgent_workspace #2f343a #900000 #ffffff
     }
+    font pango:Terminus, FontAwesome 10
     # i3bar position
     position top
     # Using custom i3status.conf

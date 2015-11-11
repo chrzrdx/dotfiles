@@ -134,8 +134,8 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 if has('gui_running')
-  set guifont=Source\ Code\ Pro\ 10
-  set guifontwide=DejaVu\ Sans\ Mono\ 10
+  set guifont=Anonymous\ Pro\ 10
+  set guifontwide=DejaVu\ Sans\ Mono\ 9
 endif
 
 set lazyredraw                  " redraw after executing macro (performance gains?)
@@ -228,7 +228,7 @@ let g:syntastic_style_warning_symbol = ">"
 let g:syntastic_cpp_compiler = "g++"
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_no_include_search = 0
-" let g:syntastic_cpp_compiler_options = " -std=c++11"
+let g:syntastic_cpp_compiler_options = " -std=c++11"
 
 
 " -------- [ YOUCOMPLETEME ] -----------------------------------
