@@ -19,6 +19,8 @@ xset -b
 
 # add font tamsyn
 xset fp+ /usr/share/fonts/local
+xset +fp /usr/share/fonts/ttf
+xset fp rehash
 
 export QT_STYLE_OVERRIDE=GTK+
 

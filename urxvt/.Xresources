@@ -25,7 +25,7 @@ URxvt.clipboard.pastecmd: xsel -ob
 URxvt*skipBuiltinGlyphs:    true
 
 !-- Xft settings -- !
-Xft.dpi:        112
+!Xft.dpi:        112
 Xft.autohint:   true
 Xft.antialias:  true
 Xft.rgba:       rgb
@@ -34,8 +34,8 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 
 ! -- Fonts -- !
-URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono:style=Book:size=9
-URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono:size=9
+URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono:style=Book
+URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono
 !URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
 
@@ -94,3 +94,5 @@ xterm*faceName:-*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*
 *.color13:      base06
 *.color14:      base0F
 *.color15:      base07
+
+rofi.lines: 5
