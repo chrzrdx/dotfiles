@@ -4,6 +4,7 @@ source! /home/ap/.vimperatorrc.local
 
 " vim: set ft=vimperator:
 " colorscheme twily
+" colorscheme molokai
 
 set suggestengines=google
 set defsearch=google
@@ -12,9 +13,6 @@ set maxitems=20
 set titlestring=
 set gui=none
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
-
-" Colorscheme
-"colorscheme molokai
 
 " Ctrl-F8 to toggle status bar
 map <silent> <C-F8> :js toggle_bottombar()<CR>
@@ -102,15 +100,15 @@ set! browser.tabs.insertRelatedAfterCurrent=true
 set! browser.tabs.insertRelatedAfterCurrent.override=true
 
 " what to clear after shutdown?
-set! privacy.clearOnShutdown.cache=false
+"set! privacy.clearOnShutdown.cache=false
 "set! privacy.clearOnShutdown.cookies=true
-set! privacy.clearOnShutdown.downloads=true
-set! privacy.clearOnShutdown.formdata=true
-set! privacy.clearOnShutdown.history=false
+"set! privacy.clearOnShutdown.downloads=true
+"set! privacy.clearOnShutdown.formdata=true
+"set! privacy.clearOnShutdown.history=false
 set! privacy.clearOnShutdown.offlineApps=true
 "set! privacy.clearOnShutdown.passwords=true
 "set! privacy.clearOnShutdown.sessions=true
-set! privacy.clearOnShutdown.siteSettings=true
+"set! privacy.clearOnShutdown.siteSettings=true
 
 " clear cookies on close or in a day
 set! network.cookie.lifetimePolicy=2

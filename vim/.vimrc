@@ -136,8 +136,8 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 if has('gui_running')
-  set guifont=Anonymous\ Pro\ 10
-  set guifontwide=DejaVu\ Sans\ Mono\ 9
+  set guifont=Source\ Code\ Pro\ 10
+  set guifontwide=DejaVu\ Sans\ Mono\ 10
 endif
 
 set lazyredraw                  " redraw after executing macro (performance gains?)

@@ -17,6 +17,8 @@ fi
 # disable speaker beep
 xset -b
 
+xsetroot -cursor_name left_ptr &
+
 # add font tamsyn
 xset fp+ /usr/share/fonts/local
 xset +fp /usr/share/fonts/ttf

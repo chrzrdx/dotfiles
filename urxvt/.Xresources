@@ -12,7 +12,7 @@ URxvt*loginShell: true
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 URxvt.intensityStyles: false
-URxvt*underlineColor: #268bd2
+URxvt*underlineColor: #777777
 
 ! get cut/paste to work
 URxvt.iso14755: false
@@ -26,7 +26,7 @@ URxvt*skipBuiltinGlyphs:    true
 
 !-- Xft settings -- !
 !Xft.dpi:        112
-Xft.autohint:   true
+Xft.autohint:   0
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
@@ -34,8 +34,8 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 
 ! -- Fonts -- !
-URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono:style=Book
-URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, xft:DejaVu Sans Mono
+URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Book
+URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Bold
 !URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
 
@@ -53,7 +53,7 @@ URxvt.keysym.Control-Right: \033[1;5C
 xterm*faceName:-*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*
 !xterm*faceSize:10
 
-! Base16 Brewer
+!! Base16 Brewer
 ! Scheme: Timothée Poisot (http://github.com/tpoisot)
 
 #define base00 #0c0d0e
