@@ -6,20 +6,20 @@ set $modalt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font xft:Tamsyn
-
 font pango: Tamsyn, FontAwesome 0
 
 #set wallpaper using feh
 exec_always --no-startup-id feh --bg-fill "$(find ~/.wallpapers/* -type f | shuf -n 1)"
 
 #exec --no-startup-id systemctl --user start psd
-exec --no-startup-id compton -fCGb --backend glx --vsync opengl
+exec --no-startup-id compton -CGb --backend glx --vsync opengl
 exec --no-startup-id redshift -O 3200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+popup_during_fullscreen smart
 
 # start a terminal
 bindsym $mod+Return exec /usr/bin/urxvt
@@ -27,11 +27,15 @@ bindsym $mod+Return exec /usr/bin/urxvt
 # kill focused window
 bindsym $mod+q kill
 
-# set media keys (volume)
+# set media keys (volume, media player)
 set $update && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer sset Master '5%+' $update
-bindsym XF86AudioLowerVolume exec amixer sset Master '5%-' $update
-bindsym XF86AudioMute exec amixer set Master toggle $update
+
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2+ unmute $update
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 2- unmute $update
+bindsym XF86AudioMute exec amixer -q sset Master toggle $update
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec mpc toggle
 
 # set media keys (brightness)
 bindsym XF86MonBrightnessDown exec xbacklight -10
@@ -84,9 +88,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 workspace_auto_back_and_forth yes
 
 # Name the workspaces
@@ -95,7 +96,6 @@ set $tag2 "2:"
 set $tag3 "3:"
 set $tag4 "4:"
 set $tag5 "5:"
-set $tag6 "6:6"
 
 #exec --no-startup-id i3-msg 'workspace $tag1 ; exec firefox' 
 #exec --no-startup-id i3-msg 'workspace $tag4 ; exec urxvt -e irssi' 
@@ -113,7 +113,7 @@ bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace $tag5
-bindsym $mod+6 workspace $tag6
+bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -125,22 +125,36 @@ bindsym $mod+Shift+2 move container to workspace $tag2
 bindsym $mod+Shift+3 move container to workspace $tag3
 bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
-bindsym $mod+Shift+6 move container to workspace $tag6
+bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+$modalt+h exec --no-startup-id systemctl poweroff
-bindsym $mod+$modalt+j exec --no-startup-id i3lock -c 000000 && systemctl suspend
-bindsym $mod+$modalt+k exec --no-startup-id systemctl reboot
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Power menu
+set $sysmenu "  [<b>r</b>]estart - [<b>l</b>]ogout - [<b>s</b>]uspend - re[<b>b</b>]oot - po[<b>w</b>]eroff  "
+bindsym $mod+Shift+e      mode $sysmenu
+
+mode $sysmenu {
+    bindsym r         restart
+    bindsym l         exit
+    bindsym w         exec "systemctl poweroff"
+    bindsym b         exec "systemctl reboot"
+    bindsym s         exec "systemctl suspend"
+    bindsym Return    mode "default"
+    bindsym Escape    mode "default"
+}
+
+
+#bindsym $mod+$modalt+h exec --no-startup-id systemctl poweroff
+#bindsym $mod+$modalt+j exec --no-startup-id i3lock -c 000000 && systemctl suspend
+#bindsym $mod+$modalt+k exec --no-startup-id systemctl reboot
 bindsym $mod+$modalt+l exec --no-startup-id i3lock -c 000000 -d
 
 # resize window (you can also use the mouse for that)
@@ -150,12 +164,6 @@ mode "resize" {
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -170,8 +178,6 @@ bar {
 
     font pango: Tamsyn, FontAwesome 9
     
-   # strip_workspace_numbers yes
-
     colors {
             separator  #b6b6b6
             background #212121
@@ -182,20 +188,16 @@ bar {
             inactive_workspace #212121 #212121 #ffffff
             urgent_workspace   #f44336 #f44336 #ffffff
     }
-    # i3bar position
     position bottom
     status_command i3blocks -c ~/.i3/i3blocks.conf
 }
 
 # enable floating mode for special apps
 for_window [window_role="pop-up"] floating enable
-for_window [title="ALSA Mixer"] floating enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 for_window [window_role="message_search"] floating enable
 for_window [class="Volumeicon"] [title="Preferences"] floating enable
 for_window [class="Thunar"] [title="File Operation Progress"] floating enable
-for_window [window_role="gtkutils"] floating enable
 
 # border only, no window title bar
 hide_edge_borders both

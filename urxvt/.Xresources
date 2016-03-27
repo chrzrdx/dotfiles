@@ -13,6 +13,7 @@ Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 URxvt.intensityStyles: false
 URxvt*underlineColor: #777777
+!URxvt.letterSpace: -1
 
 ! get cut/paste to work
 URxvt.iso14755: false
@@ -34,11 +35,12 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 
 ! -- Fonts -- !
-URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Book
-URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Bold
+!URxvt*font: xft:Source Code Pro:size=10, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+!URxvt*boldFont: xft:Source Code Pro:style=Bold:size=10, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Book:size=9
+URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Bold:size=9
 !URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
-
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyOutput: false
 URxvt.scrollTtyKeypress: true
