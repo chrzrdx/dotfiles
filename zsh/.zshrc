@@ -8,9 +8,19 @@ source ~/.zsh/exports.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/setopt.zsh
-source ~/.zsh/prompt.zsh
+#source ~/.zsh/prompt.zsh
+
+fpath=( "$HOME/.zsh/functions" $fpath )
+autoload -U promptinit && promptinit
+prompt pure
 
 source ~/.zsh/plugins/grep.zsh
+
+
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-brewer.dark.sh"

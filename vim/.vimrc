@@ -39,6 +39,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 "Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'sjl/badwolf'
 "Plugin 'tpope/vim-fugitive' " make git pervasive in vim 
 "Plugin 'Valloric/YouCompleteMe' " autocompletion engine
 
@@ -151,7 +152,7 @@ set cursorline
 set cc=80
 "highlight ColorColumn ctermbg=darkgray
 
-set t_Co=256
+"set t_Co=256
 colorscheme base16-brewer
 let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark       " let term use brighter colours
