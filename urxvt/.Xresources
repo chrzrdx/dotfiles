@@ -1,6 +1,6 @@
 !-----URxvt settings-----!
 URxvt.perl-ext:
-URxvt.perl-ext-common:default,matcher
+URxvt.perl-ext-common:default,matcher,clipboard,url-select
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 2
 URxvt*buffered: true
@@ -31,8 +31,10 @@ URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.keysym.M-s: perl:keyboard-select:activate
 URxvt.keysym.M-r: perl:keyboard-select:search
 
+URxvt.clipboard.autocopy: true
+
 ! disable drawing glyphs
-!URxvt*skipBuiltinGlyphs:    true
+URxvt*skipBuiltinGlyphs:    true
 
 !-- Xft settings -- !
 Xft.dpi:        112
@@ -44,10 +46,8 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 
 ! -- Fonts -- !
-!URxvt*font: xft:Source Code Pro:size=10, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
-!URxvt*boldFont: xft:Source Code Pro:style=Bold:size=10, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
-URxvt*font: -*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*, xft:FontAwesome, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Book:size=9
-URxvt*boldFont: -*-tamsyn-bold-r-*-*-16-*-*-*-*-*-*-*, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1, xft:DejaVu Sans Mono:style=Bold:size=9
+URxvt*font: -*-tamsyn-medium-r-*-*-14-*-*-*-*-*-*-*
+URxvt*boldFont: -*-tamsyn-bold-r-*-*-14-*-*-*-*-*-*-*
 !URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
 URxvt.scrollWithBuffer: true
@@ -96,5 +96,13 @@ xterm*faceName:-*-tamsyn-medium-r-*-*-16-*-*-*-*-*-*-*
 *color7: #707880
 *color15: #C5C8C6
 
-
-rofi.lines: 5
+!-----Rofi launcher config-----!
+rofi.terminal:          /usr/bin/termite
+rofi.run-shell-command: /usr/bin/termite -e '{cmd}'
+rofi.ssh-command:       tmux split-window -h -p 50 '{ssh-client} {host}'
+rofi.location:      0
+rofi.width:         30
+rofi.padding:       12
+rofi.borderwidth:   2
+rofi.lines:         8
+rofi.bc:            #8c9440
