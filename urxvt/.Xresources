@@ -104,3 +104,4 @@ rofi.padding:       12
 rofi.borderwidth:   2
 rofi.lines:         8
 rofi.bc:            #8c9440
+rofi.font:          Source Code Pro 10
