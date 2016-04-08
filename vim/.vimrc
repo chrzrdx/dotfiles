@@ -1,172 +1,274 @@
-" SOURCES
-" https://github.com/W4RH4WK/dotVim/blob/master/vimrc
-" http://amix.dk/vim/vimrc.html
-" https://gist.github.com/joegoggins/8482408
+" AUTOINSTALL VIM-PLUG {{{
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+"}}}
 
-" needed for many options to work
-set nocompatible
-set shell=zsh
+" PLUGINS INSTALLED {{{
+call plug#begin('~/.vim/plugged')
 
-" ================================================================ VUNDLE
-filetype off
+" interface improvements {{{
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+"}}}
 
-" to install vundle on fresh system
-" http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
+" language agnostic plugins {{{
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'benekastah/neomake', { 'on': ['Neomake'] }
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
+"}}}
+
+" pandoc {{{
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc-after'
+"}}}
+
+" text manipulation {{{
+Plug 'tpope/vim-surround'
+"}}}
+
+" colorschemes {{{
+Plug 'sjl/badwolf'
+Plug 'w0ng/vim-hybrid'
+Plug 'chriskempson/tomorrow-theme'
+Plug 'chriskempson/base16-vim'
+"}}}
+
+call plug#end()
+"}}}
+
+" REGULAR SETTINGS {{{
+
+" neovim defaults {{{
+" https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults
+
+if has('autocmd')
+  filetype plugin indent on     " load ftplugins files
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Plugin 'gmarik/vundle' " let vundle manage itself
-
-" -------- [ vim plugins ] -------------------------------------
-"Plugin 'scrooloose/nerdtree' " file navigator gutter
-"Plugin 'scrooloose/nerdcommenter' " commenting
-Plugin 'scrooloose/syntastic' " awesome syntax highlighting
-Plugin 'chriskempson/base16-vim' " make it look amazing !
-Plugin 'bling/vim-airline' " status line
-Plugin 'vim-pandoc/vim-pandoc' " writing documents in pandoc
-Plugin 'vim-pandoc/vim-pandoc-after' " writing documents in pandoc
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-"Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'sjl/badwolf'
-"Plugin 'tpope/vim-fugitive' " make git pervasive in vim 
-"Plugin 'Valloric/YouCompleteMe' " autocompletion engine
-
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
-
-" ============================================================== GENERAL
-
-" -------- [ basic settings ] ----------------------------------
-set number                      " set line numbers
-set backspace=indent,eol,start  " allow backspace in insert mode
-set whichwrap+=<,>,h,l          " wrap cursor to next/prev line
-set history=1000                " store lots of :cmdline history
-set showcmd                     " show incomplete cmds down the bottom
-set showmode                    " show current mode down the bottom
-
-filetype plugin on              " load ftplugins files
-set ffs=unix,dos,mac            " use Unix as the standard file type
-set encoding=utf-8
-set fileencoding=utf-8          " set utf-8
+" settings based on :help nvim-option-defaults
+set autoindent
 set autoread                    " autoreload files changed outside vim
-
-syntax on                       " syntax highlighting
-set magic                       " for regex
-
-" buffer becomes hidden when it is abandoned
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-" set mapleader for extra key combos !
-let mapleader=","
-let g:mapleader=","
-
-" -------- [ search ] ------------------------------------------
-set ignorecase
-set smartcase
+set backspace=indent,eol,start  " allow backspace in insert mode
+set complete-=i
+set display=lastline
+set encoding=utf-8
+set formatoptions=tcqj
+set history=10000
 set hlsearch                    " highlight search results
 set incsearch                   " incremental search, like in modern browsers
-
-" -------- [ indentation ] -------------------------------------
-set autoindent
-set smartindent
-set expandtab
+set langnoremap
+set laststatus=2
+set mouse=a
+set nrformats=hex
+set sessionoptions-=options
 set smarttab
-set shiftwidth=4
+set tabpagemax=50
+set tags=./tags;,tags
+set ttyfast
+set viminfo+=!
+set wildmenu
+
+" Load matchit.vim, if a newer version isn't already installed.
+" Neovim includes matchit.vim as a regular plug-in.
+if !exists("g:loaded_matchit") && findfile("plugin/matchit.vim", &runtimepath) ==# ""
+  runtime! macros/matchit.vim
+endif
+
+"}}}
+
+" standard settings {{{
+set number                      " set line numbers
+set whichwrap+=<,>,h,l          " wrap cursor to next/prev line
+set showmode                    " show current mode down the bottom
+set ffs=unix,dos,mac            " use unix as the standard file type
+set magic                       " for regex
+set shell=/bin/zsh              " setting shell to zsh
+set showcmd                     " show commands as you type them
+set textwidth=120               " text width is 120 characters
+set cmdheight=1                 " command line height
+set pumheight=10                " completion window max size
+set hidden                      " enables to switch between unsaved buffers and keep undo history
+set clipboard+=unnamed          " allow to use system clipboard
+set lazyredraw                  " don't redraw while executing macros (better performance)
+set matchtime=2                 " How many tenths of a second to blink when matching brackets
+set showmatch                   " show matching brackets when text indicator is over them
+set virtualedit=block           " to be able to select past eol in visual block mode
+set nojoinspaces                " no extra space when joining a line which ends with . ? !
+set scrolloff=5                 " scroll when closing to top or bottom of the screen
+set updatetime=1000             " update time used to create swap file or other things
+set mouse=a                     " use mouse
+"}}}
+
+" split settings (more natural) {{{
+set splitbelow                              " splitting a window will put the new window below the current
+set splitright                              " splitting a window will put the new window right of the current
+"}}}
+
+" timeout settings {{{
+" time out on key codes but not mappings. basically this makes terminal vim work sanely. (by steve losh)
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+"}}}
+
+" visual, color and highlighting settings {{{
+set background=dark       " let term use brighter colours
+colorscheme hybrid
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast= 1
+
+hi! link Conceal Operator
+hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
+
+set cursorline
+
+"}}}
+
+" searching {{{
+set ignorecase                              " ignore case by default
+set smartcase                               " make search case sensitive only if it contains uppercase letters
+set wrapscan                                " search again from top when reached the bottom
+"}}}
+
+" persistent undo settings {{{
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.config/nvim/tmp/undo//
+endif
+"}}}
+
+" indentation {{{
+set smartindent
 set softtabstop=4
 set tabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+"}}}
 
-" -------- [ scrolling  ] --------------------------------------
-set scrolloff=8                 " start scrolling when 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
-
-" -------- [ text wrap ]  --------------------------------------
-set textwidth=80
-set wrap linebreak nolist       " set soft wrap, use gj gk to scroll by screen lines
-set showbreak=" "
-
-" -------- [ vim command line completion ] ---------------------
-set wildmode=longest:list,full
-set wildmenu
-set wildchar=<Tab>              " default
-set wildignorecase
-
-" -------- [ folding ] -----------------------------------------
-set foldcolumn=0
-
-" -------- [ status line ] -------------------------------------
-set laststatus=2
+" folding {{{
+set foldcolumn=2
+set foldmethod=marker
+"}}}
 
 " turn off swap/backup
-set noswapfile
+set noswapfile                  " new buffers will be loaded without creating a swapfile
 set nobackup
 set nowb
 
 " no annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
-set tm=500
 
-" to get the mouse going in term
-set mouse=a
-set ttymouse=xterm2
+"}}}
 
+" PLUGIN SETTINGS {{{
 
-" ============================================================== VISUAL
+" neomake {{{
+let g:neomake_verbose=0
+let g:neomake_warning_sign = {
+      \ 'text': '❯',
+      \ 'texthl': 'WarningMsg',
+      \ }
+let g:neomake_error_sign = {
+      \ 'text': '❯',
+      \ 'texthl': 'ErrorMsg',
+      \ }
+"}}}
 
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
+" plug {{{
+let g:plug_timeout=20
+"}}}
 
-if has('gui_running')
-  set guifont=Source\ Code\ Pro\ 10
-  set guifontwide=DejaVu\ Sans\ Mono\ 10
-endif
+" lightline {{{
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ }
+"}}}
 
-set lazyredraw                  " redraw after executing macro (performance gains?)
-set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
-set ruler                       " show cursor position
-set ttyfast
-set showmatch                   " highlight matching brackets
-set gcr=n:blinkon0              " disable cursor blink (doesn't seem to work?)
-set cursorline
+" vim-pandoc {{{
+let g:pandoc#formatting#mode = "hA"
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
+let g:pandoc#folding#level = 3
+let g:pandoc#folding#mode = "relative"
+let g:pandoc#after#modules#enabled = ["nrrwrgn", "tablemode"]
+let g:pandoc#completion#bib#mode = 'citeproc'
+let g:pandoc#syntax#colorcolumn = 1
+let g:pandoc#modules#disabled = ["folding", "spell"]
+let g:pandoc#syntax#conceal#use = 0
+"}}}
 
-set cc=80
-"highlight ColorColumn ctermbg=darkgray
+"}}}
 
-"set t_Co=256
-colorscheme base16-brewer
-let base16colorspace=256  " Access colors present in 256 colorspace
-set background=dark       " let term use brighter colours
+" REGULAR MAPPINGS {{{
 
-" ============================================================== USEFUL BINDINGS
+" set leader
+let g:mapleader=","
+
+" vim hardmode {{{
+nnoremap <up> <NOP>
+nnoremap <down> <NOP>
+nnoremap <left> <NOP>
+nnoremap <right> <NOP>
+nnoremap <bs> <NOP>
+nnoremap <delete> <NOP>
+inoremap <up> <NOP>
+inoremap <down> <NOP>
+inoremap <left> <NOP>
+inoremap <right> <NOP>
+nnoremap Q <NOP>
+"}}}
+
+" easy motion {{{
+" jump to the next row on long lines
+nnoremap j gj
+nnoremap k gk
+nnoremap gj 5j
+nnoremap gk 5k
+vnoremap j gj
+vnoremap k gk
+vnoremap gj 5j
+vnoremap gk 5k
+
+" when jump to next match also center screen
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
+"}}}
+
+" misc {{{
+" more logical y (default was alias for yy)
+nnoremap Y y$
 
 " quick ESC in insert mode
 imap jk <ESC>
 
-" jump to the next row on long lines
-map <Down> gj
-map <Up>   gk
-nnoremap j gj
-nnoremap k gk
+" quick fold toggle (suggestion from steve losh)
+nnoremap <space> za
 
 " use Ctrl+n to disable highlighted search terms
 nmap <silent> <C-n> :noh<CR>
@@ -177,74 +279,32 @@ nmap <leader>w :w!<cr>
 " :W saves with sudo
 command W w !sudo tee % > /dev/null
 
-" toggle paste mode on and off
-map <leader>pp :setlocal paste! paste?<cr>
+" paste from system clipboard at current indentation
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
-" pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell! spell?<cr>
+" paste mode toggling
+nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
+" toggle spelling on and off
+nnoremap <silent> <F4> :set spell!<CR> :set spell?<CR>
+" source (reload configuration)
+nnoremap <silent> <F5> :source $MYNVIMRC<CR>
+"}}}
 
-" remove the Windows ^M - when the encodings gets messed up
-noremap <leader>mm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+"}}}
 
-" ============================================================== FILETYPE SPECIFIC SETTINGS
+" PLUGIN MAPPINGS {{{
 
-" set textwidth at 72chars for markdown, txt files
-au BufRead,BufNewFile *.md,*.txt setlocal textwidth=80
+" deoplete {{{
 
+" insert <TAB> or select next match
+"inoremap <silent> <expr> <Tab> utils#tabComplete()
 
-" Forget about the arrow keys!
-nnoremap <UP>    <NOP>
-nnoremap <DOWN>  <NOP>
-nnoremap <LEFT>  <NOP>
-nnoremap <RIGHT> <NOP>
-inoremap <UP>    <NOP>
-inoremap <DOWN>  <NOP>
-inoremap <LEFT>  <NOP>
-inoremap <RIGHT> <NOP>
+" manually trigger tag autocomplete
+"inoremap <silent> <expr> <C-]> utils#manualTagComplete()
 
-" ============================================================== PLUGIN SPECIFIC SETTINGS
+" <C-h>, <BS>: close popup and delete backword char
+inoremap <expr><C-h> deolete#mappings#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
+"}}}
 
-
-
-" -------- [ NERDTree Mappings ] -------------------------------
-map <leader>n <esc>:NERDTreeToggle<cr>  " Open Nerd Tree with <Leader>n
-map <leader>r <esc>:NERDTreeFind<cr>    " Reveal current file in NERDTree with <Leader>r
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
-
-" -------- [ SYNTASTIC ] ---------------------------------------
-let g:syntastic_enable_signs=1               " mark syntax errors with :signs
-let g:syntastic_quiet_messages = {
-    \ "!level":  "errors",
-    \ "type":    "style" }
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
-
-let g:syntastic_error_symbol = "X"
-let g:syntastic_style_error_symbol = ">"
-let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_warning_symbol = ">"
-
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_no_include_search = 0
-let g:syntastic_cpp_compiler_options = " -std=c++11"
-
-
-" -------- [ YOUCOMPLETEME ] -----------------------------------
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
-" -------- [ VIM-AIRLINE ] -------------------------------------
-let g:bufferline_echo = 0            " prevent automatic echoing to buffer (vim-bufferline)
-
-" -------- [ VIM-PANDOC] ---------------------------------------
-let g:pandoc#formatting#mode = "hA"
-let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
-let g:pandoc#folding#level = 3
-let g:pandoc#folding#mode = "relative"
-let g:pandoc#after#modules#enabled = ["nrrwrgn", "tablemode"]
-let g:pandoc#completion#bib#mode = 'citeproc'
-let g:pandoc#syntax#colorcolumn = 1
+"}}}
