@@ -1,0 +1,2944 @@
+: 1449424721:0;pacaur -Syu
+: 1449425040:0;pacaur -S rstudio-desktop-bin
+: 1449426404:0;mkdir tmp
+: 1449426405:0;l
+: 1449426411:0;rm -rf mnt
+: 1449426413:0;cd tmp
+: 1449426414:0;..
+: 1449426423:0;lsblk
+: 1449426458:0;sudo mount /dev/sda7 tmp
+: 1449426473:0;sudo mount /dev/sda7 -ro tmp
+: 1449426478:0;man mount
+: 1449426543:0;sudo mount /dev/sda7 -r tmp
+: 1449426546:0;cd tmp
+: 1449426547:0;l
+: 1449426565:0;cd ~/.config/base16-shell
+: 1449426565:0;l
+: 1449426570:0;./base16-3024.dark.sh
+: 1449426574:0;ls ~/tmp
+: 1449426582:0;./base16-monokai.dark.sh
+: 1449426587:0;./base16-monokai.light.sh
+: 1449426594:0;./base16-solarized.dark.sh
+: 1449426599:0;./base16-solarized.light.sh
+: 1449426610:0;./base16-ocean.dark.sh
+: 1449426620:0;./base16-brewer.dark.sh
+: 1449426628:0;./base16-bespin.dark.sh
+: 1449426641:0;./base16-tomorrow.dark.sh
+: 1449426649:0;./base16-tomorrow.light.sh
+: 1449426750:0;vim .i3/config
+: 1449426764:0;cd .wallpapers
+: 1449426765:0;l
+: 1449426778:0;cat ~/.i3/config| grep feh
+: 1449426810:0;$(find ~/.wallpapers/* -type f | shuf -n 1)\
+
+: 1449426835:0;find ~/.wallpapers/* -type f | shuf -n 1\
+
+: 1449426907:0;vim ~/.i3/config
+: 1449426943:0;alsamixer
+: 1449427125:0;sudoedit /etc/pacman.conf
+: 1449427187:0;pacaur -Syu
+: 1449427210:0;pacaur -S infinality-bundle ibfonts-meta-base
+: 1449427272:0;fc-match monospace
+: 1449427278:0;fc-match sans
+: 1449427418:0;cd /etc/fonts/conf.avail
+: 1449427419:0;l
+: 1449427432:0;pacaur -Rns infinality-bundle ibfonts-meta-base
+: 1449427442:0;pacaur -Rns ibfonts-meta-base
+: 1449427455:0;pacaur -Rns infinality-bundle
+: 1449427469:0;pacaur -S infinality-bundle ibfonts-meta-base
+: 1449427524:0;cd /etc/fonts/conf.avail.infinality/
+: 1449427525:0;l
+: 1449427723:0;pacaur -S siji
+: 1449427728:0;pacaur -Ss siji
+: 1449427734:0;pacaur -S siji-git
+: 1449427908:0;vim .Xresources
+: 1449428052:0;xrdb -merge .Xresources
+: 1449428055:0;ls
+: 1449428062:0;https://github.com/sshdw/dotfiles/blob/master/X11/.Xresources
+: 1449428073:0;curl https://github.com/sshdw/dotfiles/blob/master/X11/.Xresources
+: 1449428134:0;vim .xinitrc
+: 1449428164:0;xsetroot -cursor_name left_ptr &\
+
+: 1449428173:0;pacaur -S panel
+: 1449428177:0;pacaur -Ss panel
+: 1449428232:0;vim .Xresources
+: 1449428302:0;xrdb -merge .Xresources
+: 1449428305:0;ls
+: 1449428306:0;l
+: 1449428307:0;ll
+: 1449430302:0;pacaur -Ss candy
+: 1449430314:0;pacaur -S tewi
+: 1449430318:0;pacaur -Ss tewi
+: 1449430331:0;pacaur -S bdf-tewi-git
+: 1449430556:0;ls
+: 1449510318:0;pacaur -Syu
+: 1449510349:0;pacaur -S compton-git
+: 1449519125:0;vim .Xresources
+: 1449519982:0;ssh ap@10.2.12.196
+: 1449520006:0;scp -r ap@10.2.12.196:~/ms
+: 1449520008:0;scp -r ap@10.2.12.196:~/ms .
+: 1449520558:0;pacaur -S ntp
+: 1449521124:0;cd build
+: 1449521129:0;git clone https://github.com/phallus/fonts
+: 1449521135:0;cd fonts
+: 1449521136:0;l
+: 1449521142:0;bash install
+: 1449521158:0;pacaur -Ss xfontsel
+: 1449521164:0;pacaur -S xorg-xfontsel
+: 1449521178:0;xfontsel
+: 1449521290:0;sudo lxappearance
+: 1449521367:0;xfontsel
+: 1449521989:0;fc-cache -fv\
+
+: 1449521997:0;xset fp rehash\
+
+: 1449522001:0;fc-cache -fv\
+
+: 1449522006:0;xset fp rehash\
+
+: 1449522009:0;xfontsel
+: 1449523141:0;pacaur -Ss inconsolata
+: 1449523148:0;pacaur -S ttf-inconsolata
+: 1449534403:0;l
+: 1449534403:0;ll
+: 1449536546:0;pacaur -Ss i3 block
+: 1449536555:0;pacaur -Ss i3blocks
+: 1449536559:0;pacaur -S i3blocks
+: 1449536596:0;pacaur -S acpi systat playerctl lm_sensors
+: 1449536621:0;pacaur -S acpi sysstat playerctl lm_sensors
+: 1449536639:0;pacaur -Ss playerctl
+: 1449536655:0;vim .i3/config
+: 1449536746:0;cp /etc/i3blocks.conf ~/.i3blocks.conf
+: 1449536771:0;vim .i3blocks.conf
+: 1449536901:0;ip addr
+: 1449536957:0;amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1
+: 1449537132:0;vim .i3/config
+: 1449537306:0;ll
+: 1449537309:0;free -h
+: 1449537313:0;hfree
+: 1449537329:0;htop
+: 1449537353:0;amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1
+: 1449537359:0;amixer get Master | grep -E -o '[0-9]{1,3}?' | head -1
+: 1449537364:0;amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1
+: 1449537369:0;amixer get Master | grep -E -o '[0-9]{1,3}?%%' | head -1
+: 1449537374:0;amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1
+: 1449537377:0;amixer get Master | grep -E -o '[0-9]{1,3}?%'
+: 1449537382:0;amixer get Master | grep -E -o '[0-9]{1,3}?%%'
+: 1449537387:0;amixer get Master | grep -E -o '[0-9]{1,3}?%'
+: 1449537400:0;amixer get Master
+: 1449537409:0;amixer get Master | grep -E -o '[0-9]{1,3}'
+: 1449537417:0;amixer get Master | grep -E -o '[0-9]{1,3}?%'
+: 1449537492:0;sudo pacman -S xorg-xfd\
+
+: 1449537499:0;xfd
+: 1449537502:0;xfd siji
+: 1449537546:0;./view.sh\
+
+: 1449537548:0;cd build
+: 1449537549:0;ls
+: 1449537561:0;git clone https://github.com/gstk/siji && cd siji\
+
+: 1449537565:0;l
+: 1449537569:0;./view.sh
+: 1449538525:0;vim myblocklet
+: 1449538542:0;chmod +x myblocklet
+: 1449538546:0;vim .i3blocks.conf
+: 1449538677:0;vim myblocklet
+: 1449539062:0;vim .i3/config
+: 1449539288:0;vim .i3blocks.conf
+: 1449539316:0;cd /etc/i3/
+: 1449539316:0;l
+: 1449539321:0;cat config.keycodes
+: 1449539325:0;cat config
+: 1449539353:0;vim .i3/config
+: 1449539907:0;cd build/siji/
+: 1449539908:0;l
+: 1449539910:0;./view.sh
+: 1449540017:0;ls
+: 1449540120:0;cd build/siji
+: 1449540122:0;cat view.sh
+: 1449540145:0;pacaur -Ss iconic
+: 1449540155:0;pacaur -S ttf-font-icons
+: 1449540194:0;cp view.sh iconicview.sh
+: 1449540198:0;xfontsel
+: 1449540221:0;fc-cache -fv\
+
+: 1449540234:0;xset fp rehash\
+
+: 1449540238:0;xfontsel
+: 1449540289:0;vim build/siji/iconicview.sh
+: 1449540337:0;./build/siji/iconicview.sh
+: 1449540692:0;pacaur -Ss gohufont
+: 1449540698:0;pacaur -S gohufont
+: 1449540724:0;xfontsel
+: 1449541101:0;vim .i3/config
+: 1449541302:0;vim .i3blocks.conf
+: 1449541586:0;free -h
+: 1449541895:0;pacaur -Ss ultra flat icon
+: 1449541904:0;pacaur -S ultra-flat-icons
+: 1449542084:0;pacaur -Ss numix
+: 1449542095:0;pacaur -S numix-frost-themes
+: 1449542123:0;cd build
+: 1449542133:0;cower -dd numix-frost-themes
+: 1449542138:0;cd numix-frost-themes
+: 1449542139:0;l
+: 1449542150:0;makepkg -si --skipintef
+: 1449542152:0;makepkg -si --skipinteg
+: 1449542195:0;pacaur -S python2
+: 1449542199:0;makepkg -si --skipinteg
+: 1449542215:0;l
+: 1449542222:0;pacaur -U numix-frost-themes-3.0.3-1-any.pkg.tar.xz
+: 1449542244:0;pacaur -U numix-frost-themes-3.0.3-1-any.pkg.tar.xz --noconfirm
+: 1449542267:0;pacaur -S numix-themes
+: 1449542537:0;pacaur -Ss stlarch
+: 1449542552:0;pacaur -S stlarch-font-ibx
+: 1449542583:0;cat /usr/share/doc/stlarch-font-ibx/README.stlarch
+: 1449542595:0;fc-cache -f
+: 1449542603:0;mkfontscale /usr/share/fonts/local\
+
+: 1449542611:0;xset +fp /usr/share/fonts/local
+: 1449542616:0;xset fp rehash\
+
+: 1449542662:0;man xfd
+: 1449542681:0;xfontsel
+: 1449542732:0;xfd -fa -misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
+: 1449542764:0;xfd -fn -misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
+: 1449542925:0;./build/siji/view.sh
+: 1449543493:0;pacaur -Ss terminus
+: 1449543527:0;pacaur -S terminus-font-ll2-td1
+: 1449543588:0;xset +fp /usr/share/fonts/local
+: 1449543591:0;xset fp rehash\
+
+: 1449543596:0;fc-cache -f
+: 1449543605:0;fc-cache -fv\
+
+: 1449543612:0;xset +fp /usr/share/fonts/local
+: 1449543615:0;xset fp rehash\
+
+: 1449543618:0;xfontsel
+: 1449543659:0;pacaur -S terminus
+: 1449543663:0;pacaur -S terminus-font
+: 1449543674:0;pacaur -S terminus-font-ll2-td1
+: 1449543743:0;vim .i3/config
+: 1449544053:0;vim .newi3blocks.conf
+: 1449544115:0;cp -r /usr/lib/i3blocks .i3
+: 1449544118:0;cd .i3
+: 1449544119:0;l
+: 1449544123:0;cd i3blocks
+: 1449544123:0;l
+: 1449544167:0;cp volume time
+: 1449544170:0;vim time
+: 1449544248:0;vim .i3/i3blocks/disk
+: 1449544498:0;vim temp.sh
+: 1449544508:0;bash temp.sh
+: 1449544544:0;cd .i3/i3blocks
+: 1449544549:0;./volume
+: 1449544560:0;ls
+: 1449544568:0;./battery
+: 1449544580:0;./cpu_usage
+: 1449544589:0;./load_average
+: 1449544601:0;top
+: 1449544671:0;bash disl
+: 1449544679:0;cd .i3/i3blocks
+: 1449544685:0;bash disk
+: 1449544696:0;vim .disk
+: 1449544700:0;vim disk
+: 1449544708:0;l
+: 1449544713:0;./memory
+: 1449544716:0;vim memory
+: 1449544757:0;echo "${BLOCK_INSTANCE:-mem}"
+: 1449544798:0;cat /proc/meminfo
+: 1449544877:0;cat /proc/cpuinfo
+: 1449544890:0;cat /proc/loadavg
+: 1449554574:0;mkdir -p pic/ss
+: 1449554582:0;cd pic/ss
+: 1449554583:0;l
+: 1449555323:0;gvim
+: 1449555334:0;vim sample.md
+: 1449555561:0;vim .i3/config
+: 1449556702:0;touch sample.html
+: 1449556708:0;chromium sample.html
+: 1449557375:0;vim .Xresources
+: 1449557386:0;xfontsel
+: 1449557462:0;xrdb .Xresources
+: 1449557489:0;vim .i3/config
+: 1449557513:0;xrdb -merge .Xresources
+: 1449557514:0;vim .i3/config
+: 1449557969:0;chromium sample.html
+: 1449558355:0;mv .i3blocks.conf .i3/i3blocks.conf
+: 1449558710:0;cd build
+: 1449558714:0;cd numix-frost-themes
+: 1449558726:0;makepkg -si --skipinteg --skippgpcheck
+: 1449558732:0;makepkg -sfi --skipinteg --skippgpcheck
+: 1449559300:0;cd ~/.i3/i3blocks
+: 1449559301:0;l
+: 1449559311:0;vim volume
+: 1449559324:0;./volume
+: 1449559334:0;vim ../i3blocks.conf
+: 1449559361:0;vim myblocklet
+: 1449559444:0;./myblocklet
+: 1449559472:0;vim .i3/i3blocks/volume
+: 1449560056:0;man echo
+: 1449560070:0;echo amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1
+: 1449560074:0;echo `amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1`
+: 1449560082:0;echo 'span' `amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1`
+: 1449560097:0;echo 'span' `amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1` '</span>\
+'
+: 1449560159:0;echo '<span background=#ffffff>' `amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1` '</span>'\
+
+: 1449560580:0;cd .i3/i3blocks/vol.sh
+: 1449560584:0;vim .i3/i3blocks/vol.sh
+: 1449560597:0;bash vol.sh
+: 1449560604:0;bash .i3/i3blocks/vol.sh
+: 1449560669:0;chmod +x .i3/i3blocks/vol.sh
+: 1449560687:0;bash .i3/i3blocks/vol.sh
+: 1449560705:0;./.i3/i3blocks/vol.sh
+: 1449560716:0;cat myblocklet
+: 1449560728:0;./myblocklet
+: 1449560739:0;vim ./.i3/i3blocks/vol.sh
+: 1449560903:0;echo '<span background="#0000ff"> îƒ¨ƒ£.' `amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1` '</span>'\
+
+: 1449560913:0;echo '<span background="#0000ff"> îƒ¨ƒ£' `amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1` '</span>'\
+
+: 1449561127:0;pacaur -S fontawesome-git
+: 1449561135:0;pacaur -Ss fontawesome
+: 1449561141:0;pacaur -Ss awesome
+: 1449561164:0;pacaur -S ttf-font-awesome
+: 1449561197:0;vim .i3/config
+: 1449561287:0;vim .Xresources
+: 1449561338:0;xrdb .Xresources
+: 1449561404:0;vim .i3/config
+: 1449561707:0;cd .i3/i3blocks/
+: 1449561710:0;vim vol.sh
+: 1449561839:0;bash vol.sh
+: 1449561841:0;vim vol.sh
+: 1449561857:0;bash vol.sh
+: 1449561858:0;vim vol.sh
+: 1449562114:0;awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master)
+: 1449562125:0;amix sget Master
+: 1449562127:0;amixer sget Master
+: 1449562168:0;awk -F"[][]" '/dB/ { print $1 $2 $3 }' <(amixer sget Master)
+: 1449562181:0;awk -F"[][]" '/dB/ { print $1 $2 $3 $5 }' <(amixer sget Master)
+: 1449562185:0;awk -F"[][]" '/dB/ { print $1 $2 $3 $4 }' <(amixer sget Master)
+: 1449562189:0;awk -F"[][]" '/dB/ { print $1 $2 $3 $6 }' <(amixer sget Master)
+: 1449562195:0;awk -F"[][]" '/dB/ { print $6 }' <(amixer sget Master)
+: 1449562266:0;bash vol.sh
+: 1449562277:0;vim vol.sh
+: 1449562298:0;bash vol.sh
+: 1449562302:0;vim vol.sh
+: 1449562434:0;bash vol.sh
+: 1449562436:0;vim vol.sh
+: 1449562460:0;bash vol.sh
+: 1449562464:0;vim vol.sh
+: 1449562470:0;man echo
+: 1449562473:0;vim vol.sh
+: 1449562490:0;bash vol.sh
+: 1449562512:0;vim vol.sh
+: 1449562826:0;bash vol.sh
+: 1449562829:0;vim vol.sh
+: 1449562846:0;bash vol.sh
+: 1449562849:0;vim vol.sh
+: 1449563021:0;bash vol.sh
+: 1449563028:0;vim vol.sh
+: 1449563077:0;bash vol.sh
+: 1449563079:0;vim vol.sh
+: 1449563109:0;bash vol.sh
+: 1449563118:0;vim vol.sh
+: 1449563188:0;bash vol.sh
+: 1449563199:0;vim vol.sh
+: 1449563314:0;bash vol.sh
+: 1449563319:0;vim vol.sh
+: 1449563338:0;bash vol.sh
+: 1449563347:0;vim vol.sh
+: 1449563407:0;vim .i3/config
+: 1449567327:0;vim .i3/i3blocks.conf
+: 1449567544:0;pacaur -S xorg-xdotool
+: 1449567561:0;pacaur -Ss xdotool
+: 1449567566:0;pacaur-S xdotool
+: 1449567569:0;pacaur -S xdotool
+: 1449567578:0;xdotool getwindowfocus getwindowname.\
+
+: 1449567585:0;xdotool getwindowfocus getwindowname\
+
+: 1449567876:0;xtitle -s
+: 1449567881:0;pacaur -Ss xtitle
+: 1449567913:0;pacaur -S xtitle-git
+: 1449568021:0;ip addr
+: 1449568201:0;man xdotool
+: 1449568452:0;vim .i3/config
+: 1449569627:0;ls
+: 1449569628:0;ll
+: 1449569631:0;ls
+: 1449569655:0;vim .i3/config
+: 1449569702:0;vim myblocklet
+: 1449569723:0;vim sample.html
+: 1449569905:0;hfree
+: 1449570038:0;ps x
+: 1449570177:0;vim .i3/i3blocks
+: 1449570180:0;vim .i3/i3blocks.conf
+: 1449570423:0;ll
+: 1449570432:0;vim myblocklet
+: 1449570457:0;vim .vimrc
+: 1449570471:0;vim .Xresources
+: 1449570488:0;xrdb .Xresources
+: 1449570510:0;ls
+: 1449570516:0;vim .Xresources
+: 1449570939:0;vim .i3/config
+: 1449570959:0;vim .i3/i3blocks/vol.sh
+: 1449571175:0;cd .i3/i3blocks
+: 1449571182:0;./date
+: 1449571183:0;l
+: 1449571186:0;./time
+: 1449571190:0;rm time
+: 1449571198:0;cp vol.sh date.sh
+: 1449571202:0;vim date.sh
+: 1449571314:0;cat .i3/i3blocks.conf
+: 1449571338:0;vim .i3/i3blocks.conf
+: 1449571387:0;l
+: 1449571395:0;rm temp.sh sample.html myblocklet 2015-12-08-113244_1366x768_scrot.png
+: 1449571396:0;l
+: 1449571405:0;cd .i3/i3blocks
+: 1449571406:0;l
+: 1449571412:0;rm volume2.txt
+: 1449571436:0;vim ../i3blocks.conf
+: 1449571450:0;vim ../i3blocks/date.sh
+: 1449571490:0;vim .i3/con
+: 1449571501:0;vim ~/.i3/config
+: 1449571693:0;vim .i3/config
+: 1449571917:0;touch sample.html
+: 1449571921:0;chromium sample.html
+: 1449571939:0;rm sample.html
+: 1449572058:0;vim .i3/config
+: 1449572142:0;cd .i3/i3blocks
+: 1449572151:0;cp date.sh load.sh
+: 1449572156:0;./load
+: 1449572159:0;l
+: 1449572165:0;cat ../i3blocks.conf
+: 1449572175:0;./load_average
+: 1449572183:0;cat ./load_average
+: 1449572216:0;vim load.sh
+: 1449572246:0;vim ../i3blocks.conf
+: 1449572307:0;cat load_average >> load.sh
+: 1449572311:0;vim load.sh
+: 1449572597:0;vim ../i3blocks.conf
+: 1449573236:0;vim .i3/config
+: 1449573256:0;redshift -O 3200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90\
+
+: 1449573283:0;redshift -O 3200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+: 1449573288:0;redshift -O 4200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+: 1449573294:0;redshift -O 5500 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+: 1449573301:0;redshift -O 3500 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+: 1449573314:0;redshift -O 3800 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90
+: 1449573319:0;redshift -O 3800 -l 17:78 -t 4500:3500 -g 0.90:1.0:0.90
+: 1449573324:0;redshift -O 3800 -l 17:78 -t 4500:3500 -g 0.90:0.90:0.90
+: 1449573330:0;redshift -O 3800 -l 17:78 -t 4500:3500 -g 0.90:0.95:0.90
+: 1449573344:0;redshift -O 3800 -l 17:78 -t 4500:3500 -g 1:1:1
+: 1449573351:0;redshift -O 3800 -l 17:78
+: 1449573356:0;redshift -O 5500 -l 17:78
+: 1449573359:0;redshift -O 4500 -l 17:78
+: 1449573370:0;redshift -O 3000 -l 17:78
+: 1449573524:0;while :; do date +'{"full_text": "%s"}'; sleep 1; done
+: 1449573583:0;while :; do xdotool getwindowfocus getwindowname +'{"full_text": "%s"}'; sleep 1; done
+: 1449573591:0;while :; do xdotool getwindowfocus getwindowname '{"full_text": "%s"}'; sleep 1; done
+: 1449573597:0;while :; do xdotool getwindowfocus getwindowname; sleep 1; done
+: 1449573808:0;./build/siji/view.sh
+: 1449606849:0;alsamixer
+: 1449607636:0;xtitle -s -e -t -100 | xargs -L 1 -I {} sh -c "echo -e \"{}\" | iconv -c -f utf-8 -t utf-8"\
+
+: 1449607657:0;vim .i3/i3blocks.conf
+: 1449608030:0;cat /sys/class/power_supply/BAT1/status
+: 1449608053:0;cd /sys/class/power_supply/
+: 1449608055:0;cat AC
+: 1449608058:0;cd AC
+: 1449608059:0;ls
+: 1449608063:0;cat online
+: 1449608079:0;cd ..
+: 1449608079:0;ls
+: 1449608084:0;cd BAT0
+: 1449608085:0;l
+: 1449608091:0;cat status
+: 1449608103:0;cat capacity
+: 1449608107:0;cat alarm
+: 1449608112:0;cat charge_full
+: 1449608116:0;cat charge_now
+: 1449608124:0;cat manufacturer
+: 1449608129:0;cat present
+: 1449608138:0;cat uevent
+: 1449608422:0;xtitle -s -e -t -100 | xargs -L 1 -I {} sh -c "echo -e \"{}\" | iconv -c -f utf-8 -t utf-8"\
+
+: 1449608435:0;xtitle -s -e -t -50 | xargs -L 1 -I {} sh -c "echo -e \"{}\" | iconv -c -f utf-8 -t utf-8"\
+
+: 1449608451:0;vim .i3/i3blocks
+: 1449608454:0;vim .i3/i3blocks.conf
+: 1449609122:0;cd build
+: 1449609124:0;git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme\
+
+: 1449609274:0;./autogen.sh --prefix=/usr --disable-transparency --disable-cinnamon --disable-gnome-shell --disable-unity --disable-metacity
+: 1449609289:0;sudo make install\
+
+: 1449609510:0;vim .i3/config
+: 1449609582:0;vim sample.html
+: 1449609957:0;l
+: 1449609962:0;chromium sample.html
+: 1449621286:0;vim .i3/config
+: 1449621525:0;cd .config/base16-shell
+: 1449621531:0;./base16-default.dark.sh
+: 1449621631:0;cd .i3/i3blocks
+: 1449621632:0;l
+: 1449621655:0;./iface
+: 1449622121:0;ll
+: 1449622397:0;cal
+: 1449622444:0;pacaur -Ss dunst
+: 1449622451:0;pacaur -S dunst
+: 1449623888:0;vim .i3/i3blocks/load.sh
+: 1449624237:0;cd .i3/i3blocks
+: 1449624240:0;./load.sh
+: 1449624263:0;vim load.sh
+: 1449624483:0;./load.sh
+: 1449624530:0;vim load.sh
+: 1449624557:0;./load.sh
+: 1449628922:0;vim .i3/config
+: 1449629078:0;man rofi
+: 1449629661:0;ls
+: 1449630012:0;vim .i3/i3blocks.conf
+: 1449630057:0;vim .i3/config
+: 1449631275:0;cd dwn
+: 1449631282:0;mpv The.Nightly.Show.2015.12.07/The.Nightly.Show.2015.12.07.mp4
+: 1449631395:0;free -h
+: 1449631598:0;vim .i3/config
+: 1449632348:0;sudo bash -c "echo 'vm.swappiness = 15' >> /etc/sysctl.d/99-sysctl.conf
+: 1449632349:0;sudo bash -c "echo 'vm.swappiness = 15' >> /etc/sysctl.d/99-sysctl.conf"
+: 1449632362:0;sudo bash -c "echo 'vm.swappiness = 1' >> /etc/sysctl.d/99-sysctl.conf"
+: 1449632381:0;vim sample.save.commands
+: 1449632545:0;cd dwn
+: 1449632545:0;l
+: 1449632547:0;cd ..
+: 1449632548:0;l
+: 1449632657:0;cp dwn/AUTO\ TRANSLATED\ -\ en\ -\ Sleeping.with.Other.People.2015.1080p.WEB-DL.DD5.1.x264.TheBaconLord.srt Sleeping\ with\ Other\ People\ \(2015\)\ 720p\ WEBRip\ \[DayT.se\].srt
+: 1449632658:0;ls
+: 1449632781:0;mpv Sleeping\ with\ Other\ People\ \(2015\)\ 720p\ WEBRip\ \[DayT.se\].mp4
+: 1449632796:0;rm Sleeping\ with\ Other\ People\ \(2015\)\ 720p\ WEBRip\ \[DayT.se\].srt
+: 1449632854:0;cd
+: 1449632856:0;mpv Sleeping\ with\ Other\ People\ \(2015\)\ 720p\ WEBRip\ \[DayT.se\].mp4
+: 1449638633:0;vim .i3/config
+: 1449639665:0;cd .i3/i3blocks
+: 1449639672:0;vim load.sh
+: 1449639699:0;vim .i3/config
+: 1449640486:0;l
+: 1449640489:0;ls
+: 1449640520:0;rm Sleeping\ with\ Other\ People\ \(2015\)\ 720p\ WEBRip\ \[DayT.se\].mp4
+: 1449640523:0;rm sample.html
+: 1449640525:0;ls
+: 1449640526:0;cd dwn
+: 1449640527:0;l
+: 1449640530:0;rm AUTO\ TRANSLATED\ -\ en\ -\ Sleeping.with.Other.People.2015.1080p.WEB-DL.DD5.1.x264.TheBaconLord.srt
+: 1449640538:0;mpv Kejriwal_HTSummit_443944_334218_320.mp4
+: 1449640841:0;vim vol.sh
+: 1449640866:0;vim date.sh
+: 1449641189:0;cd .i3/i3blocks
+: 1449641192:0;vim vol.sh
+: 1449641267:0;vim load.sh
+: 1449641303:0;cp load.sh
+: 1449641309:0;cp load.sh wintitle.sh
+: 1449641312:0;vim wintitle.sh
+: 1449641338:0;vim ../i3blocks.conf
+: 1449641400:0;l
+: 1449641406:0;./wintitle.sh
+: 1449641408:0;vim ../i3blocks.conf
+: 1449641416:0;vim ./wintitle.sh
+: 1449641430:0;./wintitle.sh
+: 1449641433:0;vim ./wintitle.sh
+: 1449641442:0;./wintitle.sh
+: 1449641472:0;vim ./wintitle.sh
+: 1449641483:0;xtitle -s -e -t -60 | xargs -L 1 -I {} sh -c "echo -e \"{}\" | iconv -c -f utf-8 -t utf-8"
+: 1449641492:0;vim ./wintitle.sh
+: 1449641500:0;vim ../i3blocks.conf
+: 1449641521:0;./wintitle.sh
+: 1449641539:0;xtitle -s -e -t -60 | xargs -L 1 -I {} sh -c "echo -e \"{}\" | iconv -c -f utf-8 -t utf-8"
+: 1449641564:0;vim .i3/i3blocks.conf
+: 1449641653:0;xtitle -s -e -t -60 | xargs -L 1 -I {} sh -c "echo -e \"{}\"
+: 1449641668:0;xtitle -s -e -t -60 | xargs -L 1 -I {} sh -c "echo -e \"{} \" | iconv -c -f utf-8 -t utf-8"
+: 1449642017:0;vim .i3/i3blocks.conf
+: 1449642074:0;vim .i3/wintitle.conf
+: 1449642131:0;vim .i3/config
+: 1449642314:0;man i3blocks
+: 1449642674:0;ls
+: 1449642714:0;vim .i3/config
+: 1449643563:0;pacaur -Syu
+: 1449644564:0;cd dwn
+: 1449644565:0;l
+: 1449644568:0;ex twily-dir-s-.vimperator-colors.zip
+: 1449644570:0;l
+: 1449644579:0;mv colors ~/.vimperator/
+: 1449644583:0;cd ~/.vimperator
+: 1449644583:0;l
+: 1449644590:0;vim ~/.vimperatorrc
+: 1449644636:0;vim .vimperatorrc
+: 1449647899:0;vim ~/.gtkrc-2.0
+: 1449647911:0;vim ~/.config/gtk-3.0/settings.ini
+: 1449647923:0;vim ~/.vimperatorrc
+: 1449648260:0;vim .i3/config
+: 1449648363:0;vim .compton.conf
+: 1449648376:0;vim .i3/config
+: 1449648459:0;man compton
+: 1449648484:0;vim .i3/config
+: 1449648558:0;ll
+: 1449648568:0;cat .compton.conf
+: 1449648592:0;vim .i3/config
+: 1449648634:0;ls
+: 1449648724:0;vim .i3/config
+: 1449649107:0;man compton
+: 1449649221:0;glxinfo | grep "OpenGL version"\
+\
+
+: 1449649224:0;pacaur -S mesa
+: 1449649230:0;pacaur -S mesautils
+: 1449649234:0;pacaur -Ss mesautils
+: 1449649237:0;pacaur -Ss mesa utils
+: 1449649240:0;pacaur -Ss mesa
+: 1449649275:0;pacaur -S mesa-demos mesa-vdpau
+: 1449649282:0;glxinfo | grep "OpenGL version"\
+\
+
+: 1449649298:0;l
+: 1449649299:0;ll
+: 1449649314:0;rm .newi3blocks.conf
+: 1449649323:0;rm -rf .cache
+: 1449649441:0;vim .vimrc
+: 1449653930:0;vim .i3/config
+: 1449654706:0;i3-msg "hide_edge_borders none"
+: 1449655713:0;pacaur -Syu
+: 1449655736:0;ls
+: 1449655744:0;l
+: 1449655755:0;cd .dotfiles
+: 1449655756:0;l
+: 1449655759:0;cd i3
+: 1449655760:0;ls
+: 1449655762:0;cd .i3
+: 1449655763:0;l
+: 1449655767:0;...
+: 1449655768:0;gs
+: 1449655779:0;git add i3
+: 1449655781:0;gs
+: 1449655860:0;pacaur -Ss wtitle
+: 1449655921:0;gma "major tweaks, i3blocks, xtitle, fontawesome"
+: 1449655931:0;git push
+: 1449656128:0;pacaur -Ss palemoon
+: 1449656157:0;cat /proc/cpuinfo\
+\
+
+: 1449656164:0;cat /proc/cpuinfo\
+\
+| grep sse2
+: 1449656176:0;cat /proc/cpuinfo | grep -i sse2\
+\
+
+: 1449656200:0;pacaur -S palemoon-bin
+: 1449656528:0;hfree
+: 1449656741:0;vim .vimperatorrc
+: 1449656887:0;hfree
+: 1449656966:0;free -h
+: 1449656974:0;hfree
+: 1449657042:0;pkill rsession
+: 1449657044:0;ps x
+: 1449657056:0;hfree
+: 1449698019:0;ls
+: 1449698021:0;cd dwn
+: 1449698021:0;l
+: 1449698559:0;ll
+: 1449698562:0;l
+: 1449698627:0;mpv The.Daily.Show.2015.12.08.Thomas.Perez.HDTV.x264-CROOKS.rar
+: 1449699812:0;pacaur -Syu
+: 1449711237:0;l
+: 1449711246:0;sudo mount /dev/sda7 -r tmp
+: 1449711269:0;cd tmp/Users/Abhinandan/Downloads/
+: 1449711270:0;l
+: 1449711276:0;../Desktop
+: 1449711277:0;l
+: 1449711427:0;mpv Night\ Owls\ \(2015\)\ 1080p\ WEBRip\ \[DayT.se\].mp4 --sub-file=~/dwn/Night.Owls.2015.1080p.WEB-DL.DD5.1.H264-FGT.srt
+: 1449711519:0;mpv Night\ Owls\ \(2015\)\ 1080p\ WEBRip\ \[DayT.se\].mp4 --sub-file=/home/ap/dwn/Night.Owls.2015.1080p.WEB-DL.DD5.1.H264-FGT.srt
+: 1449718343:0;l
+: 1449751718:0;xtitle -s
+: 1449751739:0;xtitle -s -e -t -60 | xargs -L 1 -I {} sh -c "echo -e \"{} \" | iconv -c -f utf-8 -t utf-8"
+: 1449751765:0;xtitle -s -e -t -60 | xargs -L 1 -I {} sh -c "echo -e \"{}\" | iconv -c -f utf-8 -t utf-8"
+: 1449751797:0;xtitle -s -e -t -60 | iconv -c -f utf-8 -t utf-8"
+: 1449751808:0;xtitle -s -e -t -60 | iconv -c -f utf-8 -t utf-8
+: 1449751860:0;cd
+: 1449751865:0;xtitle -s
+: 1449751899:0;xtitle -s -e -t -60 | xargs -L 1 -I {} sh -c "echo -e \"{}\" | iconv -c -f utf-8 -t utf-8"
+: 1449751924:0;vim sample.error
+: 1449756202:0;chromium sample.error
+: 1449756352:0;vim .vimrc
+: 1449757040:0;palemoon
+: 1449757046:0;ps x
+: 1449757055:0;hfree
+: 1449794157:0;xfontsel
+: 1449794263:0;vim .Xresources
+: 1449794280:0;xrdb .Xresources
+: 1449794283:0;ls
+: 1449794284:0;ll
+: 1449794287:0;ls
+: 1449794293:0;vim .Xresources
+: 1449794311:0;xrdb -merge .Xresources
+: 1449794313:0;ls
+: 1449794318:0;ll
+: 1449794323:0;l
+: 1449794334:0;vim .Xresources
+: 1449794354:0;xrdb -merge .Xresources
+: 1449794356:0;ls
+: 1449794366:0;mpv dwn/TVSF.mp4
+: 1449796142:0;mpv dwn/The.Daily.Show.2015.12.08.Thomas.Perez.HDTV.x264-CROOKS.rar
+: 1449818563:0;sudo mount /dev/sda7 -r tmp
+: 1449823621:0;mpv dwn/The.Daily.Show.2015.12.08.Thomas.Perez.HDTV.x264-CROOKS.rar
+: 1449825438:0;sudo mount /dev/sda7 -r tmp
+: 1449877884:0;vim .config/mpv/mpv.conf
+: 1449878255:0;mpv dwn/The.Daily.Show.2015.12.08.Thomas.Perez.HDTV.x264-CROOKS.rar
+: 1449878342:0;cd .dotfiles
+: 1449878343:0;gs
+: 1449879004:0;mpv dwn/tv
+: 1449899898:0;ping time.iiit.ac.in
+: 1449899943:0;pacaur -S ntp
+: 1449899972:0;sudoedit /etc/ntp.conf
+: 1449900011:0;sudo ntpd -u ntp:ntp
+: 1449900101:0;sudo ntpdate -s time.iiit.ac.in
+: 1449880311:0;cat /etc/localtime
+: 1449880364:0;su
+: 1449880415:0;sudo ntpdate -s time.iiit.ac.in
+: 1449891387:0;cd /tmp/RtmpE2RbXC
+: 1449891387:0;l
+: 1449891407:0;cp GPL6244.soft ~/ms/sem09/data
+: 1449891496:0;ls
+: 1449891498:0;ll
+: 1449891507:0;ex GPL6244.annot.gz
+: 1449892510:0;pacaur -Ss filezilla
+: 1449892516:0;pacaur -S filezilla
+: 1449898490:0;cd dwn/tv
+: 1449898491:0;l
+: 1449898497:0;mpv The.Nightly.Show.2015.12.09.rar
+: 1449940714:0;su
+: 1449940733:0;sudo ntpdate -s time.iiit.ac.in
+: 1449920942:0;hwclock -w
+: 1449920945:0;sudo hwclock -w
+: 1449952038:0;cd dwn/tv
+: 1449952039:0;l
+: 1449952097:0;mpv Ash.vs.Evil.Dead.S01E01.WEBRip.x264-FUM\[ettv\].mp4 --sub-file=Ash.vs.Evil.Dead.S01E01.HDTV.x264-KILLERS.srt
+: 1449952120:0;l
+: 1449952126:0;ls *.mp4
+: 1450111235:0;pacaur -S jupyter
+: 1450111390:0;pacaur -S mathjax
+: 1450111464:0;pacaur -Ss conda
+: 1450111505:0;jupyter notebook
+: 1450111557:0;ps x
+: 1450111559:0;htop
+: 1450111573:0;hfree
+: 1450119228:0;pacaur -Syu
+: 1450249649:0;pacaur -S pacaur
+: 1450261052:0;sudo mount /dev/sda7 -r tmp
+: 1450262696:0;vim .i3/i3blocks.conf
+: 1450262732:0;xtitle
+: 1450262737:0;xtitle -s
+: 1450262777:0;pkill i3blocks
+: 1450262824:0;xtitle -s -t 60
+: 1450262864:0;man xtitle
+: 1450262943:0;vim gm&gg.txt
+: 1450262947:0;vim "gm&gg.txt"
+: 1450262969:0;vim gmggg.txt
+: 1450298152:0;ping 8.8.8.8
+: 1450320493:0;pacaur -Syu
+: 1450334139:0;ping 10.2.12.196
+: 1450336117:0;pacaur -Syu
+: 1450350874:0;lsblk
+: 1450396885:0;pacaur -Syu
+: 1450396967:0;cd /tmp/pacaurtmp-ap/xtitle-git/
+: 1450396968:0;l
+: 1450396972:0;makepkg -si
+: 1450627221:0;su
+: 1450627330:0;sudo ntpdate -s time.iiit.ac.in
+: 1450627361:0;sudo hwclock -w
+: 1450627426:0;sudo ntpdate -s time.iiit.ac.in
+: 1450627442:0;man ntpdate
+: 1450627450:0;man ntpd
+: 1450627486:0;sudo ntpdate -s time.iiit.ac.in
+: 1450630760:0;cd dwn
+: 1450630760:0;l
+: 1450630840:0;pacaur -Syu
+: 1450632231:0;pacaur -S bdf-tewi-latest
+: 1450632242:0;pacaur -S bdf-tewi-git
+: 1450632269:0;pacaur -S pacaur
+: 1450688988:0;ping 8.8.8.8
+: 1450689047:0;sudo ntpdate -s time.iiit.ac.in
+: 1450689473:0;cat .zcompdump
+: 1450689487:0;cat .zsh/zsh_history
+: 1450689501:0;cat .zsh/zsh_history | grep -C 3 ntpdate
+: 1450689515:0;strings .zsh/zsh_history | grep -C 3 ntpdate
+: 1450689544:0;cat /etc/localtime
+: 1450689577:0;su
+: 1450689583:0;sudo su
+: 1450690218:0;timedatectl
+: 1450690266:0;su
+: 1450690271:0;sudo su
+: 1450690560:0;sudo systemctl disable ntp
+: 1450690564:0;sudo systemctl disable ntpd
+: 1450690570:0;sudo systemctl stop ntpd
+: 1450690590:0;sudo ntpdate -s time.iiit.ac.in
+: 1450690657:0;date -s "$(curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g')"\
+
+: 1450690676:0;date -d "$(curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g')"\
+
+: 1450690683:0;l
+: 1450690688:0;man date
+: 1450690693:0;date -d "$(curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g')"\
+
+: 1450690704:0;date -d "$(curl -s --head http://google.com | grep -v Date: | sed 's/Date: //g')"\
+
+: 1450690729:0;curl -s --head http://google.com | grep ^Date: | sed 's/Date: //g'
+: 1450690735:0;man gerp
+: 1450690739:0;man grep
+: 1450690753:0;curl -s --head http://google.com | grep -e ^Date: | sed 's/Date: //g'
+: 1450690765:0;curl -s --head http://google.com
+: 1450690777:0;curl -s --head http://google.com | grep ^Date
+: 1450690780:0;curl -s --head http://google.com | grep -e ^Date
+: 1450690785:0;curl -s --head http://google.com | grep "^Date"
+: 1450690802:0;date -d "$(curl -s --head http://google.com | grep "^Date:" | sed 's/Date: //g')"\
+
+: 1450690810:0;date -s "$(curl -s --head http://google.com | grep "^Date:" | sed 's/Date: //g')"\
+
+: 1450690815:0;sudo date -s "$(curl -s --head http://google.com | grep "^Date:" | sed 's/Date: //g')"\
+
+: 1450671028:0;timedatectl
+: 1450671045:0;hwclock -w --utc\
+
+: 1450671049:0;sudo hwclock -w --utc\
+
+: 1450671052:0;timedatectl
+: 1450673870:0;ls
+: 1450673875:0;rm The\ Lobster\ \(2015\)\ 720p\ WEBRip\ \[DayT.se\].mp4
+: 1450673877:0;cd dwn
+: 1450673878:0;l
+: 1450677376:0;cd dwn/tor-browser_en-US
+: 1450677377:0;l
+: 1450677379:0;./start-tor-browser.desktop
+: 1450677475:0;pacaur -Ss deluge
+: 1450677582:0;pacaur -S tixati
+: 1450677585:0;pacaur -Ss tixati
+: 1450677589:0;pacaur -S tixati
+: 1450678851:0;cd dwn/tor-browser_en-US/Browser/Downloads
+: 1450678852:0;l
+: 1450678962:0;mpv 21291.mp4
+: 1450678973:0;ls -al
+: 1450679174:0;mpv 21291.mp4
+: 1450679207:0;ls -al
+: 1450679212:0;thunar
+: 1450681716:0;cd dwn/tor-browser_en-US
+: 1450681717:0;./start-tor-browser.desktop
+: 1450681760:0;pacaur -S gnome-themes-standard
+: 1450683950:0;cd dwn/tor-browser_en-US
+: 1450683952:0;./start-tor-browser.desktop
+: 1450687550:0;ping 10.2.12.196
+: 1450697757:0;sudo mount /dev/sda7 -r tmp
+: 1450799519:0;pacaur -Syu
+: 1450843528:0;cat /proc/sys/vm/swappiness
+: 1450864647:0;ssh ap@10.2.12.96
+: 1450864649:0;ssh ap@10.2.12.196
+: 1450864747:0;scp -r ap@10.2.12.196:/home/ap/bak/temp/bak/pic/ss pic/ss\
+
+: 1450864754:0;cd pic/ss
+: 1450864760:0;gpicview 2015-12-08-113256_1366x768_scrot.png 2015-12-08-113345_1366x768_scrot.png 2015-12-10-181623_1366x768_scrot.png 2015-12-10-181628_1366x768_scrot.png 2015-12-15-065041_1366x768_scrot.png 2015-12-15-065042_1366x768_scrot.png 2015-12-15-065043_1366x768_scrot.png 2015-12-15-065044_1366x768_scrot.png 2015-12-15-065045_1366x768_scrot.png 2015-12-15-065059_1366x768_scrot.png 2015-12-15-065100_1366x768_scrot.png ss
+: 1450866678:0;cd pic/ss
+: 1450866679:0;l
+: 1450866683:0;gpicview 2015-12-08-113256_1366x768_scrot.png 2015-12-08-113345_1366x768_scrot.png 2015-12-10-181623_1366x768_scrot.png 2015-12-10-181628_1366x768_scrot.png 2015-12-15-065041_1366x768_scrot.png 2015-12-15-065042_1366x768_scrot.png 2015-12-15-065043_1366x768_scrot.png 2015-12-15-065044_1366x768_scrot.png 2015-12-15-065045_1366x768_scrot.png 2015-12-15-065059_1366x768_scrot.png 2015-12-15-065100_1366x768_scrot.png ss
+: 1450866696:0;rm *
+: 1450866699:0;cd ss
+: 1450866700:0;l
+: 1450866706:0;gpicview 2015-10-29-152253_1366x768_scrot.png 2015-10-29-152435_1366x768_scrot.png 2015-11-13-023239_1366x768_scrot.png 2015-11-15-230132_1366x768_scrot.png 2015-11-15-230133_1366x768_scrot.png 2015-11-15-230140_1366x768_scrot.png 2015-11-15-230144_1366x768_scrot.png 2015-11-15-230147_1366x768_scrot.png 2015-11-15-230309_1366x768_scrot.png 2015-11-15-230423_1366x768_scrot.png 2015-11-15-230424_1366x768_scrot.png 2015-11-15-230425_1366x768_scrot.png 2015-11-15-230426_1366x768_scrot.png 2015-11-15-230503_1366x768_scrot.png 2015-11-15-230504_1366x768_scrot.png 2015-11-15-230505_1366x768_scrot.png 2015-11-16-035903_1366x768_scrot.png
+: 1450926362:0;sudo mount /dev/sda7 -r tmp
+: 1450926399:0;ssh ap@10.2.12.196
+: 1450926453:0;scp ap@10.2.12.196:~/dwn/movies/C*.avi .
+: 1450926459:0;scp "ap@10.2.12.196:~/dwn/movies/C*.avi" .
+: 1450947034:0;cal
+: 1450994247:0;sudo mount /dev/sda7 -r tmp
+: 1451073715:0;pacaur -Ss hakyll
+: 1451073812:0;sudoedit /etc/pacman.conf
+: 1451073833:0;pacaur -Syu
+: 1451073860:0;sudoedit /etc/pacman.conf
+: 1451073870:0;pacaur -Syu
+: 1451073919:0;pacaur -Rns numix-frost-themes
+: 1451073921:0;pacaur -Syu
+: 1451073961:0;pacaur -Ss hakyll
+: 1451073970:0;pacaur -S haskell-hakyll
+: 1451075243:0;mkdir proj
+: 1451075245:0;cd proj
+: 1451075273:0;hakyll-init .
+: 1451075282:0;l
+: 1451075337:0;./site build
+: 1451075345:0;./site watch
+: 1451075356:0;l
+: 1451075363:0;chromium index.html
+: 1451075397:0;cd _site
+: 1451075397:0;l
+: 1451075400:0;chromium index.html
+: 1451076889:0;sudo mount /dev/sda7 -r tmp
+: 1451300838:0;pacaur -Syu
+: 1451309107:0;sudo mount /dev/sda7 -r tmp
+: 1451325493:0;hfree
+: 1451326098:0;free -m
+: 1451326103:0;hfree
+: 1451465836:0;ls
+: 1451465847:0;rm Creed.2015.DVDScr.XVID.AC3.HQ.Hive-CM8.* Spotlight\ \(2015\)\ DVDScr\ \[DayT.se\].avi
+: 1451465848:0;l
+: 1451465851:0;cd dwn
+: 1451465851:0;l
+: 1451465869:0;rm The\ Diary\ of\ a\ Teenage\ Girl\ 2015\ DVDRip\ LKRG.idx The\ Diary\ of\ a\ Teenage\ Girl\ 2015\ DVDRip\ LKRG.mp4.crdownload The\ Diary\ of\ a\ Teenage\ Girl\ 2015\ DVDRip\ LKRG.sub The.Hateful.Eight.2015.DVDSCR.999MB.ShAaNiG.mkv
+: 1451465870:0;l
+: 1451547542:0;sudo mount /dev/sda7 -r tmp
+: 1451583455:0;./dwn/tor-browser_en-US/start-tor-browser.desktop
+: 1451583464:0;cd dwn/tor-browser_en-US
+: 1451583466:0;./start-tor-browser.desktop
+: 1451649763:0;sudoedit /etc/fstab
+: 1451649821:0;lsblk
+: 1451649853:0;blkid /dev/sda7
+: 1451649858:0;blkid /dev/sda3
+: 1451649861:0;blkid /dev/sda4
+: 1451649871:0;sudo blkid /dev/sda4
+: 1451649876:0;sudo blkid /dev/sda7
+: 1451649938:0;sudo blkid
+: 1451649979:0;l
+: 1451650205:0;whoami
+: 1451650427:0;pacaur -Syu
+: 1451650455:0;sudoedit /etc/fstab
+: 1451650499:0;free -m
+: 1451650733:0;cd dwn/tor-browser_en-US
+: 1451650734:0;./start-tor-browser.desktop
+: 1451651282:0;free -m
+: 1451696392:0;pacaur -S convert
+: 1451696396:0;pacaur -Ss convert
+: 1451696412:0;pacaur -S imagemagick
+: 1451696449:0;cd dwn
+: 1451696450:0;ls
+: 1451696474:0;man convert
+: 1451696517:0;convert -quality 50 2016-01-01.jpg
+: 1451696528:0;convert -quality 50 2016-01-01.jpg 2016-01-01.png
+: 1451696534:0;ll
+: 1451696547:0;convert -quality .50 2016-01-01.jpg 2016-01-01.png
+: 1451696559:0;ll
+: 1451696571:0;convert -quality .50 2016-01-01.jpg 2016-01-01.jpg
+: 1451696573:0;ll
+: 1451696586:0;convert -quality .25 2016-01-01.jpg 2016-01-01.jpg
+: 1451696589:0;ll
+: 1451696697:0;convert 2016-01-01.jpg -resize x400 2016-01-01.jpg
+: 1451696706:0;ll
+: 1451696733:0;convert 2016-01-01\ \(1\).jpg -resize x800 2016-01-01\ \(1\).jpg
+: 1451696741:0;convert 2016-01-01\ \(2\).jpg -resize x800 2016-01-01\ \(2\).jpg
+: 1451696744:0;convert 2016-01-01\ \(2\).jpg -resize x800 2016-01-01\ \(3\).jpg
+: 1451696755:0;convert 2016-01-01\ \(3\).jpg -resize x800 2016-01-01\ \(3\).jpg
+: 1451696761:0;convert 2016-01-01\ \(4\).jpg -resize x800 2016-01-01\ \(4\).jpg
+: 1451696767:0;convert 2016-01-01\ \(5\).jpg -resize x800 2016-01-01\ \(5\).jpg
+: 1451696773:0;gpicview *
+: 1451696792:0;gpicview 2016-01-01\ \(1\).jpg 2016-01-01\ \(2\).jpg 2016-01-01\ \(3\).jpg 2016-01-01\ \(4\).jpg 2016-01-01\ \(5\).jpg 2016-01-01.jpg
+: 1451696820:0;rm 2016-01-01\ \(1\).jpg 2016-01-01\ \(2\).jpg 2016-01-01\ \(3\).jpg 2016-01-01\ \(4\).jpg 2016-01-01\ \(5\).jpg 2016-01-01.jpg
+: 1451696826:0;l
+: 1451696831:0;rm 2016-01-01.png
+: 1451696887:0;cd dwn
+: 1451696888:0;l
+: 1451696897:0;convert 2016-01-01\ \(4\).jpg -resize x800 2016-01-01\ \(4\).jpg
+: 1451696903:0;convert 2016-01-01\ \(3\).jpg -resize x800 2016-01-01\ \(3\).jpg
+: 1451696908:0;convert 2016-01-01\ \(2\).jpg -resize x800 2016-01-01\ \(2\).jpg
+: 1451696915:0;convert 2016-01-01\ \(1\).jpg -resize x800 2016-01-01\ \(1\).jpg
+: 1451696925:0;convert 2016-01-01.jpg -resize x800 2016-01-01.jpg
+: 1451703876:0;vim .i3/config
+: 1451704433:0;l
+: 1451704434:0;ll
+: 1451704441:0;vim .compton.conf
+: 1451704513:0;compton --config ~/.compton.conf -b &\
+
+: 1451706548:0;cd dwn/tor-browser_en-US
+: 1451706550:0;./start-tor-browser.desktop
+: 1451707043:0;hfree
+: 1451726116:0;vim .compton.conf
+: 1451726147:0;vim .i3/config
+: 1451726161:0;vim .xinitrc
+: 1451726172:0;vim .i3/config
+: 1451726191:0;mv .compton.conf .compton.conf.bak
+: 1451726382:0;vim .i3/config
+: 1451726529:0;ping 10.2.12.196
+: 1451727003:0;cd dwn/tor-browser_en-US
+: 1451727004:0;./start-tor-browser.desktop
+: 1451730062:0;pacaur -Syu
+: 1451810972:0;sudo mount /dev/sda7 -r tmp
+: 1451811005:0;lsblk
+: 1451811016:0;l
+: 1451811034:0;sudo umount -a
+: 1451933245:0;ping 8.8.8.8
+: 1451950868:0;ssh ap@10.2.12.196
+: 1451955672:0;cd dwn/tor-browser_en-US
+: 1451955675:0;./start-tor-browser.desktop
+: 1451980421:0;hfree
+: 1451983737:0;vim .i3/config
+: 1451983932:0;man compton
+: 1451983940:0;vim .i3/config
+: 1451983953:0;pacaur-Syu
+: 1451983955:0;pacaur -Syu
+: 1451987489:0;man shutdown
+: 1451990297:0;ssh ap@10.2.12.196
+: 1451990306:0;ssh -Y ap@10.2.12.196
+: 1452000851:0;pacaur -Syu
+: 1452021282:0;rsync -v ap@10.2.12.196:~/gdrive .
+: 1452021309:0;man rsync
+: 1452021351:0;rsync -av ap@10.2.12.196:~/gdrive .
+: 1452028147:0;cd dwn/tor-browser_en-US
+: 1452028148:0;./start-tor-browser.desktop
+: 1452062422:0;ping 10.2.12.196
+: 1452070042:0;pacaur -Syu
+: 1452086535:0;cd .gdrive
+: 1452086536:0;l
+: 1452086536:0;ll
+: 1452086541:0;cd Legs
+: 1452086542:0;ll
+: 1452086671:0;ssh ap@10.2.12.196
+: 1452086723:0;scp "ap@10.2.12.196:~/gdrive/Lexi/Step*" .
+: 1452086756:0;scp "ap@10.2.12.196:~/gdrive/Lexi/Cum*" .
+: 1452086805:0;scp "ap@10.2.12.196:~/gdrive/Lexi/*lackmai*" .
+: 1452089659:0;cd dwn/tor-browser_en-US
+: 1452089660:0;./start-tor-browser.desktop
+: 1452107844:0;hfree
+: 1452107860:0;free -m
+: 1452108758:0;./start-tor-browser.desktop
+: 1452150149:0;ping 8.8.8.8
+: 1452150161:0;cd dwn/tor-browser_en-US
+: 1452150163:0;./start-tor-browser.desktop
+: 1452152977:0;pacaur -Syu
+: 1452153027:0;cd dwn/tor-browser_en-US
+: 1452153028:0;./start-tor-browser.desktop
+: 1452156689:0;pacaur -Syu
+: 1452176653:0;ping 8.8.8.8
+: 1452190421:0;cd dwn/tor-browser_en-US
+: 1452190424:0;./start-tor-browser.desktop
+: 1452201071:0;cd dwn/tor-browser_en-US
+: 1452201075:0;cd tor-browser_en-US
+: 1452201077:0;./start-tor-browser.desktop
+: 1452237275:0;/usr/lib/rstudio/bin/pandoc/pandoc -v
+: 1452237302:0;pandoc -v
+: 1452237307:0;su
+: 1452246258:0;hfree
+: 1452297495:0;cd ms/sem09/res
+: 1452297501:0;zathura Predicitng_metastatic_HCC.pdf&
+: 1452298865:0;pacaur -Syu
+: 1452298969:0;pkill -9 rstudio
+: 1452300003:0;ll
+: 1452300007:0;l
+: 1452300009:0;ll
+: 1452300244:0;cd tor-browser_en-US
+: 1452300245:0;./start-tor-browser.desktop
+: 1452300913:0;vim .Renviron
+: 1452302223:0;hfree
+: 1452313946:0;pacaur -S gfortran
+: 1452313950:0;pacaur -S gcc-fortran
+: 1452318361:0;hfree
+: 1452318538:0;pkill rstudio
+: 1452318557:0;free -m
+: 1452321908:0;cd ms/sem09/res
+: 1452321910:0;zathura Predicitng_metastatic_HCC.pdf
+: 1452446743:0;ping 8.8.8.8
+: 1452446752:0;ping 10.4.8.204
+: 1452446765:0;ip addr
+: 1452446831:0;pacaur -Syu
+: 1452531397:0;cd tor-browser_en-US
+: 1452531398:0;./start-tor-browser.desktop
+: 1452538405:0;pacaur -Syu
+: 1452538498:0;ssh ap@10.2.12.196
+: 1452921903:0;ip addr
+: 1452962181:0;pacaur -Syu
+: 1452962548:0;hfree
+: 1452962659:0;find / -iname "*swappiness*"
+: 1452962666:0;sudo find / -iname "*swappiness*"
+: 1452969622:0;pacaur -Syu
+: 1452969684:0;pacaur -S haskell-hakyll
+: 1452970971:0;htop
+: 1452970986:0;hfree
+: 1452974650:0;rm .cache/chromium .cache/mozilla
+: 1452974655:0;rm -rf .cache/chromium .cache/mozilla
+: 1452979649:0;mpv dwn/rec_20160117-0241.mp3
+: 1453019666:0;sudo systemctl enable sshd
+: 1453019675:0;sudo systemctl start sshd
+: 1453019680:0;ip addr
+: 1453020417:0;mpv dwn/tv/Real.Time.With.Bill.Maher.2016.01.15.HDTV.x264-BATV.rar
+: 1453062087:0;pacaur -SYu
+: 1453062092:0;pacaur -Syu
+: 1453071738:0;ping 8.8.8.8
+: 1453071747:0;ping google.com
+: 1453113975:0;cal
+: 1453113980:0;cal 3
+: 1453113991:0;cal 2016
+: 1453257355:0;hfree
+: 1453257999:0;free
+: 1453258005:0;free -m
+: 1453258012:0;hfree
+: 1453259116:0;vim trainInx
+: 1453272085:0;vim ideas
+: 1453407421:0;cd tmp
+: 1453407431:0;mkdir tm2
+: 1453407444:0;sudo mount /dev/sda7 -r tm2
+: 1453407453:0;cd tm2
+: 1453472571:0;sudo mount /dev/sda7 -r tm2
+: 1453503617:0;pacaur -S flashplayer-standalone
+: 1453503651:0;pacaur -S google-chrome
+: 1453503672:0;pacaur -Ss google-chrome
+: 1453503681:0;pacaur -S google-chrome
+: 1453508043:0;pacaur -S ppub
+: 1453508687:0;pacaur -Ss calibre
+: 1453508691:0;pacaur -S calibre
+: 1453512045:0;free -m
+: 1453514440:0;pacaur -Syu
+: 1453514498:0;ps x
+: 1453514502:0;hfree
+: 1453514741:0;pacaur -Rns calibre ppub google-chrome
+: 1453514754:0;cd doc/ebooks
+: 1453514755:0;l
+: 1453514762:0;cd Unknown
+: 1453514763:0;l
+: 1453514958:0;pacaur -Syyu
+: 1453517339:0;pacaur -Rns jupyter
+: 1453517558:0;sudoedit /etc/fstab
+: 1453517574:0;lsblk -f
+: 1453517950:0;ll
+: 1453517955:0;cd tmp
+: 1453517974:0;lsblk -f
+: 1453517990:0;pacaur -Syu
+: 1453518014:0;pacaur -S pandoc
+: 1453518043:0;pacaur -Rns haskell-pandoc
+: 1453520964:0;cat /var/log/Xorg.0.log
+: 1453521134:0;cat /var/log/Xorg.1.log
+: 1453521225:0;cat /var/log/journal/153e90e0c3244ba59d2452b9954e50cb/system.journal
+: 1453521236:0;cat /var/log/journal/153e90e0c3244ba59d2452b9954e50cb/user-1000.journal
+: 1453521282:0;systemctl --failed\
+\
+
+: 1453521289:0;systemctl --failed\
+\
+-all
+: 1453521297:0;systemctl --failed -all\
+\
+-all
+: 1453521306:0;systemctl --failed --all\
+\
+-all
+: 1453521309:0;systemctl --failed --all\
+\
+
+: 1453521323:0;systemctl --failed --all
+: 1453521334:0;systemctl status systemd-modules-load
+: 1453521376:0;journalctl
+: 1453521560:0;fsck
+: 1453521611:0;sudoedit /etc/fstab
+: 1453521643:0;pacaur -S linux-lts
+: 1453521773:0;pkill -9 Thunar
+: 1453521781:0;htop
+: 1453521800:0;hfree
+: 1453589295:0;pacaur -S gcc-clang
+: 1453589301:0;pacaur -S clang
+: 1453589536:0;pacaur -Ss valgrind
+: 1453589543:0;pacaur -S valgrind
+: 1453589559:0;pacaur -S openmpi
+: 1453597600:0;cd tor
+: 1453597601:0;./start-tor-browser.desktop
+: 1453670365:0;ssh ap@10.2.12.196
+: 1453670395:0;scp -r ap@10.2.12.196:~/dwn/ebooks .
+: 1453670415:0;mv ebooks dwn
+: 1453670422:0;cp -r ebooks dwn
+: 1453670632:0;l
+: 1453670635:0;ll
+: 1453670640:0;cd tmp
+: 1453670641:0;l
+: 1453670643:0;cd
+: 1453670649:0;sudo mount /dev/sda7 -r tmp
+: 1453670655:0;cd tmp
+: 1453670656:0;l
+: 1453670665:0;cd Users
+: 1453670668:0;cd a
+: 1453670671:0;cd Abhinandan
+: 1453670672:0;l
+: 1453670679:0;cd Downloads
+: 1453670679:0;l
+: 1453670687:0;cp -r ml_lectures ~/
+: 1453744603:0;pacaur -Ss hangouts
+: 1453744629:0;pacaur -Ss google talk
+: 1453744647:0;pacaur -S google-talkplugin
+: 1453768205:0;hfree
+: 1453768217:0;free -m
+: 1453869695:0;ca
+: 1453869698:0;cal
+: 1453904652:0;checkupdates
+: 1453904692:0;pacaur -Syu
+: 1453905325:0;pacaur -Syyu
+: 1453905379:0;pacaur -S linux-lts
+: 1453905778:0;bc
+: 1453905783:0;cal
+: 1453905823:0;cal 3
+: 1453905833:0;cal 2016
+: 1453910229:0;pacaur -Rns confuse
+: 1453910239:0;pacaur -Rns confuse i3status
+: 1453910253:0;pacaur -S confuse i3status
+: 1453910279:0;cd /var/cache/pacman/pkg
+: 1453910280:0;l
+: 1453910290:0;rm confuse-2.7-3-x86_64.pkg.tar.xz i3status-2.9-1-x86_64.pkg.tar.xz
+: 1453910298:0;sudo rm confuse-2.7-3-x86_64.pkg.tar.xz i3status-2.9-1-x86_64.pkg.tar.xz
+: 1453910304:0;pacaur -S confuse i3status
+: 1453910353:0;checkupdates
+: 1453910421:0;pacaur -Syyu
+: 1453910696:0;cal 2016
+: 1453911000:0;pacaur -S confuse
+: 1453911009:0;pacaur -S confuse i3status
+: 1453911018:0;pacaur -Syyu
+: 1453912086:0;cal 2
+: 1453912091:0;cal 2016
+: 1453928224:0;hfree
+: 1453928234:0;free -m
+: 1453928818:0;hfree
+: 1454108634:0;mkdir rashmi
+: 1454108636:0;cd rashmi
+: 1454108637:0;ls
+: 1454108829:0;vim report.md
+: 1454108941:0;pacaur -Syu
+: 1454109770:0;vim .vimrc
+: 1454109852:0;pacaur -Ss texlive-most
+: 1454109870:0;pacaur -Ss texlive
+: 1454109891:0;pacaur -S texlive-most
+: 1454109908:0;vim report.md
+: 1454116797:0;cal 11/2015
+: 1454116801:0;cal 2015
+: 1454117554:0;pandoc -o report.pdf report.md
+: 1454117633:0;pandoc --toc -V documentclass=report -o report.pdf report.md
+: 1454117643:0;gvim report.md
+: 1454117830:0;pandoc --toc -V documentclass=report -o report.pdf report.md
+: 1454117836:0;zathura report.pdf
+: 1454117912:0;vim make.sh
+: 1454118009:0;sh make.sh
+: 1454118017:0;chmod +x make.sh
+: 1454118019:0;vim make.sh
+: 1454118028:0;./make.sh
+: 1454118034:0;man pandoc
+: 1454118043:0;vim make.sh
+: 1454118061:0;./make.sh
+: 1454118069:0;vim make.sh
+: 1454118074:0;./make.sh
+: 1454118081:0;ls
+: 1454118085:0;zathura report.pdf
+: 1454118315:0;vim make.sh
+: 1454118396:0;./make.sh
+: 1454118401:0;zathura report.pdf
+: 1454118769:0;./make.sh
+: 1454118772:0;zathura report.pdf
+: 1454118849:0;vim make.sh
+: 1454118866:0;./make.sh
+: 1454118869:0;zathura report.pdf
+: 1454118877:0;vim make.sh
+: 1454118884:0;./make.sh
+: 1454118888:0;zathura report.pdf
+: 1454118929:0;vim rashmi/report.md
+: 1454118942:0;./make.sh
+: 1454118946:0;zathura report.pdf
+: 1454119259:0;vim rashmi/report.md
+: 1454119934:0;zathura report.pdf
+: 1454121078:0;./make.sh
+: 1454121083:0;zathura report.pdf
+: 1454121190:0;vim make.sh
+: 1454121350:0;./make.sh
+: 1454121353:0;zathura report.pdf
+: 1454121360:0;l
+: 1454121364:0;rm report.pdf
+: 1454121368:0;./make.sh
+: 1454121375:0;zathura report.pdf
+: 1454121587:0;vim make.sh
+: 1454121598:0;./make.sh
+: 1454121602:0;zathura report.pdf
+: 1454121640:0;cd rashmi
+: 1454121643:0;zathura report.pdf
+: 1454122640:0;vim make.sh
+: 1454122715:0;./make.sh
+: 1454122720:0;zathura report.pdf
+: 1454123107:0;./make.sh
+: 1454123110:0;zathura report.pdf
+: 1454123563:0;convert bacterialgrowth.gif bacterialgrowth.png
+: 1454123565:0;l
+: 1454123576:0;gpicview bacterialgrowth.png
+: 1454124376:0;convert ab_prescription.gif ab_prescription.png
+: 1454124377:0;l
+: 1454124387:0;convert strep_stats.gif strep_stats.png
+: 1454124403:0;./make.sh
+: 1454124421:0;l
+: 1454124434:0;./make.sh
+: 1454124440:0;l
+: 1454124451:0;./make.sh
+: 1454124457:0;zathura report.pdf
+: 1454124582:0;./make.sh
+: 1454124586:0;zathura report.pdf
+: 1454124612:0;convert hospital_attack.jpg hospital_attack.png
+: 1454124622:0;./make.sh
+: 1454124627:0;zathura report.pdf
+: 1454125412:0;./make.sh
+: 1454125419:0;zathura report.pdf
+: 1454125514:0;./make.sh
+: 1454125519:0;zathura report.pdf
+: 1454126051:0;./make.sh
+: 1454126058:0;zathura report.pdf
+: 1454126100:0;./make.sh
+: 1454126106:0;zathura report.pdf
+: 1454126552:0;./make.sh
+: 1454126556:0;zathura report.pdf
+: 1454127198:0;./make.sh
+: 1454127204:0;zathura report.pdf
+: 1454127213:0;vim ma
+: 1454127222:0;zathura report.pdf
+: 1454127288:0;./make.sh
+: 1454127292:0;zathura report.pdf
+: 1454127463:0;vim make.sh
+: 1454127473:0;./make.sh
+: 1454127478:0;zathura report.pdf
+: 1454127746:0;cd ~/dwn
+: 1454127760:0;pandoc -o rep.md mrsa.esbl.docx
+: 1454127765:0;vim rep.md
+: 1454127841:0;pandoc -o rep.pdf rep.md
+: 1454127844:0;zathura rep.pdf
+: 1454127900:0;vim rep.md
+: 1454128308:0;man bibtex
+: 1454128370:0;vim bib.md
+: 1454128672:0;l
+: 1454128679:0;mv bib.md rashmi
+: 1454128680:0;cd r
+: 1454128682:0;dc rashmi
+: 1454128686:0;cd rashmi
+: 1454128687:0;l
+: 1454128692:0;vim make.sh
+: 1454128786:0;./make.sh
+: 1454128796:0;zathura bib.pdf
+: 1454128836:0;zathura report.pdf
+: 1454128842:0;vim make.sh
+: 1454128850:0;./make.sh
+: 1454128857:0;vim make.sh
+: 1454128866:0;./make.sh
+: 1454128884:0;mpv dwn/The.Daily.Show.2016.01.28.Ryan.Lizza.EXTENDED.WEBRip.x264.AAC.rar
+: 1454128893:0;zathura bib.pdf
+: 1454128970:0;vim bib.md
+: 1454129383:0;pandoc -D latex
+: 1454129425:0;zathura rashmi/report.pdf
+: 1454129641:0;vim report.
+: 1454129644:0;vim report.md
+: 1454130145:0;./make.sh
+: 1454130191:0;l
+: 1454130204:0;mkdir output
+: 1454130820:0;mpv dwn/The.Daily.Show.2016.01.28.Ryan.Lizza.EXTENDED.WEBRip.x264.AAC.rar
+: 1454130925:0;./make.sh
+: 1454131439:0;vim make.sh
+: 1454131457:0;./make.sh
+: 1454131781:0;vim make.sh
+: 1454131794:0;./make.sh
+: 1454131912:0;man convert
+: 1454132186:0;vim rashmi/report.
+: 1454132189:0;vim rashmi/report.md
+: 1454132334:0;cd rashmi
+: 1454132335:0;./make.sh
+: 1454132712:0;cd rashmi/output
+: 1454132713:0;l
+: 1454132714:0;ll
+: 1454132717:0;..
+: 1454132717:0;l
+: 1454132741:0;convert -compress lossless cover.pdf acknowledgement.pdf report.pdf bib.pdf merged.pdf
+: 1454132758:0;ll
+: 1454132769:0;zathura merged.pdf
+: 1454132785:0;rm merged.pdf
+: 1454132786:0;l
+: 1454132897:0;convert quinolones.jpg -crop:-10-10 qq.jpg
+: 1454132912:0;convert quinolones.jpg -crop:400x400-10-10 qq.jpg
+: 1454132915:0;convert quinolones.jpg -crop:400x400-10-10 qq.jpg!
+: 1454132919:0;convert quinolones.jpg: -crop:400x400-10-10 qq.jpg!
+: 1454133015:0;man mogrify
+: 1454133069:0;identify -verbose rashmi/quinolones.jpg
+: 1454133184:0;identify -verbose quinolones.jpg
+: 1454133194:0;identify -verbose quinolones.jpg | grep metry
+: 1454133235:0;mogrify -crop 976x416+0+100 quinolones.jpg
+: 1454133253:0;identify -verbose macrolides.jpg | grep metry
+: 1454133261:0;mogrify -crop 976x416+0+100 macrolides.jpg
+: 1454133275:0;mogrify -crop 976x416+0+100 betalactam.jpg
+: 1454133331:0;mogrify -crop 976x496+0+60 betalactam.jpg
+: 1454133335:0;mogrify -crop 976x496+0+60 macrolides.jpg
+: 1454133339:0;mogrify -crop 976x496+0+60 quinolones.jpg
+: 1454133374:0;./make.sh
+: 1454133476:0;vim report.md
+: 1454133533:0;./make.sh
+: 1454133661:0;vim make.sh
+: 1454133673:0;./make.sh
+: 1454133721:0;vim report.
+: 1454133723:0;vim report.md
+: 1454133748:0;./make.sh
+: 1454133773:0;vim report.md
+: 1454133798:0;./make.sh
+: 1454133828:0;vim make.sh
+: 1454133836:0;./make.sh
+: 1454133903:0;vim report.md
+: 1454133925:0;./make.sh
+: 1454134448:0;find . -name '*.txt' -exec mv {} . \;
+: 1454134450:0;l
+: 1454134461:0;find . -name '*.txt'
+: 1454134480:0;find . -name '*.mp4' -exec mv {} . \;
+: 1454134554:0;rmdir 5\ Parts\ 720p\ -\ FHD\ 2016241\ Five\ 1.mp4 5\ Parts\ 720p\ -\ FHD\ 2016241\ Five\ 2.mp4 5\ Parts\ 720p\ -\ FHD\ 2016241\ Five\ 3.mp4 5\ Parts\ 720p\ -\ FHD\ 2016241\ Five\ 4.mp4 5\ Parts\ 720p\ -\ FHD\ 2016241\ Five\ 5.mp4 Chelsea.Does.S01E01.WEBRip.x264-2HD Chelsea.Does.S01E01.WEBRip.x264-2HD.mp4 Chelsea.Does.S01E02.WEBRip.x264-2HD Chelsea.Does.S01E02.WEBRip.x264-2HD.mp4 Chelsea.Does.S01E03.WEBRip.x264-FUM Chelsea.Does.S01E03.WEBRip.x264-FUM.mp4 Chelsea.Does.S01E04.WEBRip.x264-2HD Chelsea.Does.S01E04.WEBRip.x264-2HD.mp4 Crashing.S01E03.PROPER.HDTV.x264-RiVER Crashing.S01E03.PROPER.HDTV.x264-RiVER.mp4 Crazy.Ex-Girlfriend.S01E09.HDTV.x264-LOL Crazy.Ex-Girlfriend.S01E09.HDTV.x264-LOL.mp4 DCs.Legends.of.Tomorrow.S01E01.HDTV.x264-LOL DCs.Legends.of.Tomorrow.S01E01.HDTV.x264-LOL.mp4 DanielKahneman_2010-480p-en.mp4 Eddie\ Griffin\ -\ \ Voodoo\ Child\ -\ Comedy\ Stand\ up\ \[FULL\ MOVIE\].mp4 Firsthand.CA.If.The.Poet.HDTV.x264-aAF Firsthand.CA.If.The.Poet.HDTV.x264-aAF.mp4 Mike\ Epps\ \ \ Inappropriate\ Behavior\ Full.mp4 Real.Time.With.Bill.Maher.2016.01.15.HDTV.x264-BATV Real.Time.With.Bill.Maher.2016.01.15.HDTV.x264-BATV.mp4 Real.Time.With.Bill.Maher.2016.01.22.HDTV.x264-BATV Real.Time.With.Bill.Maher.2016.01.22.HDTV.x264-BATV.mp4 Rulez.MNR.01.25.16.720p.HDTV\ ptt\ \(1\).mp4 Rulez.MNR.01.25.16.720p.HDTV\ ptt\ \(2\).mp4 Rulez.MNR.01.25.16.720p.HDTV\ ptt\ \(3\).mp4 Rulez.MNR.01.25.16.720p.HDTV\ ptt\ \(4\).mp4 The\ Nightly\ Show\ 2016.01.05\ Bernie\ Sanders\ EXTENDED\ 720p\ WEBRip.mp4 The.Daily.Show.2016.01.13.Rand.Paul.and.Tavis.Smiley.EXTENDED.WEBRip.x264.AAC.mp4 The.Daily.Show.2016.01.21.Marlon.Wayans.WEBRip.x264.AAC The.Daily.Show.2016.01.21.Marlon.Wayans.WEBRip.x264.AAC.mp4 The.Daily.Show.2016.01.25.Gad.Elmaleh.HDTV.x264-CROOKS The.Daily.Show.2016.01.25.Gad.Elmaleh.HDTV.x264-CROOKS.mp4 The.Daily.Show.2016.01.27.Jerry.Seinfeld.EXTENDED.WEBRip.x264.AAC The.Daily.Show.2016.01.27.Jerry.Seinfeld.EXTENDED.WEBRip.x264.AAC.mp4 The.Daily.Show.2016.01.28.Ryan.Lizza.EXTENDED.WEBRip.x264.AAC The.Daily.Show.2016.01.28.Ryan.Lizza.EXTENDED.WEBRip.x264.AAC.mp4 The.Daily.Show.with.Trevor.Noah.2016.01.26.DeRay.McKesson.Extended The.Daily.Show.with.Trevor.Noah.2016.01.26.DeRay.McKesson.Extended.mp4 The.Graham.Norton.Show.S18E15.HDTV.x264-FTP The.Graham.Norton.Show.S18E15.HDTV.x264-FTP.mp4 The.Nightly.Show.2016.01.06.480p.WEBRip The.Nightly.Show.2016.01.06.480p.WEBRip.mp4 The.Nightly.Show.2016.01.20.Sarah.Palins.Trump.Speech.and.Smart.Sex.WEBRip.x264.AAC The.Nightly.Show.2016.01.20.Sarah.Palins.Trump.Speech.and.Smart.Sex.WEBRip.x264.AAC.mp4 The.Nightly.Show.2016.01.21.Track.Palins.Arrest.and.Black.Awards.Shows.WEBRip.x264.AAC The.Nightly.Show.2016.01.21.Track.Palins.Arrest.and.Black.Awards.Shows.WEBRip.x264.AAC.mp4 The.Nightly.Show.2016.01.25.Rand.Paul.Talks.Donald.Trumps.Candidacy.EXTENDED.WEBRip.x264.AAC The.Nightly.Show.2016.01.25.Rand.Paul.Talks.Donald.Trumps.Candidacy.EXTENDED.WEBRip.x264.AAC.mp4 The.Nightly.Show.2016.01.26.Planned.Parenthood.Wins.and.Hillary.Clinton.WEBRip.x264.AAC The.Nightly.Show.2016.01.26.Planned.Parenthood.Wins.and.Hillary.Clinton.WEBRip.x264.AAC.mp4 The.Nightly.Show.2016.01.27.Neil.deGrasse.Tysons.B.o.B.Smackdown.EXTENDED.WEBRip.x264.AAC The.Nightly.Show.2016.01.27.Neil.deGrasse.Tysons.B.o.B.Smackdown.EXTENDED.WEBRip.x264.AAC.mp4 The.Nightly.Show.2016.01.28.Militant.Cops.and.Michael.Jackson.Portrayal.WEBRip.x264.AAC The.Nightly.Show.2016.01.28.Militant.Cops.and.Michael.Jackson.Portrayal.WEBRip.x264.AAC.mp4 standup startalk.s01 startalk.s02
+: 1454958150:0;pacaur -Syu
+: 1455297042:0;lsblk
+: 1455297045:0;l
+: 1455297048:0;cd tmp
+: 1455297049:0;l
+: 1455297050:0;..
+: 1455297064:0;sudo mount /dev/sda7 tmp
+: 1455297377:0;pacaur -Syu
+: 1455297399:0;pacaur -Ss install script
+: 1455297409:0;pacaur -S arch-install-scripts
+: 1455297414:0;pacaur -Syu
+: 1455298234:0;pacaur -S error
+: 1455298241:0;pacaur -Ss error
+: 1455298260:0;pacaur -Ss libalpm
+: 1455298312:0;pacaur -S cower
+: 1455298330:0;cd build
+: 1455298331:0;l
+: 1455298340:0;cower -dd cower
+: 1455298359:0;cd /tmp/pacaurtmp-ap/cower
+: 1455298359:0;l
+: 1455298366:0;makepkg -s --skipinteg
+: 1455298373:0;l
+: 1455298378:0;pacaur -U cower-14-2-x86_64.pkg.tar.xz
+: 1455298385:0;pacaur -Syu
+: 1455298506:0;cd /mnt
+: 1455298506:0;l
+: 1455298507:0;ll
+: 1455298571:0;lsblk
+: 1455298597:0;sudo mount /sdb /mnt
+: 1455298638:0;sudo gparted
+: 1455298692:0;lsblk
+: 1455298698:0;sudo mount /sdb /mnt
+: 1455298709:0;sudo mount /sdb1 /mnt
+: 1455298713:0;sudo gparted
+: 1455298870:0;l
+: 1455298903:0;lsblk
+: 1455298930:0;sudo mount /sdb2 /mnt
+: 1455298939:0;sudo mount /dev/sdb2 /mnt
+: 1455298946:0;sudo mount /dev/sdb1 /mnt
+: 1455298955:0;sudo umount /mnt
+: 1455298958:0;lsblk
+: 1455298964:0;sudo gparted
+: 1455299022:0;l
+: 1455299031:0;lsblk
+: 1455299036:0;sudo mount /dev/sdb1 /mnt
+: 1455299188:0;sudo umount -a /mnt
+: 1455299258:0;lsof /dev/sdb
+: 1455299259:0;lsof /dev/sdb1
+: 1455299264:0;lsof /mnt
+: 1455299288:0;sudo gparted
+: 1455299442:0;lsblk
+: 1455299462:0;sudo mount /dev/sdb1 /mnt
+: 1455299466:0;cd /mnt
+: 1455299467:0;l
+: 1455299480:0;su
+: 1455299537:0;cd proj/
+: 1455299537:0;l
+: 1455300082:0;cd /mnt
+: 1455300089:0;arch-chroot /mnt
+: 1455300092:0;sudo arch-chroot /mnt
+: 1455300197:0;sudo arch-chroot /mnt /bin/bash
+: 1455301038:0;umount /mnt
+: 1455301041:0;sudo umount /mnt
+: 1455301099:0;sudo gparted
+: 1455311537:0;lsblk
+: 1455311545:0;su
+: 1455312721:0;sudo umount /mnt/boot
+: 1455312726:0;sudo umount /mnt
+: 1455312729:0;lsblk
+: 1455312790:0;pacaur -S qtemu
+: 1455312933:0;lsusb
+: 1455313057:0;qemu-system-x86_64 -hda /dev/sdb
+: 1455313063:0;sudo qemu-system-x86_64 -hda /dev/sdb
+: 1455313461:0;l
+: 1455313476:0;scp -r 10.2.12.196:~/proj .
+: 1455313490:0;ssh 10.2.12.196
+: 1455313497:0;scp -r ap@10.2.12.196:~/proj .
+: 1455313501:0;ping 10.2.12.196
+: 1455314759:0;acpi -i\
+
+: 1455378925:0;scp -r ap@10.2.12.196:~/proj .
+: 1455378952:0;cd proj
+: 1455378952:0;l
+: 1455378956:0;cd arch-setup
+: 1455378956:0;l
+: 1455378960:0;..
+: 1455378971:0;cp -r arch-setup usb-arch-setup
+: 1455378974:0;cd usb-arch-setup
+: 1455378974:0;l
+: 1455378977:0;vim 1.sh
+: 1455379352:0;su
+: 1455379890:0;man sgdisk
+: 1455381133:0;su
+: 1455381156:0;lsblk
+: 1455381161:0;su
+: 1455382616:0;vim 1.sh
+: 1455382825:0;su
+: 1455383079:0;pacman -S lxde
+: 1455383082:0;sudo pacman -S lxde
+: 1455383113:0;free -m
+: 1455383117:0;top
+: 1455383122:0;htop
+: 1455383144:0;acpi -a
+: 1455383146:0;acpi -i
+: 1455383312:0;cd proj/usb-arch-setup
+: 1455383314:0;vim 1.sh
+: 1455383387:0;pacman -Ss lightdm-gtk
+: 1455384413:0;sudo qemu-system-x86_64 -hda /dev/sdb
+: 1455384507:0;lsblk
+: 1455384516:0;su
+: 1455384941:0;umount -R /mnt
+: 1455384947:0;umount /mnt
+: 1455384952:0;sudo umount /mnt
+: 1455384960:0;sudo umount -R /mnt
+: 1455384965:0;lsblk
+: 1455384973:0;sudo qemu-system-x86_64 -hda /dev/sdb
+: 1455385225:0;sudo gparted
+: 1455476255:0;lsblk
+: 1455476364:0;sudo mount /dev/sda7 tmp
+: 1455476399:0;cd tmp/Users/ap/Downloads
+: 1455476400:0;l
+: 1455476415:0;lsblk
+: 1455476430:0;dd if=xubuntu-14.04.3-desktop-amd64.iso of=/dev/sdb bs=4M && sync
+: 1455476435:0;sudo dd if=xubuntu-14.04.3-desktop-amd64.iso of=/dev/sdb bs=4M && sync
+: 1455476542:0;lsblk
+: 1455476553:0;sudo qemu-system-x86_64 -hda /dev/sdb
+: 1455477574:0;sudo gparted
+: 1455477582:0;sudo mount /dev/sda7 tmp
+: 1455477589:0;lsblk
+: 1455477600:0;sudo mount /dev/sda7 tmp
+: 1455477665:0;cd dwn
+: 1455477666:0;ls
+: 1455477671:0;ll
+: 1455477677:0;chmod +x ./unetbootin-linux64-613.bin
+: 1455477679:0;./unetbootin-linux64-613.bin
+: 1455477690:0;pacaur -Ss 7zip
+: 1455477697:0;pacaur -S p7zip
+: 1455477718:0;sudo ./unetbootin-linux64-613.bin
+: 1455478222:0;lsblk
+: 1455478238:0;sudo qemu-system-x86_64 -hda /dev/sdb
+: 1455478306:0;pacaur -Ss mkusb
+: 1455478312:0;pacaur -Ss usb
+: 1455478418:0;sudo dd if=../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso of=/dev/sdb bs=4M && sync
+: 1455478548:0;sudo qemu-system-x86_64 -hda /dev/sdb
+: 1455478608:0;sudo gparted
+: 1455478722:0;lsblk
+: 1455478733:0;sudo sgdisk --zap-all /dev/sdb
+: 1455478771:0;sudo qemu-system-x86_64 -hda /dev/sdb -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso
+: 1455478844:0;sudo gparted
+: 1455478893:0;sudo qemu-system-x86_64 -hda /dev/sdb -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso
+: 1455478918:0;sudo qemu-system-x86_64 -hda /dev/sdb -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso -boot order=d
+: 1455478968:0;lsblk
+: 1455478972:0;sudo qemu-system-x86_64 -hda /dev/sdb -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso -boot order=d
+: 1455479035:0;sudo qemu-system-x86_64 /dev/sdb -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso -boot order=d
+: 1455479146:0;sudo qemu-system-x86_64 -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso -boot order=d
+: 1455479182:0;ps x
+: 1455479189:0;pkill qemu-system-x86
+: 1455479193:0;sudo pkill qemu-system-x86
+: 1455479201:0;sudo qemu-system-x86_64 -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso -boot order=d
+: 1455479338:0;qemu-img create disk.img 2G
+: 1455479432:0;qemu-system-x86_64 -cdrom ../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso -boot order=d
+: 1455479440:0;qemu-system-x86_64 -cdrom ~/tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso -boot order=d
+: 1455479499:0;lsblk
+: 1455479502:0;sudo dd if=../tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso of=/dev/sdb bs=4M && sync
+: 1455479512:0;sudo dd if=~/tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso of=/dev/sdb bs=4M && sync
+: 1455479523:0;sudo dd if=/home/ap/tmp/Users/ap/Downloads/xubuntu-14.04.3-desktop-amd64.iso of=/dev/sdb bs=4M && sync
+: 1455479649:0;sudo qemu-system-x86_64 -hda /dev/sdb
+: 1455526307:0;l
+: 1455526331:0;rm -r 'Counting\ the\ dots.html Counting\ the\ dots_files\
+'
+: 1455527019:0;pacaur -Syu
+: 1456008242:0;acpi -a
+: 1456008245:0;acpi -i
+: 1456159890:0;sudo gparted
+: 1456160060:0;sudo mount /dev/sda7 tmp
+: 1456160631:0;sudo umount -R tmp
+: 1456681548:0;ping 10.2.12.196
+: 1456681813:0;pacaur -Syu
+: 1456684884:0;pacaur -S pandoc pandoc-citeproc
+: 1456684899:0;pacaur -Rns pandoc pandoc-citeproc
+: 1456684905:0;pacaur -S pandoc pandoc-citeproc
+: 1456684983:0;pandoc -i
+: 1456684989:0;pandoc -v
+: 1456685138:0;pacman -Qe
+: 1456685152:0;pacman -Qe | grep pandoc
+: 1456685165:0;which pandoc
+: 1456685175:0;ls /usr/bin/pandoc
+: 1456685203:0;pacman -Qo pandoc
+: 1456685222:0;pacaur -Rns haskell-pandoc haskell-pandoc-citeproc
+: 1456685237:0;pacaur -Rns haskell-pandoc haskell-pandoc-citeproc haskell-hakyll
+: 1456685263:0;pacaur -S pandoc pandoc-citeproc
+: 1456685275:0;pacaur -S pandoc pandoc-citeproc haskell-hakyll
+: 1456685724:0;pacaur -Rns pandoc pandoc-citeproc haskell-hakyll
+: 1456685733:0;pacaur -Rns pandoc pandoc-citeproc
+: 1456685737:0;pacaur -Rns haskell-pandoc haskell-pandoc-citeproc haskell-hakyll
+: 1456685744:0;pacaur -S haskell-pandoc haskell-pandoc-citeproc haskell-hakyll
+: 1456686087:0;cd build
+: 1456686089:0;ll
+: 1456686100:0;cower -dd rstudio-bin
+: 1456686118:0;pacaur -Ss rstudio
+: 1456686140:0;cower -dd rstudio-desktop-bin
+: 1456686159:0;cd rstudio-desktop-bin
+: 1456686172:0;makepkg -si --ignorerepo=community
+: 1456686186:0;makepkg -si
+: 1456689519:0;cd ~/dwn
+: 1456689520:0;l
+: 1456689530:0;cd movies
+: 1456689531:0;l
+: 1456691485:0;th
+: 1456691494:0;ll
+: 1456691517:0;which ls
+: 1456691530:0;/usr/bin/ls dwn
+: 1456691563:0;/usr/bin/ls --quoting-style=literal dwn
+: 1456776933:0;ping 8.8.8.8
+: 1456777560:0;ping 8.8.8,8
+: 1456777563:0;ping 8.8.8.8
+: 1456796298:0;pacaur -Syu
+: 1456809473:0;sudo mount /dev/sda7 tmp
+: 1456924787:0;acpi -i
+: 1456924796:0;ping 8.8.8.8
+: 1456925784:0;sudo mount /dev/sda7 tmp
+: 1456926008:0;pacaur -Syu
+: 1456941169:0;acpi -i
+: 1456960425:0;sudo mount /dev/sda7 tmp
+: 1456967300:0;pacaur -Syu
+: 1456967402:0;pacaur -S haskell-hakyll
+: 1456967424:0;which pandoc
+: 1456967433:0;ln -s `which pandoc`
+: 1456967443:0;ls `which pandoc`
+: 1456967446:0;ls -l `which pandoc`
+: 1456967454:0;pacaur -S pandoc pandoc-citeproc
+: 1456967522:0;sudoedit /etc/pacman.conf
+: 1457265277:0;sudo mount /dev/sda7 tmp
+: 1457265301:0;cd tmp/Users/ap/Pictures/
+: 1457265302:0;ll
+: 1457265306:0;thunar
+: 1457277146:0;connmanctl
+: 1457310452:0;export http_proxy=""
+: 1457310462:0;chromium
+: 1457417353:0;sudo mount /dev/sda7 tmp
+: 1457417374:0;cp tmp/Users/ap/Desktop/speech.txt .
+: 1457478304:0;sudo mount /dev/sda7 tmp
+: 1457478323:0;cd tmp/Users/ap/Downloads
+: 1457478324:0;l
+: 1457478390:0;cd tv
+: 1457478392:0;ll
+: 1457478728:0;mpv ../Real.Time.With.Bill.Maher.2016.03.04.INTERNAL.HDTV.x264-BATV.rar
+: 1457481586:0;mpv Lucifer.S01E06.HDTV.x264-LOL.rar
+: 1457485353:0;l
+: 1458031727:0;locate proxy.sh
+: 1458031737:0;sudoedit `locate proxy.sh`
+: 1458031786:0;ping 8.8.8.8
+: 1458031791:0;pacaur -Syu
+: 1458031814:0;echo $http_proxy
+: 1458031824:0;export $http_proxy=
+: 1458031830:0;export http_proxy=
+: 1458031833:0;export https_proxy=
+: 1458031836:0;pacaur -Syu
+: 1458031846:0;sudoedit `locate proxy.sh`
+: 1458031903:0;pacaur -S broadcom-wl-dkms
+: 1458032112:0;cd proj/arch-setup
+: 1458032113:0;l
+: 1458032120:0;cat 2.sh
+: 1458032147:0;git config --global http.proxy
+: 1458032150:0;git config --global http.proxy ""
+: 1458032154:0;git config --global https.proxy ""
+: 1458032156:0;git config --global https.proxy
+: 1458032159:0;pacaur -S broadcom-wl-dkms
+: 1458032227:0;pacaur -S linux-lts-headers
+: 1458032309:0;pacaur -S linux-lts
+: 1458032333:0;uname -a
+: 1458032514:0;cd dwn
+: 1458032515:0;l
+: 1458032520:0;pacaur -U linux-lts-headers-4.1.18-1-x86_64.pkg.tar.xz
+: 1458032625:0;connmanctl
+: 1458032658:0;sudoedit /etc/profile.d/proxy.sh
+: 1458032860:0;ping google.com
+: 1458032864:0;ping www.google.com
+: 1458032868:0;connmanctl
+: 1458032886:0;ping 8.8.8.8
+: 1458032892:0;ping google.com
+: 1458032910:0;vim .i3/i3blocks/wifi
+: 1458032925:0;vim .i3/i3blocks.conf
+: 1458032958:0;ifconfig
+: 1458032960:0;ip addr
+: 1458037600:0;ip add
+: 1458037609:0;ping 8.8.8.8
+: 1458037613:0;connmanctl
+: 1458037690:0;ping 8.8.8.
+: 1458037692:0;ping 8.8.8.8
+: 1458038899:0;sudo mount /dev/sda7 tmp
+: 1458045706:0;echo $http_proxy
+: 1458045787:0;ping 8.8.8.8
+: 1458045794:0;connmanctl
+: 1458053684:0;pacaur -Syu
+: 1458054321:0;connmanctl
+: 1458054337:0;ip addr
+: 1458054351:0;echo $http_proxy
+: 1458125491:0;sudo mount /dev/sda7 tmp
+: 1458171269:0;ls
+: 1458171275:0;l
+: 1458171276:0;ls
+: 1458171295:0;cd doc
+: 1458171295:0;l
+: 1458171299:0;vim gee.md
+: 1458238925:0;mkdir gsoc
+: 1458238926:0;cd gsoc
+: 1458238927:0;l
+: 1458238932:0;git clone https://github.com/zotonic/zotonic
+: 1458238949:0;pacaur -S erlang
+: 1458238952:0;pacaur -Ss erlang
+: 1458238977:0;pacaur -S elixir erlang erlang-docs
+: 1458239158:0;l
+: 1458239171:0;pacaur -S elixir erlang erlang-docs
+: 1458239842:0;l
+: 1458239849:0;sudo mount /dev/sda7 tmp
+: 1458239869:0;cp tmp/Users/ap/Documents/bak/coding .
+: 1458239873:0;cp -r tmp/Users/ap/Documents/bak/coding .
+: 1458239875:0;l
+: 1458239880:0;cd doc
+: 1458239880:0;l
+: 1458239922:0;dircolors|grep ow\
+
+: 1458241769:0;cd .config/base16-shell
+: 1458241770:0;ll
+: 1458241776:0;git pull
+: 1458241781:0;./colortest
+: 1458242279:0;ls
+: 1458242296:0;pacaur -Ss elixir
+: 1458242696:0;vim .Xresources
+: 1458249132:0;pacaur -Ss hack
+: 1458249150:0;pacaur -S ttf-hack
+: 1458249303:0;vim .Xresources
+: 1458249311:0;xfontsel
+: 1458249381:0;vim .vimrc
+: 1458249440:0;gvim .vimrc
+: 1458249499:0;vim .vimrc
+: 1458249721:0;echo `tput sitm`filed`tput ritm` `tput smso`standout`tput rmso`\
+
+: 1458249975:0;echo `tput sitm`file`tput ritm` `tput smso`standout`tput rmso`\
+
+: 1458249981:0;echo `tput sitm`file `tput ritm` `tput smso`standout`tput rmso`\
+
+: 1458249987:0;echo `tput sitm`filed `tput ritm` `tput smso`standout`tput rmso`\
+
+: 1458250004:0;echo `tput sitm`filed`tput ritm` `tput smso`standout`tput rmso`\
+
+: 1458250047:0;echo `tput sitm`filed`tput ritm` `tput smso`standout`tput rmso`
+: 1458250069:0;vim .Xresources
+: 1458250135:0;xrdb .Xresources
+: 1458250138:0;l
+: 1458250140:0;echo `tput sitm`filed`tput ritm` `tput smso`standout`tput rmso`
+: 1458250149:0;echo `tput sitm`file`tput ritm` `tput smso`standout`tput rmso`
+: 1458250154:0;echo `tput sitm`filed `tput ritm` `tput smso`standout`tput rmso`
+: 1458251160:0;vim .Xresources
+: 1458251196:0;xrdb >Xres
+: 1458251200:0;xrdb .Xresources
+: 1458251204:0;echo `tput sitm`filed `tput ritm` `tput smso`standout`tput rmso`
+: 1458251213:0;echo `tput sitm`filed`tput ritm` `tput smso`standout`tput rmso`
+: 1458251224:0;echo `tput sitm`filedll`tput ritm` `tput smso`standout`tput rmso`
+: 1458251257:0;echo `tput sitm`filedll`
+: 1458251262:0;echo `tput sitm`filedll``
+: 1458251268:0;echo `tput sitm`filedll` ree`
+: 1458251274:0;echo `tput sitm`filedll` tput ree`
+: 1458251285:0;echo `tput sitm`filedll``
+: 1458251294:0;echo zii `tput sitm`filedll``
+: 1458251301:0;echo krishy `tput sitm`filedll``
+: 1458251695:0;pacaur -Ss fira
+: 1458252096:0;pacaur -S otf-fira-sans otf-fira-mono
+: 1458252522:0;xc-list
+: 1458252525:0;fc-list
+: 1458252534:0;fc-list | grep fira
+: 1458252547:0;fc-list | grep ira
+: 1458252585:0;fc-list | grep Fira
+: 1458252590:0;fc-list | grep FiraC
+: 1458252597:0;fc-list | grep -i code
+: 1458252639:0;fc-list | grep -i mono
+: 1458252658:0;vim .Xresources
+: 1458252716:0;xrdb .Xresources
+: 1458252719:0;ls
+: 1458252720:0;ll
+: 1458252729:0;ls -al
+: 1458252766:0;vim .Xresources
+: 1458252790:0;xrdb .Xresources
+: 1458252791:0;ls
+: 1458252794:0;ll
+: 1458252813:0;vim .Xresources
+: 1458252864:0;urxvt -fn "xft:Fira Mono OT:size=9:antialias=true:hinting=true"\
+
+: 1458252866:0;ls
+: 1458252887:0;urxvt -fn "xft:Fira Mono:size=9:antialias=true:hinting=true"
+: 1458252889:0;ls
+: 1458252891:0;ll
+: 1458252917:0;vim .Xresources
+: 1458252975:0;urxvt -fn "xft:Fira Mono:size=10:antialias=true:hinting=true"
+: 1458252977:0;ls
+: 1458252979:0;ll
+: 1458253063:0;echo krishy `tput sitm`filedll``
+: 1458253186:0;fc-match monospace
+: 1458253193:0;vim .Xresources
+: 1458253216:0;xrdb -merge .Xresources
+: 1458253218:0;l
+: 1458253221:0;ls
+: 1458253222:0;ll
+: 1458253227:0;ls
+: 1458253231:0;vim .Xresources
+: 1458253248:0;xrdb .Xresources
+: 1458253250:0;ls
+: 1458253253:0;ll
+: 1458253257:0;vim .Xresources
+: 1458253266:0;xrdb .Xresources
+: 1458253267:0;l
+: 1458253268:0;ls
+: 1458253273:0;vim .Xresources
+: 1458253293:0;echo krishy `tput sitm`filedll``
+: 1458253296:0;echo krishy `tput sitm`filed``
+: 1458253310:0;ls
+: 1458253313:0;vim .Xresources
+: 1458253338:0;xrdb .Xresources
+: 1458253341:0;ls
+: 1458253342:0;ll
+: 1458253349:0;vim .Xresources
+: 1458253408:0;xrdb .Xresources
+: 1458253421:0;ls
+: 1458253422:0;l
+: 1458253427:0;ll
+: 1458253440:0;vim .Xresources
+: 1458253467:0;xrdb .Xresources
+: 1458253472:0;ll
+: 1458253476:0;vim .Xresources
+: 1458253486:0;xrdb .Xresources
+: 1458253488:0;ls
+: 1458253543:0;vim.Xre
+: 1458253549:0;vim .Xresources
+: 1458253559:0;xrdb .Xresources
+: 1458253561:0;ls
+: 1458253565:0;vim .Xresources
+: 1458253593:0;echo krishy `tput sitm`filed``
+: 1458253596:0;echo krishy `tput sitm`filed ``
+: 1458253599:0;echo krishy `tput sitm`fileld ``
+: 1458253602:0;echo krishy `tput sitm`fileldll ``
+: 1458253606:0;ls
+: 1458255083:0;l
+: 1458255088:0;ls
+: 1458255096:0;ll
+: 1458255099:0;l
+: 1458255105:0;ls -al
+: 1458255115:0;cd .moonchild\ productions
+: 1458255116:0;l
+: 1458255118:0;..
+: 1458255128:0;cd dwn
+: 1458255129:0;ll
+: 1458255145:0;pacaur -Syu
+: 1458256283:0;ls
+: 1458256284:0;ll
+: 1458256299:0;gvim .Xresources
+: 1458256447:0;pacaur -Rns palemoon-bin
+: 1458256982:0;cal
+: 1458257010:0;vim .Xresources
+: 1458257032:0;xrdb .Xresources
+: 1458257035:0;ls
+: 1458257036:0;ll
+: 1458257038:0;ls
+: 1458257043:0;vim .Xresources
+: 1458257050:0;xrdb .Xresources
+: 1458257053:0;ls
+: 1458257055:0;ll
+: 1458257062:0;vim .Xresources
+: 1458259308:0;dircolors|grep ow\
+
+: 1458259324:0;grep LS_COLORS .zsh/
+: 1458259326:0;grep LS_COLORS .zsh/*
+: 1458259347:0;vim .zsh/colors.zsh
+: 1458259378:0;source .zsh/colors.zsh
+: 1458259380:0;l
+: 1458259385:0;vim .zsh/colors.zsh
+: 1458259401:0;source .zsh/colors.zsh
+: 1458259403:0;l
+: 1458259405:0;vim .zsh/colors.zsh
+: 1458259427:0;bash
+: 1458259446:0;ls
+: 1458259448:0;bash
+: 1458259522:0;source .zsh/colors.zsh
+: 1458259532:0;ls
+: 1458259533:0;ll
+: 1458259538:0;ls
+: 1458259546:0;source .zsh/colors.zsh
+: 1458259548:0;ls
+: 1458259619:0;vim .zsh/colors.zsh
+: 1458259660:0;source .zsh/colors.zsh
+: 1458259663:0;ls
+: 1458259664:0;ll
+: 1458259682:0;ls
+: 1458259720:0;vim .zsh/colors.zsh
+: 1458259743:0;source .zsh/colors.zsh
+: 1458259745:0;ls
+: 1458259751:0;ll
+: 1458259754:0;ls
+: 1458259761:0;cd tmp
+: 1458259762:0;ls
+: 1458259780:0;vim .zsh/colors.zsh
+: 1458259805:0;l
+: 1458259849:0;pandoc
+: 1458261208:0;vim ~/.dir_colors
+: 1458261223:0;xrdb .Xresources
+: 1458261226:0;ls
+: 1458261241:0;ls --color
+: 1458261242:0;ls --colors
+: 1458261244:0;ls --color
+: 1458261249:0;echo $LS_COLORS
+: 1458261354:0;ls
+: 1458261356:0;ll
+: 1458261364:0;cd .config
+: 1458261370:0;base16-shell
+: 1458261370:0;l
+: 1458261377:0;./base16-default.dark.sh
+: 1458261389:0;./base16-brewer.dark.sh
+: 1458261404:0;./base16-chalk.dark.sh
+: 1458261406:0;htop
+: 1458261409:0;./base16-brewer.dark.sh
+: 1458261411:0;htop
+: 1458261419:0;./base16-google.dark.sh
+: 1458261420:0;htop
+: 1458261456:0;./base16-flat.dark.sh
+: 1458261459:0;htop
+: 1458261468:0;vim .Xres
+: 1458261478:0;vim ~/.Xresources
+: 1458261495:0;./base16-colors.dark.sh
+: 1458261498:0;vim ~/.Xresources
+: 1458261502:0;htop
+: 1458261517:0;./base16-monokai.dark.sh
+: 1458261520:0;htop
+: 1458261526:0;ps x
+: 1458261531:0;ll
+: 1458261533:0;ls ~
+: 1458261550:0;./base16-railscasts.dark.sh
+: 1458261552:0;htop
+: 1458261563:0;./base16-solarized.dark.sh
+: 1458261565:0;htop
+: 1458261576:0;ll
+: 1458261579:0;ls ~
+: 1458261587:0;./base16-twilight.dark.sh
+: 1458261589:0;ls
+: 1458261593:0;htop
+: 1458263288:0;pacaur -S termite
+: 1458263378:0;termite
+: 1458263382:0;ls
+: 1458263383:0;ll
+: 1458263389:0;ls
+: 1458263394:0;cat .Xresources
+: 1458263398:0;vim .Xresources
+: 1458263456:0;vim .Xresourc
+: 1458263459:0;ls
+: 1458263461:0;ll
+: 1458263464:0;ls
+: 1458263476:0;ll
+: 1458263477:0;l
+: 1458263480:0;ls
+: 1458263481:0;ll
+: 1458263542:0;grep
+: 1458263547:0;17 04:26 .icons/\
+-rw------- 1 ap 62 Jan 30 11:20 .lesshst\
+drwxr-xr-x 3 ap 4.0K Nov 17 04:30 .local/\
+drwx------ 3 ap 4.0K Mar 17 20:58 '.moonchild productions'/\
+drwx------ 4 ap 4.0K Dec 8 14:42 .mozilla/\
+drwx------ 3 ap 4.0K Nov 17 04:26 .pki/\
+drwxr-xr-x 14 ap 4.0K Mar 9 05:39 .rstudio-desktop/\
+drwx------ 2 ap 4.0K Jan 25 02:49 .ssh/\
+drwxr-xr-x 3 ap 4.0K Dec 7 00:01 .thumbnails/\
+drwxr-xr-x 3 ap 4.0K Jan 8 10:57 .tixati/\
+drwxr-xr-x 3 ap 4.0K Nov 17 04:25 .vim/\
+-rw------- 1 ap 16K Mar 18 06:40 .viminfo\
+drwx------ 4 ap 4.0K Dec 9 12:32 .vimperator/\
+lrwxrwxrwx 1 ap 34 Nov 17 04:23 .vimperatorrc -> .dotfiles/vimperator/.vimperatorrc\
+lrwxrwxrwx 1 ap 20 Nov 17 04:23 .vimrc -> .dotfiles/vim/.vimrc\
+drwxr-xr-x 2 ap 4.0K Feb 19 20:24 .wallpapers/\
+lrwxrwxrwx 1 ap 20 Nov 17 04:23 .xinitrc -> .dotfiles/x/.xinitrc\
+-rw-r--r-- 1 ap 38K Feb 29 02:01 .zcompdump\
+lrwxrwxrwx 1 ap 18 Nov 17 04:23 .zsh -> .dotfiles/zsh/.zsh
+: 1458263578:0;man termite
+: 1458263644:0;ls
+: 1458263658:0;ll
+: 1458277395:0;vim .xinitrc
+: 1458277403:0;ll
+: 1458277417:0;vim .Xresources
+: 1458277426:0;ls
+: 1458277439:0;cd .dotfiles/x/
+: 1458277440:0;l
+: 1458277441:0;ll
+: 1458277454:0;git status
+: 1458277471:0;git co .xinitrc
+: 1458277483:0;git checkout .xinitrc
+: 1458277488:0;cat .xinitrc
+: 1458277517:0;l
+: 1458277519:0;gs
+: 1458304946:0;sudo mount /dev/sda7 tmp
+: 1458317256:0;pacaur -Rns google-chrome-stable
+: 1458317283:0;pacaur -Ss opera
+: 1458317317:0;pacaur -Ss opera | grep -i browser
+: 1458317334:0;pacaur -Ss opera | grep -i -C 2 browser
+: 1458322247:0;ls
+: 1458322254:0;vim .Xresources
+: 1458322263:0;ll
+: 1458322277:0;cd .dotfiles/vim
+: 1458322278:0;l
+: 1458322279:0;ll
+: 1458322288:0;git checkout .vimrc
+: 1458322293:0;cd
+: 1458322294:0;l
+: 1458322295:0;ll
+: 1458322309:0;rm Xres
+: 1458322311:0;ls
+: 1458322314:0;vim .Xresources
+: 1458322330:0;xrdb .Xresources
+: 1458322334:0;ls
+: 1458322336:0;ll
+: 1458322345:0;vim .Xresources
+: 1458322352:0;xrdb .Xresources
+: 1458322357:0;ls
+: 1458322357:0;ll
+: 1458322361:0;ls -al
+: 1458322366:0;vim .Xresources
+: 1458322402:0;xrdb .Xresources
+: 1458322404:0;ls
+: 1458322405:0;ll
+: 1458322411:0;vim .Xresources
+: 1458322424:0;xrdb .Xresources
+: 1458322426:0;ls
+: 1458322427:0;ll
+: 1458322431:0;vim .Xresources
+: 1458322446:0;xrdb .Xresources
+: 1458322447:0;ls
+: 1458322448:0;l
+: 1458322452:0;vim .Xresources
+: 1458322457:0;ll
+: 1458322458:0;ls
+: 1458322459:0;l
+: 1458322468:0;xfontsel
+: 1458322744:0;xrdb .Xresources
+: 1458322746:0;ls
+: 1458322747:0;ll
+: 1458322749:0;l
+: 1458322752:0;ls
+: 1458322756:0;vim .Xresources
+: 1458331481:0;sudo mount /dev/sda7 tmp
+: 1458331504:0;cd tmp/Users/ap/Downloads/movies
+: 1458331505:0;l
+: 1458331532:0;mv "Room (2015) 1080p BluRay [DayT.se].mp4" Room.2015.BDRip.x264-SPARKS.SDH.mp4
+: 1458331536:0;mpv Room.2015.BDRip.x264-SPARKS.SDH.mp4
+: 1458335789:0;vim ~/.Xresources
+: 1458335845:0;xrdb ~/.Xresources
+: 1458335849:0;ls
+: 1458335850:0;ll
+: 1458335879:0;xfontsel
+: 1458336160:0;vim .Xresources
+: 1458342199:0;pacaur -Ss transmi
+: 1458522737:0;su
+: 1458522743:0;sudo ntpdate pool.ntp.org
+: 1458522803:0;sudoedit /etc/ntp.conf
+: 1458522815:0;sudo ntpdate pool.ntp.org
+: 1458522830:0;sudo ntpdate -q
+: 1458522848:0;ntpq -p
+: 1458522855:0;sudo ntpq -p
+: 1458522886:0;sudo ntpd -u ntp:ntp
+: 1458522902:0;ntpq -p
+: 1458522927:0;sudo ntpd -u ntp:ntp
+: 1458522930:0;ntpq -p
+: 1458522997:0;sudo systemctl start ntpd
+: 1458522998:0;ntpq -p
+: 1458503209:0;sudo ntpd -u ntp:ntp
+: 1458503235:0;vim time.reg
+: 1458503265:0;sudo hwclock --systohc --utc
+: 1458503278:0;hwclock
+: 1458503281:0;sudo hwclock
+: 1458503369:0;sudo mount /dev/sda7 tmp
+: 1458503388:0;mv time.reg tmp/Users/ap/Downloads
+: 1458548600:0;pacaur -Ss qutebrowser
+: 1458548610:0;pacaur -S qutebrowser
+: 1458551240:0;pacaur -Spdfjs
+: 1458551242:0;pacaur -S pdfjs
+: 1458552163:0;vim .config/qutebrowser/qutebrowser.conf
+: 1458555012:0;vim dwn/qutebrowser.conf
+: 1458555287:0;mv dwn/qutebrowser.conf .config/qutebrowser
+: 1458555623:0;vim .config/qutebrowser/qutebrowser.conf
+: 1458594332:0;pacaur -S thunar glib2
+: 1458594418:0;cd build
+: 1458594421:0;mkdir thunar
+: 1458594422:0;cd thunar
+: 1458594435:0;vim PKGBUILD
+: 1458594462:0;makepkg -sic
+: 1458594495:0;cower -dd thunar
+: 1458594507:0;cower -dd thunar --ignorerepo=extra
+: 1458594713:0;pacaur -S pcmanfm
+: 1458596248:0;bash rename.sh
+: 1458596258:0;vim rename.sh
+: 1458596267:0;bash rename.sh
+: 1458596268:0;vim rename.sh
+: 1458596277:0;bash rename.sh
+: 1458596278:0;vim rename.sh
+: 1458596301:0;bash rename.sh
+: 1458596470:0;vim rename.sh
+: 1458596639:0;bash rename.sh
+: 1458596649:0;vim rename.sh
+: 1458596664:0;bash rename.sh
+: 1458596666:0;vim rename.sh
+: 1458596675:0;bash rename.sh
+: 1458596676:0;vim rename.sh
+: 1458596690:0;bash rename.sh
+: 1458596695:0;vim rename.sh
+: 1458596708:0;bash rename.sh
+: 1458597015:0;vim rename.sh
+: 1458597048:0;bash rename.sh
+: 1458597102:0;vim rename.sh
+: 1458597131:0;bash rename.sh
+: 1458597134:0;vim rename.sh
+: 1458597171:0;bash rename.sh
+: 1458597176:0;vim rename.sh
+: 1458597203:0;bash rename.sh
+: 1458643712:0;connmanctl
+: 1458654264:0;sudo mount /dev/sda7 tmp
+: 1458654282:0;mv dwn/cric2015 tmp/Users/ap/Downloads
+: 1458665395:0;gvim sop.md
+: 1458665455:0;free -m
+: 1458672914:0;htop
+: 1458672926:0;free -m
+: 1458673155:0;sudo swapoff-a
+: 1458673159:0;sudo swapoff -a
+: 1458704522:0;connmanctl
+: 1458704883:0;ping 8.8.8.8
+: 1458704892:0;ping www.google.com
+: 1458704899:0;connmanctl
+: 1458704909:0;ip addr
+: 1458704913:0;connmanctl
+: 1458704929:0;ip addr
+: 1458704946:0;cat /etc/hostname
+: 1458704951:0;connmanctl
+: 1458733204:0;acpi -a
+: 1458733206:0;acpi -p
+: 1458733209:0;acpi -d
+: 1458733212:0;acpi -b
+: 1458733223:0;acpi -c
+: 1458733229:0;acpi -v
+: 1458733240:0;acpi -V
+: 1458734612:0;cp sop.md altair-sop.md
+: 1458734626:0;cp sop.md theranosis-sop.md
+: 1458734631:0;vim sop.md
+: 1458734986:0;cp sop.md altair-sop.md
+: 1458734989:0;cp sop.md theranosis-sop.md
+: 1458734994:0;vim altair-sop.md
+: 1458735015:0;cp sop.md infoserve-sop.md
+: 1458735017:0;vim infoserve-sop.md
+: 1458736956:0;cp infoserve-sop.md bolt3d.md
+: 1458736959:0;vim bolt3d.md
+: 1458738337:0;vim infoserve-sop.md
+: 1458738910:0;vim bolt3d.md
+: 1458739185:0;cp infoserve-sop.md theranosis-sop.md
+: 1458739187:0;vim theranosis-sop.md
+: 1458742314:0;mv theranosis-sop.md iisc-sop.md
+: 1458742315:0;l
+: 1458743933:0;hfree
+: 1458771324:0;vim xx
+: 1458801724:0;acpi -d
+: 1458801728:0;acpi -V
+: 1458970212:0;sudo swapoff -a
+: 1458970218:0;sudo mount /dev/sda7 tmp
+: 1459048468:0;pacaur -Syu
+: 1459048513:0;sudoedit `find / -iname proxy.sh`
+: 1459048525:0;locate proxy.sh
+: 1459048539:0;sudoedit `locate proxy.sh`
+: 1459048560:0;pacaur -Syu
+: 1459048578:0;bash /etc/profile.d/proxy.sh
+: 1459048580:0;pacaur -Syu
+: 1459048590:0;echo $http_proxy
+: 1459048611:0;pacaur -Syu
+: 1459087266:0;cd /tmp/pacaurtmp-ap/cower
+: 1459087267:0;l
+: 1459087274:0;makepkg -si --skipinteg
+: 1459087286:0;pacaur -U cower-15-1-x86_64.pkg.tar.xz
+: 1459087290:0;../pacaur
+: 1459087291:0;makepkg -si --skipinteg
+: 1459087300:0;pacaur -U pacaur-4.5.6-1-any.pkg.tar.xz
+: 1459087304:0;../rstudio-desktop-bin
+: 1459087306:0;makepkg -si --skipinteg
+: 1459092709:0;lsusb
+: 1459092737:0;pacaur -S broadcom-wl-dkms
+: 1459096121:0;pacaur -Syyu
+: 1459096163:0;pacaur -S pandoc pandoc-citeproc
+: 1459096305:0;pacaur -S rstudio-desktop-bin --ignore=pandoc --ignore=pandoc-citeproc
+: 1459096439:0;l
+: 1459096443:0;vim PKGBUILD
+: 1459096464:0;..
+: 1459096464:0;l
+: 1459113078:0;pacaur -Syu
+: 1459113165:0;man ln
+: 1459113233:0;cd .dotfiles
+: 1459113235:0;gs
+: 1459113256:0;gma "latest revision"
+: 1459113265:0;gp
+: 1459113321:0;cd
+: 1459113322:0;ll
+: 1459113324:0;l
+: 1459113332:0;ls doc
+: 1459113342:0;mv *.md doc/writeups
+: 1459113343:0;l
+: 1459113349:0;zathura xyz.pdf
+: 1459113356:0;rm xyz.pdf
+: 1459113360:0;l
+: 1459113365:0;mkdir bak
+: 1459113387:0;ln -s .dotfiles bak
+: 1459113390:0;cd bak
+: 1459113390:0;l
+: 1459113391:0;ll
+: 1459113393:0;..
+: 1459113399:0;cd doc
+: 1459113399:0;l
+: 1459113403:0;..
+: 1459113421:0;ln -s * bak
+: 1459113424:0;cd bak
+: 1459113425:0;l
+: 1459113442:0;rm R
+: 1459113447:0;rm bak
+: 1459113448:0;l
+: 1459113452:0;rm build
+: 1459113461:0;rm tmp
+: 1459113468:0;ll
+: 1459113498:0;cd dwn
+: 1459113510:0;l
+: 1459113514:0;cd doc
+: 1459113526:0;rm *
+: 1459113533:0;..
+: 1459113534:0;l
+: 1459113541:0;cd dwn
+: 1459113542:0;l
+: 1459113570:0;rm Cricket-Captain-2015_www.FreeGamesDL.net.zip CricketCaptain.zip Og2OMI3.webm GDRJvEU.jpg giphy.gif 9yo63vO.webm 851.gif
+: 1459113571:0;l
+: 1459113575:0;du -sh tv
+: 1459113581:0;du -sh movies
+: 1459113998:0;ssh ap@10.2.12.196
+: 1459114067:0;scp -r coding doc dwn gsoc ms pic proj ap@10.2.12.196:~/bk2/
+: 1459115498:0;sudo mount /dev/sda7 tmp
+: 1459115583:0;cd tmp
+: 1459115584:0;l
+: 1459115594:0;cd Users
+: 1459115595:0;l
+: 1459115597:0;cd ap
+: 1459115598:0;l
+: 1459115605:0;cd Desktop
+: 1459115605:0;l
+: 1459115608:0;..
+: 1459115665:0;cp Pictures Documents Music Videos ap@10.2.12.196:~/bkwin/
+: 1459115670:0;scp -r Pictures Documents Music Videos ap@10.2.12.196:~/bkwin/
+: 1459115684:0;scp -r Pictures Documents Music Videos ap@10.2.12.196:~/bk2/
+: 1459116186:0;cd Documents/bak/
+: 1459116187:0;ll
+: 1459116193:0;rm matlab_2013b.tar
+: 1459116196:0;...
+: 1459116215:0;rsync -avz Pictures Documents Music Videos ap@10.2.12.196:~/bk2/
+: 1459116673:0;cd tmp/Users/ap/Downloads/tv
+: 1459116674:0;l
+: 1459116685:0;mpv The.Daily.Show.2016.03.10.Padma.Lakshmi.HDTV.x264-CROOKS.mp4
+: 1459117782:0;mpv The.Nightly.Show.2016.03.22.Donald.Trumps.AIPAC.Speech.and.Social.Media.WEBRip.x264.AAC.mp4
+: 1459149717:0;pacaur -S chromium-pepper-flash
+: 1459149758:0;pacaur -Ss cheese
+: 1459149765:0;pacaur -S cheese
+: 1459149810:0;pacman -S fswebcam
+: 1459149816:0;sudo pacman -S fswebcam
+: 1459149853:0;fswebcam
+: 1459149887:0;cheese
+: 1459152110:0;sudo mount /dev/sda7 tmp
+: 1459188434:0;cd dwn
+: 1459188435:0;l
+: 1459188439:0;..
+: 1459188447:0;man rsync
+: 1459188654:0;rsync -avzu dwn ap@10.2.12.196:~/bk2/
+: 1459189019:0;l
+: 1459189022:0;cd dwn
+: 1459189023:0;l
+: 1459237985:0;ll
+: 1459238010:0;pacaur -S rstudio-desktop
+: 1459238019:0;pacaur -Ss rstudio-desktop
+: 1459241434:0;pacaur -Syu
+: 1459249569:0;ip addr
+: 1459249577:0;ping 8.8.8.8
+: 1459268869:0;vim temp.md
+: 1459269081:0;pandoc temp.md -o temp.pdf
+: 1459269091:0;zathura temp.pdf
+: 1459269107:0;pandoc temp.md -o temp.pdf -N -s
+: 1459269110:0;zathura temp.pdf
+: 1459269192:0;pandoc temp.md -o temp.pdf -t beamer -N -s
+: 1459269196:0;zathura temp.pdf
+: 1459269238:0;vim temp.md
+: 1459269240:0;l
+: 1459269245:0;cd dwn
+: 1459269245:0;l
+: 1459269275:0;zathura temp.pdf
+: 1459269278:0;pandoc temp.md -o temp.pdf -t beamer -N -s
+: 1459269281:0;zathura temp.pdf
+: 1459269286:0;vim temp.md
+: 1459269296:0;pandoc temp.md -o temp.pdf -t beamer -N -s
+: 1459269298:0;zathura temp.pdf
+: 1459269324:0;vim temp.md
+: 1459269345:0;pandoc temp.md -o temp.tex -t beamer -N -s
+: 1459269349:0;..
+: 1459269350:0;pandoc temp.md -o temp.tex -t beamer -N -s
+: 1459269356:0;vim temp.tex
+: 1459269586:0;vim default.beamer
+: 1459269627:0;vim sample.md
+: 1459269638:0;vim Makefile
+: 1459269650:0;make
+: 1459269662:0;l
+: 1459269669:0;zathura sample.md.slides.pdf
+: 1459273562:0;l
+: 1459273586:0;rm *.pdf *.md Makefile default.beamer temp.md temp.md.handout.pdf temp.md.slides.pdf temp.pdf temp.tex
+: 1459273589:0;l
+: 1459273596:0;gpicview 2016-03-28-125629.jpg
+: 1459273818:0;l
+: 1459275261:0;vim .i3/config
+: 1459285551:0;acpi -d
+: 1459285561:0;acpi -V
+: 1459319562:0;pacaur -Ss clang
+: 1459319840:0;pacaur -Ss gcc
+: 1459319870:0;pacaur -Ss g++
+: 1459319876:0;pacaur -Ss "g++"
+: 1459320167:0;pacaur -Ss clang
+: 1459320438:0;pacaur -S neovim
+: 1459320476:0;pacaur -S neovim xclip xsel python-neovim
+: 1459320498:0;neovim
+: 1459320508:0;locate neovim
+: 1459320512:0;pacaur -Ss neovim
+: 1459320519:0;which vim
+: 1459320528:0;which neovim
+: 1459320531:0;which nvim
+: 1459320533:0;nvim
+: 1459320764:0;vim
+: 1459320782:0;vim .vimrc
+: 1459320786:0;vim
+: 1459320800:0;pacaur -S vim
+: 1459320808:0;pacaur -S gvim
+: 1459320817:0;pacaur -Ss vim
+: 1459320933:0;pacaur -Ss atom
+: 1459320961:0;pacaur -S atom-editor
+: 1459321442:0;cp .vimrc .nvimrc
+: 1459321444:0;nvim
+: 1459321487:0;nvim -u .nvimrc\
+
+: 1459321519:0;vim
+: 1459321537:0;nvim .nvimrc
+: 1459321575:0;nvim -u .nvimrc\
+
+: 1459321583:0;nvim .nvimrc -u .nvimrc\
+
+: 1459321720:0;pacaur -S termite
+: 1459321730:0;pacaur -S terminator
+: 1459321770:0;nvim sample
+: 1459321801:0;nvim sample -u .nvimrc
+: 1459321865:0;ls
+: 1459321874:0;nvim .nvimrc -u .nvimrc
+: 1459322475:0;ls -al
+: 1459322493:0;vim .config/termite/config
+: 1459322549:0;mkdir .config/termite
+: 1459322557:0;ls
+: 1459322558:0;ll
+: 1459322568:0;fc-match monospace
+: 1459322577:0;vim .config/termite/config
+: 1459322594:0;ls
+: 1459322598:0;vim .config/termite/config
+: 1459322642:0;ls -al
+: 1459322651:0;vim .Xresources
+: 1459322693:0;fc-list
+: 1459322704:0;fc-list | grep -i terminus
+: 1459322945:0;xrdb .Xresources
+: 1459322950:0;ls
+: 1459322951:0;ll
+: 1459322961:0;nvim .nvimrc -u .nvimrc
+: 1459323084:0;ls
+: 1459323085:0;l
+: 1459323130:0;nvim .nvimrc -u .nvimrc
+: 1459323179:0;nvim .config/termite/config -u .nvimrc
+: 1459323210:0;ls
+: 1459323222:0;fc-match Monospace
+: 1459323231:0;nvim .config/termite/config -u .nvimrc
+: 1459323445:0;pacaur -Ss urxvt
+: 1459323490:0;pacaur -S urxvt-perls
+: 1459323520:0;nvim .Xresources
+: 1459323540:0;cd .dotfiles/x/
+: 1459323541:0;l
+: 1459323542:0;ll
+: 1459323547:0;../urxvt
+: 1459323548:0;ll
+: 1459323554:0;git checkot .Xresources
+: 1459323558:0;git checkout .Xresources
+: 1459323562:0;xrdb .Xresources
+: 1459323566:0;ls
+: 1459323566:0;ll
+: 1459323571:0;vim .Xresources
+: 1459323594:0;cd .dotfiles/urxvt
+: 1459323595:0;ll
+: 1459323601:0;git status
+: 1459323606:0;vim .Xresources
+: 1459323612:0;cd
+: 1459323614:0;ll
+: 1459323625:0;rm .Xresources
+: 1459323647:0;ln -s .Xresources .dotfiles/urxvt/.Xresources
+: 1459323660:0;ln -s .dotfiles/urxvt/.Xresources .Xresources
+: 1459323661:0;l
+: 1459323662:0;ll
+: 1459323670:0;l
+: 1459323677:0;vim .Xresources
+: 1459323698:0;pacaur -S urxvt-perls
+: 1459323839:0;xrdb .Xresources
+: 1459323849:0;nvim .Xresources
+: 1459323879:0;ls
+: 1459323879:0;ll
+: 1459323888:0;vim .config/termite/config
+: 1459323912:0;ls
+: 1459323939:0;vim .Xresources
+: 1459324032:0;xrdb .Xresources
+: 1459324034:0;ls
+: 1459324034:0;ll
+: 1459324046:0;nvim .Xresources
+: 1459324168:0;vim .Xresources
+: 1459324195:0;xrdb .Xresources
+: 1459324202:0;xrdb -merge .Xresources
+: 1459324206:0;ls
+: 1459324207:0;ll
+: 1459324223:0;nvim .nvimrc
+: 1459324266:0;nvim .nvimrc -u .nvimrc
+: 1459324302:0;nvim sample.md -u .nvimrc
+: 1459324371:0;nvim .nvimrc -u .nvimrc
+: 1459324449:0;ls
+: 1459324450:0;ll
+: 1459324558:0;vim .config/termite/config
+: 1459324582:0;ls
+: 1459324582:0;ll
+: 1459324588:0;vim .config/termite/config
+: 1459324617:0;ls
+: 1459324623:0;ll
+: 1459324630:0;vim .config/termite/config
+: 1459324639:0;ls
+: 1459324641:0;vim .config/termite/config
+: 1459324654:0;ls
+: 1459324656:0;vim .config/termite/config
+: 1459324663:0;ls
+: 1459324670:0;vim .config/termite/config
+: 1459324680:0;ls
+: 1459324681:0;ll
+: 1459324683:0;vim .config/termite/config
+: 1459324699:0;ls
+: 1459324703:0;vim .config/termite/config
+: 1459324730:0;ls
+: 1459324735:0;l
+: 1459324741:0;vim .nvimrc
+: 1459324798:0;vim .config/termite/config
+: 1459324824:0;ls
+: 1459324828:0;vim sample.md
+: 1459324837:0;vim .config/termite/config
+: 1459324853:0;l
+: 1459324854:0;ls
+: 1459324857:0;vim sample.md
+: 1459324867:0;vim .config/termite/config
+: 1459324907:0;ls
+: 1459324910:0;vim .config/termite/config
+: 1459324936:0;ls
+: 1459324937:0;ll
+: 1459324941:0;vim sample.md
+: 1459324959:0;nvim sample.md
+: 1459324978:0;nvim sample.md -u .nvimrc
+: 1459325002:0;l
+: 1459325006:0;ll
+: 1459325012:0;vim .config/termite/config
+: 1459325037:0;ls
+: 1459325037:0;ll
+: 1459325041:0;vim sample.md
+: 1459325084:0;pacaur -Ss gohufont
+: 1459325304:0;ls
+: 1459325306:0;ll
+: 1459325311:0;ls
+: 1459325312:0;l
+: 1459325319:0;vim .config/termite/config
+: 1459325516:0;vim .zshrc
+: 1459325531:0;source .xshrc
+: 1459325537:0;ls
+: 1459325538:0;l
+: 1459325562:0;cd .config/terminator
+: 1459325566:0;l
+: 1459325585:0;vim .Xresources
+: 1459325601:0;./build/siji/view.sh
+: 1459325832:0;free -m
+: 1459332467:0;ping 8.8.8.8
+: 1459332476:0;ip addr
+: 1459332480:0;ping 8.8.8.8
+: 1459332485:0;ping 10.2.12.196
+: 1459332503:0;ping 8.8.8.8
+: 1459332627:0;cat /proc/sys/vm/swappiness
+: 1459332642:0;ping 8.8.8.8
+: 1459361710:0;ping www.google.com
+: 1459375327:0;ls
+: 1459375328:0;ll
+: 1459375334:0;vim sample.md
+: 1459377599:0;sudo mount /dev/sda7 tmp
+: 1459382722:0;vim guttles-sop.md
+: 1459392241:0;nvim sample.md -u .nvimrc
+: 1459392261:0;nvim .nvimrc -u .nvimrc
+: 1459392266:0;l
+: 1459392275:0;cp dwn/.nvimrc .
+: 1459392278:0;nvim .nvimrc -u .nvimrc
+: 1459392494:0;rm -rf .config/nvim
+: 1459392496:0;nvim .nvimrc -u .nvimrc
+: 1459417539:0;sudo mkdir -p /var/lib/connman
+: 1459417591:0;sudo mkdir -p /var/lib/connman/wifi_iiit.cfg
+: 1459417600:0;sudo rm -p /var/lib/connman/wifi_iiit.cfg
+: 1459417603:0;sudo rm -r -p /var/lib/connman/wifi_iiit.cfg
+: 1459417606:0;sudo rm -r /var/lib/connman/wifi_iiit.cfg
+: 1459417611:0;sudoedit -p /var/lib/connman/wifi_iiit.cfg
+: 1459417615:0;sudoedit /var/lib/connman/wifi_iiit.cfg
+: 1459417863:0;pacaur -S pptpclient
+: 1459417966:0;mv /var/lib/connman/wifi_iiit.cfg /var/lib/connman/iiit.cfg
+: 1459417973:0;sudo mv /var/lib/connman/wifi_iiit.cfg /var/lib/connman/iiit.cfg
+: 1459578673:0;rm .nvimrc
+: 1459578677:0;vim .nvimrc
+: 1459578723:0;mkdir .nvim
+: 1459578727:0;cd .nvim
+: 1459578743:0;..
+: 1459578747:0;mv .nvim .config
+: 1459578764:0;mv .config/.nvim .config/nvim
+: 1459578767:0;cd .config/nvim
+: 1459578767:0;l
+: 1459578775:0;vim init.vim
+: 1459578798:0;nvim
+: 1459579062:0;nvim init.vim
+: 1459582303:0;nvim
+: 1459582372:0;nvim init.vim
+: 1459582508:0;vim temp.c
+: 1459582515:0;nvim init.vim
+: 1459582640:0;vim temp.c
+: 1459582920:0;nvim init.vim
+: 1459582982:0;find / -name libclang.so
+: 1459582992:0;locate libclang.so
+: 1459583045:0;cd /usr/lib/clang
+: 1459583063:0;nvim temp.c
+: 1459583072:0;nvim init.vim
+: 1459583093:0;nvim temp.c
+: 1459587101:0;vim temp.c
+: 1459587109:0;nvim temp.c
+: 1459587409:0;vim temp.c
+: 1459590883:0;ping 8.8.8.8
+: 1459590907:0;ip addr
+: 1459590937:0;ping 8.8.8.8
+: 1459591468:0;ip addr
+: 1459592050:0;sudo dhcpcd
+: 1459632539:0;connman
+: 1459632541:0;connmanctl
+: 1459632629:0;ip addr
+: 1459632633:0;connmanctl
+: 1459632692:0;sudo mount /dev/sda7 tmp
+: 1459632760:0;find / -iname connman
+: 1459632781:0;sudoedit /var/lib/connman/iiit.cfg
+: 1459632832:0;connmanctl
+: 1459632861:0;cd /var/lib/connman/
+: 1459632862:0;l
+: 1459632870:0;vim ethernet_b82a72b5a2d6_cable
+: 1459632881:0;vim settings
+: 1459632889:0;vim iiit.cfg
+: 1459632917:0;sudo systemctl stop connman
+: 1459632922:0;sudo systemctl start connman
+: 1459632927:0;ip addr
+: 1459632959:0;sudoedit /etc/wpa_supplicant/wpa_supplicant.conf
+: 1459633015:0;wpa_supplicant -D wired -i enp7s0 -dd -c /etc/wpa_supplicant/wpa_supplicant.conf
+: 1459633031:0;vim wpa_supplicant.cong
+: 1459633035:0;vim wpa_supplicant.conf
+: 1459633082:0;wpa_supplicant -D wired -i enp7s0 -dd -c wpa_supplicant.conf
+: 1459633092:0;sudo systemctl stop connman
+: 1459633094:0;wpa_supplicant -D wired -i enp7s0 -dd -c wpa_supplicant.conf
+: 1459633099:0;sudo wpa_supplicant -D wired -i enp7s0 -dd -c wpa_supplicant.conf
+: 1459633125:0;dhclient enp7s0
+: 1459633140:0;dhcpcd enp7s0
+: 1459633148:0;sudo dhcpcd enp7s0
+: 1459633167:0;pacaur -Syu
+: 1459633508:0;pacaur -Ss pandoc
+: 1459633824:0;sudo dhcpcd -k enp7s0
+: 1459633858:0;sudo systemctl stop wpa_supplicant
+: 1459633863:0;sudo systemctl start wpa_supplicant
+: 1459633868:0;sudo systemctl start connman
+: 1459633875:0;connmanctl
+: 1459633879:0;ip addr
+: 1459633907:0;connmanctl
+: 1459633921:0;ip addr
+: 1459633943:0;vim /var/lib/connman/iiit.cfg
+: 1459633997:0;sudo wpa_supplicant -D wired -i enp7s0 -dd -c wpa_supplicant.conf
+: 1459634014:0;dhcpcd enp7s0
+: 1459634019:0;sudo dhcpcd enp7s0
+: 1459634037:0;pacaur -S pptpclient
+: 1459634049:0;dhcpcd -k
+: 1459634059:0;sudo systemctl stop connman
+: 1459634067:0;sudo systemctl stop wpa_supplicant.service
+: 1459634071:0;sudo systemctl start wpa_supplicant.service
+: 1459634081:0;sudo systemctl start connman
+: 1459634086:0;ip addr
+: 1459634099:0;connmanctl
+: 1459634186:0;sudo dhcpcd enp7s0
+: 1459634215:0;connmanctl
+: 1459634224:0;vim /var/lib/connman/iiit.cfg
+: 1459634251:0;sudoedit /var/lib/connman/iiit.cfg
+: 1459634329:0;sudo systemctl stop wpa_supplicant.service
+: 1459634337:0;sudo systemctl stop connman.service
+: 1459634342:0;sudo systemctl start wpa_supplicant.service
+: 1459634344:0;sudo systemctl start connman.service
+: 1459634349:0;connmanctl
+: 1459634400:0;ip addr
+: 1459634406:0;ping 8.8.8.8
+: 1459634412:0;ping iiit.ac.in
+: 1459634434:0;sudo systemctl stop connman.service
+: 1459634443:0;sudo wpa_supplicant -D wired -i enp7s0 -dd -c wpa_supplicant.conf
+: 1459634463:0;sudo dhcpcd enp7s0
+: 1459634611:0;pacaur -S gnome-extension-connman
+: 1459634639:0;pacaur -Ss gnome-extension-connman
+: 1459634646:0;pacaur -Ss connman
+: 1459634674:0;pacaur -Ss connman-gtk
+: 1459634679:0;pacaur -S connman-gtk
+: 1459634785:0;connman-gtk
+: 1459634884:0;pacaur -S networkmanager network-manager-applet
+: 1459634910:0;nm-applet
+: 1459634992:0;sudo systemctl stop connman
+: 1459635006:0;sudo systemctl start NetworkManager.service
+: 1459635011:0;nm-applet &
+: 1459635096:0;pacaur -Syyu
+: 1459635160:0;pacaur -Syu
+: 1459635191:0;sudo systemctl enable NetworkManager.service
+: 1459635198:0;sudo systemctl disable connman.service
+: 1459635203:0;ps x
+: 1459635209:0;hfree
+: 1459635288:0;ps x
+: 1459635291:0;hfree
+: 1459635515:0;cat /etc/NetworkManager/NetworkManager.conf
+: 1459635530:0;cat /etc/NetworkManager/system-connections/Wired\ connection\ 1
+: 1459635534:0;sudo cat /etc/NetworkManager/system-connections/Wired\ connection\ 1
+: 1459635787:0;cat /var/lib/connman/iiit.cfg
+: 1459636617:0;cd .config/nvim
+: 1459636618:0;l
+: 1459636622:0;rm -rf *
+: 1459636631:0;vim .nvimrc
+: 1459641422:0;vim .vimrc
+: 1459642348:0;nm-connection-editor
+: 1459642364:0;nmtui
+: 1459642505:0;hfree
+: 1459642523:0;ls
+: 1459642547:0;vim .config/nvim/init.vim
+: 1459642553:0;nvim .config/nvim/init.vim
+: 1459642590:0;mv .nvimrc init.vim
+: 1459642592:0;l
+: 1459642606:0;nvim .vimrc
+: 1459642657:0;cd .config/nvim
+: 1459642661:0;nvim init.vim
+: 1459642926:0;nvim .config/nvim/init.vim
+: 1459642985:0;vim sample.c
+: 1459642988:0;nvim sample.c
+: 1459643050:0;rm sample.
+: 1459643055:0;rm sample.c
+: 1459643059:0;nvim sample.md
+: 1459643138:0;nvim ~/sample.md
+: 1459643443:0;nvim init.vim
+: 1459643532:0;nvim ~/sample.md
+: 1459643789:0;nvim init.vim
+: 1459643847:0;nvim ~/sample.md
+: 1459644639:0;nvim sample.md
+: 1459644749:0;gvim sample.md
+: 1459644780:0;vim .vimrc
+: 1459644800:0;gvim sample.md
+: 1459644829:0;gvim .config/nvim/init.vim
+: 1459644852:0;nvim .config/nvim/init.vim
+: 1459644970:0;gvim .config/nvim/init.vim
+: 1459644988:0;vim .config/nvim/init.vim
+: 1459645010:0;vim sample.md
+: 1459645025:0;nvim sample.md
+: 1459645134:0;nvim .config/nvim/init.vim
+: 1459645144:0;nvim sample.md
+: 1459645217:0;gvim sample.md
+: 1459645405:0;sudoedit /var/lib/connman/iiit.cfg
+: 1459645435:0;sudo systemctl stop NetworkManager.service
+: 1459645446:0;sudo systemctl start connman.service
+: 1459645452:0;ip addr
+: 1459645458:0;connmanctl
+: 1459645496:0;ip addr
+: 1459645549:0;sudo systemctl stop wpa_supplicant.service&& sudo systemctl stop connman.service
+: 1459645564:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459645577:0;sudoedit /var/lib/connman/iiit.cfg
+: 1459645592:0;sudo systemctl start wpa_supplicant.service && sudo systemctl start connman.service
+: 1459645610:0;ip addr
+: 1459645666:0;connmanctl
+: 1459645727:0;dhcpcd enp7s0
+: 1459645735:0;sudo dhcpcd enp7s0
+: 1459645750:0;sudo dhcpcd -k enp7s0
+: 1459645752:0;sudo dhcpcd enp7s0
+: 1459645824:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459645827:0;sudo systemctl start wpa_supplicant.service && sudo systemctl start connman.service
+: 1459662784:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459662820:0;sudo systemctl start NetworkManager
+: 1459662999:0;lsdwn
+: 1459663001:0;ls dwn
+: 1459663010:0;ls dwn/*.pem
+: 1459663066:0;sudoedit /var/lib/connman/iiit.cfg
+: 1459663090:0;cd .cert
+: 1459663095:0;mkdir .cert
+: 1459663109:0;mv dwn/IIIT-H_RADIUS_CA.pem .cert
+: 1459663111:0;cd .cert
+: 1459663157:0;sudo systemctl stop NetworkManager
+: 1459663161:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459663172:0;sudo systemctl start wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459663181:0;connmanctl
+: 1459663209:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459663213:0;sudoedit /var/lib/connman/iiit.cfg
+: 1459663227:0;ip addr
+: 1459663250:0;sudo systemctl stop NetworkManager
+: 1459663258:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459663262:0;ip addr
+: 1459663292:0;sudo dhcpcd -k
+: 1459663312:0;ip link
+: 1459663317:0;ip addr
+: 1459663364:0;sudo systemctl disable NetworkManager
+: 1459663379:0;sudo systemctl enable connman wpa_supplicant
+: 1459663521:0;ip addr
+: 1459663531:0;connmanctl
+: 1459663595:0;ip addr
+: 1459663608:0;connmanctl
+: 1459663712:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459663737:0;connmanctl
+: 1459663747:0;ping 8.8.8.8
+: 1459663766:0;sudoedit /var/lib/connman/iiit.cfg
+: 1459663786:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459663797:0;sudo systemctl start wpa_supplicant.service && sudo systemctl start connman.service
+: 1459663802:0;connmanctl
+: 1459663810:0;ip addr
+: 1459663814:0;ip addr enp7s0
+: 1459663818:0;ip addr
+: 1459663844:0;connmanctl
+: 1459663854:0;ip addr
+: 1459663863:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459663877:0;sudo systemctl start NetworkManager
+: 1459663882:0;nm-applet
+: 1459663939:0;ip addr
+: 1459664025:0;wget http://mirror.cse.iitk.ac.in/archlinux/iso/2016.04.01/archlinux-2016.04.01-dual.iso
+: 1459664074:0;wget http://mirror.us.leaseweb.net/archlinux/iso/2016.04.01/archlinux-2016.04.01-dual.iso
+: 1459664949:0;nmcli help
+: 1459664965:0;nmcli help c
+: 1459664973:0;nmcli -t
+: 1459664981:0;nmcli -t c
+: 1459664987:0;nmcli
+: 1459664989:0;nmcli c
+: 1459665240:0;qemu-system-x86_64 -cdrom dwn/archlinux-2016.04.01-dual.iso
+: 1459665292:0;cd proj
+: 1459665292:0;l
+: 1459665295:0;cd arch-setup
+: 1459665296:0;l
+: 1459665302:0;vim 1.sh
+: 1459665360:0;pacaur -S archiso
+: 1459673869:0;ping 8.8.8.8
+: 1459686011:0;nvim .config/nvim/init.vim
+: 1459686357:0;gvim .config/nvim/init.vim
+: 1459687609:0;nvim .config/nvim/init.vim
+: 1459688138:0;nvim .config/nvim/init.vim --startuptime
+: 1459688144:0;nvim --startuptime
+: 1459688148:0;nvim --startuptime x
+: 1459688155:0;nvim --startuptime x.cpp
+: 1459688164:0;nvim -h
+: 1459688169:0;l
+: 1459688172:0;cat x
+: 1459688222:0;nvim .config/nvim/init.vim
+: 1459688255:0;nvim sample.md
+: 1459688270:0;nvim sample.md --startuptime x
+: 1459688277:0;cat x
+: 1459688504:0;nvim .config/nvim/init.vim
+: 1459688549:0;nvim sample.md
+: 1459711500:0;ping 10.2.12.196
+: 1459715584:0;nvim sample.md --startuptime nvim.log
+: 1459715596:0;cat nvim.log| sort -k 2
+: 1459715793:0;nvim .config/nvim/init.vim
+: 1459715961:0;nvim sample.md --startuptime nvim.log
+: 1459715965:0;cat nvim.log| sort -k 2
+: 1459715991:0;cat nvim.log| sort -k 1
+: 1459716011:0;cat nvim.log| sort -k 2
+: 1459716032:0;head nvim.log
+: 1459716051:0;cat nvim.log| sort -k 2
+: 1459716066:0;nvim sample.md --startuptime nvim.log
+: 1459716090:0;cat nvim.log| sort -k 2
+: 1459716108:0;nvim sample.md --startuptime nvim.log
+: 1459716112:0;cat nvim.log| sort -k 2
+: 1459716124:0;:q
+: 1459716128:0;nvim sample.md --startuptime nvim.log
+: 1459716197:0;nvim sample.cpp --startuptime nvim.log
+: 1459716229:0;cat nvim.log| sort -k 2
+: 1459716240:0;ls
+: 1459716245:0;cd .config/nvim
+: 1459716246:0;l
+: 1459716253:0;rm -r autoload plugged
+: 1459716265:0;rm -rf autoload plugged
+: 1459716266:0;l
+: 1459716270:0;nvim init.vim
+: 1459716298:0;cd
+: 1459716302:0;nvim sample.cpp --startuptime nvim.log
+: 1459716308:0;cat nvim.log| sort -k 2
+: 1459716317:0;:q
+: 1459716322:0;nvim sample.md --startuptime nvim.log
+: 1459716327:0;cat nvim.log| sort -k 2
+: 1459716399:0;nvim README.md --startuptime nvim.log
+: 1459716408:0;cat nvim.log| sort -k 2
+: 1459716413:0;nvim README.md --startuptime nvim.log
+: 1459716795:0;cd tmp
+: 1459716795:0;l
+: 1459716796:0;ll
+: 1459716799:0;git clone https://github.com/jbn/paper.git && cd paper && rm -rf .git/ && rm README.markdown\
+
+: 1459716831:0;make
+: 1459716837:0;ls
+: 1459716840:0;cd target
+: 1459716841:0;l
+: 1459716846:0;chromium turing_50.html
+: 1459716990:0;...
+: 1459716995:0;git clone https://github.com/tompollard/phd_thesis_markdown
+: 1459717024:0;cd tmp
+: 1459717028:0;git clone https://github.com/davecap/markdown-latex-boilerplate
+: 1459717035:0;cd ma
+: 1459717037:0;cd markdown-latex-boilerplate
+: 1459717038:0;l
+: 1459717040:0;make
+: 1459717051:0;mkdir -p build
+: 1459717052:0;make
+: 1459717057:0;make html
+: 1459717067:0;cd build
+: 1459717068:0;l
+: 1459717071:0;chromium example.html
+: 1459717222:0;cd phd_thesis_markdown
+: 1459717223:0;l
+: 1459717224:0;make
+: 1459717227:0;make html
+: 1459717232:0;cd output
+: 1459717232:0;l
+: 1459717242:0;zathura thesis.pdf
+: 1459717298:0;chromium thesis.
+: 1459717307:0;chromium thesis.html
+: 1459717438:0;cd
+: 1459717445:0;nvim README.md
+: 1459717540:0;nvim sample.cpp --startuptime nvim.log
+: 1459717546:0;nvim .config/nvim/init.vim
+: 1459717557:0;nvim sample.cpp --startuptime nvim.log
+: 1459717568:0;nvim README.md --startuptime nvim.log
+: 1459717660:0;cat nvim.log| sort -k 2
+: 1459718059:0;pacaur -Ss par
+: 1459718079:0;pacaur -Ss par | grep -i format
+: 1459718177:0;pacaur -S par
+: 1459718215:0;nvim doc/writeups/altair-sop.md
+: 1459718300:0;nvim doc/writeups/bolt3d.md
+: 1459718419:0;nvim doc/writeups/rashmi_bio_project/report.md
+: 1459719498:0;pacaur -S polkit
+: 1459719653:0;systemctl status polkit.service\
+
+: 1459719695:0;pacaur -Ss polkit
+: 1459719721:0;pacaur -S polkit-qt5
+: 1459719789:0;pacaur -S lxqt-policykit
+: 1459719937:0;locate xdg
+: 1459720014:0;vim .config/user-dirs.dirs
+: 1459720640:0;nvim sample.md
+: 1459720651:0;nvim sample.md --startuptime nvim.log
+: 1459720658:0;cat nvim.log| sort -k 2
+: 1459720694:0;nvim sample.md -u --startuptime nvim.log
+: 1459720706:0;nvim sample.md -u init --startuptime nvim.log
+: 1459720712:0;cat nvim.log
+: 1459720728:0;cat nvim.log | sort -k 2
+: 1459720739:0;touch init
+: 1459720741:0;nvim sample.md -u init --startuptime nvim.log
+: 1459720745:0;cat nvim.log | sort -k 2
+: 1459720757:0;cat nvim.log
+: 1459720773:0;nvim sample.md --startuptime nvim.log
+: 1459720779:0;cat nvim.log
+: 1459720793:0;cat nvim.log | sort -k 2
+: 1459720811:0;cat nvim.log
+: 1459720833:0;cat nvim.log | grep vim-pandoc/
+: 1459720858:0;cat nvim.log | grep vim-pandoc/ | sort -k 1
+: 1459720918:0;nvim sample.cpp --startuptime nvim.log
+: 1459720923:0;cat nvim.log | grep vim-pandoc/ | sort -k 1
+: 1459720932:0;cat nvim.log
+: 1459720978:0;nvim sample.ex --startuptime nvim.log
+: 1459720981:0;cat nvim.log
+: 1459720993:0;nvim sample.j --startuptime nvim.log
+: 1459720997:0;nvim sample.js --startuptime nvim.log
+: 1459721000:0;cat nvim.log
+: 1459721085:0;nvim .config/nvim/init.vim
+: 1459721105:0;nvim sample.md --startuptime nvim.log
+: 1459721109:0;cat nvim.log
+: 1459721120:0;nvim .config/nvim/init.vim
+: 1459749038:0;sudo systemctl stop wpa_supplicant.service && sudo systemctl stop connman.service
+: 1459749050:0;sudo systemctl disable connman.service
+: 1459749063:0;sudo systemctl enable NetworkManager.service
+: 1459749071:0;sudo systemctl start NetworkManager.service
+: 1459749077:0;sudo systemctl stop connman.service
+: 1459750342:0;pacaur -Ss roboto
+: 1459750366:0;pacaur -S ttf-roboto-ibx ttf-roboto-mono-ibx
+: 1459767690:0;acpi -V
+: 1459792488:0;pkill chromium
+: 1459792502:0;ps x
+: 1459792513:0;pkill -9 chromium
+: 1459796435:0;pacaur -Syu
+: 1459796512:0;mkdir livecd
+: 1459796514:0;cd livecd
+: 1459796537:0;pacaur -S make patch
+: 1459796793:0;pacaur -Syu
+: 1459801622:0;..
+: 1459801624:0;cp -r /usr/share/archiso/configs/releng/* ~/livecd && cd ~/livecd
+: 1459801627:0;l
+: 1459801638:0;sudo su
+: 1459803079:0;mkdir ~/.zsh/functions
+: 1459803088:0;vim .zsh
+: 1459803093:0;nvim .zsh
+: 1459803102:0;nvim .zsh --startuptime log
+: 1459803108:0;cat log
+: 1459803113:0;rm log
+: 1459803114:0;..
+: 1459803122:0;nvim .zshrc
+: 1459803183:0;cd .zsh
+: 1459803184:0;l
+: 1459803193:0;mv async.zsh functions/async
+: 1459803210:0;mv pure.zsh functions/prompt_pure_setup
+: 1459803216:0;vim ~/.zshrc
+: 1459803263:0;prompt -h theme
+: 1459803278:0;prompt -p walters
+: 1459803285:0;prompt -p bart
+: 1459803317:0;echo $fpath
+: 1459803327:0;autoload -U promptinit && promptinit\
+
+: 1459803335:0;prompt pure
+: 1459803338:0;ls
+: 1459803339:0;ll
+: 1459803340:0;ls
+: 1459803345:0;cd .zsh
+: 1459803348:0;ls
+: 1459803355:0;cd ~/.dotfiles
+: 1459803358:0;gs
+: 1459803375:0;prompt pure
+: 1459803381:0;vim .zshrc
+: 1459803396:0;ls
+: 1459803414:0;cat nvim.log
+: 1459803439:0;cat nvim.log | sort -k 2
+: 1459803462:0;nvim .config/nvim/init.vim
+: 1459803869:0;ls
+: 1459803871:0;ll
+: 1459803872:0;ls
+: 1459803879:0;nvim .config/nvim/init.vim
+: 1459803895:0;cd .zsh
+: 1459803899:0;../dwn
+: 1459803910:0;ssh ap@10.2.12.196
+: 1459803929:0;ll
+: 1459804288:0;git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"\
+
+: 1459804324:0;setopt EXTENDED_GLOB\
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do\
+ ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"\
+done
+: 1459804339:0;mv .zshrc .zshrc_bak
+: 1459804341:0;setopt EXTENDED_GLOB\
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do\
+ ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"\
+done

@@ -1,0 +1,64 @@
+# basic
+mpd_host                              = "127.0.0.1"
+mpd_port                              = "6600"
+mpd_music_dir                         = "~/mus"
+mpd_connection_timeout                = "5"
+
+# visualizer
+visualizer_fifo_path                  = "/tmp/mpd.fifo"
+visualizer_output_name                = "fifo output"
+visualizer_sync_interval              = "30"
+visualizer_in_stereo                  = "yes"
+visualizer_type                       = "spectrum"
+visualizer_color                      = "magenta"
+visualizer_look                       = "◾◾"
+
+# visual components
+alternative_header_first_line_format  = "{$b$2%a$9} {$5%t$9}"
+alternative_header_second_line_format = "{$3%b$9} {$4(%y)$9}"
+autocenter_mode                       = "yes"
+browser_display_mode                  = "classic"
+clock_display_seconds                 = "yes"
+cyclic_scrolling                      = "yes"
+display_bitrate                       = "yes"
+display_volume_level                  = "yes"
+enable_window_title                   = "yes"
+follow_now_playing_lyrics             = "yes"
+header_visibility                     = "yes"
+ignore_leading_the                    = "no"
+incremental_seeking                   = "yes"
+message_delay_time                    = "8"
+statusbar_visibility                  = "yes"
+titles_visibility                     = "no"
+user_interface                        = "alternative"
+
+# colors
+active_column_color                   = "red"
+active_window_border                  = "red"
+header_window_color                   = "white"
+alternative_ui_separator_color        = "blue"
+color1                                = "white"
+color2                                = "blue"
+colors_enabled                        = "yes"
+empty_tag_color                       = "blue"
+main_window_color                     = "green"
+main_window_highlight_color           = "blue"
+progressbar_color                     = "black"
+state_flags_color                     = "magenta"
+state_line_color                      = "cyan"
+statusbar_color                       = "cyan"
+window_border_color                   = "red"
+
+# playlist
+playlist_disable_highlight_delay      = "3"
+playlist_display_mode                 = "classic"
+playlist_separate_albums              = "no"
+progressbar_look                      = "◾◾◾"
+
+# song display formats
+song_columns_list_format              = "(32)[red]{a} (32)[green]{b} (32)[blue]{t} $R(4)[magenta]{l}"
+song_library_format                   = "%t"
+song_list_format                      = "{$2%a$2} {$5%t$5} $R {$3%b$3}   $6({$6%l})"
+song_status_format                    = "{$2%a$2} {$3%b$3} {$5%t$5}"
+song_window_title_format              = "{%a-%t}"
+
