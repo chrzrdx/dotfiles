@@ -41,7 +41,7 @@
 [shortcuts]
     close = ctrl+shift+x
     close_all = ctrl+shift+c
-    history = ctrl+grave
+    history = ctrl+shift+grave
 
 [urgency_low]
     background = "#26282B"

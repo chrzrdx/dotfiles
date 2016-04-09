@@ -17,6 +17,9 @@ fi
 # disable speaker beep
 xset -b
 
+# notification
+dunst -config /home/ap/.i3/dunstrc &
+
 # NetworkManager applet
 >> /dev/null which nm-applet && nm-applet &
 
@@ -26,9 +29,6 @@ compton -CGb --backend glx --vsync opengl
 
 # make it easy on the eyes
 redshift -O 3200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90 &
-
-# notification
-dunst -config ~/.i3/dunstrc &
 
 # change caps lock to ESC
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
@@ -53,3 +53,4 @@ xsetroot -cursor_name left_ptr &
 # exec startxfce4
 # ...or the Window Manager of your choice
 exec dbus-launch --exit-with-session i3
+

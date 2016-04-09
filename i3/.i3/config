@@ -14,6 +14,9 @@ exec_always --no-startup-id feh --bg-fill "$(find ~/.wallpapers/* -type f | shuf
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# notification
+exec_always --no-startup-id dunst -config /home/ap/.i3/dunstrc &
+
 popup_during_fullscreen smart
 
 # start a terminal
