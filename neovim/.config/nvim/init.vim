@@ -43,7 +43,7 @@ Plug 'chriskempson/base16-vim'
 call plug#end()
 "}}}
 
-" REGULAR SETTINGS {{{
+" REGULAR SETTINGS {{{za
 
 " neovim defaults {{{
 " https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults

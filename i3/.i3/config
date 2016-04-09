@@ -23,11 +23,15 @@ bindsym $mod+Return exec /usr/bin/termite
 bindsym $mod+q kill
 
 # set media keys (volume, media player)
-set $update && pkill -RTMIN+1 i3blocks
+#set $update && pkill -RTMIN+1 i3blocks
+set $update && pkill -USR1 i3status
 
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2+ unmute $update
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 2- unmute $update
-bindsym XF86AudioMute exec amixer -q sset Master toggle $update
+#bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2+ unmute $update
+#bindsym XF86AudioLowerVolume exec amixer -q sset Master 2- unmute $update
+#bindsym XF86AudioMute exec amixer -q sset Master toggle $update
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% $update #increase sound
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% $update #decrease sound
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
@@ -175,7 +179,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 
-    font pango: Tamsyn, Tamsyn Bold, FontAwesome 9
+    font pango: Tamsyn, Tamsyn Bold, FontAwesome 10
     
     colors {
             separator  #b6b6b6
@@ -188,7 +192,8 @@ bar {
             urgent_workspace   #f44336 #f44336 #ffffff
     }
     position bottom
-    status_command i3blocks -c ~/.i3/i3blocks.conf
+    #status_command i3blocks -c ~/.i3/i3blocks/i3blocks.conf
+    status_command i3status -c ~/.i3/i3status.conf
 }
 
 # enable floating mode for special apps
