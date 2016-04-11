@@ -15,7 +15,7 @@ exec_always --no-startup-id feh --bg-fill "$(find ~/.wallpapers/* -type f | shuf
 floating_modifier $mod
 
 # notification
-exec_always --no-startup-id dunst -config /home/ap/.i3/dunstrc &
+#exec_always --no-startup-id dunst -config /home/ap/.i3/dunstrc &
 
 popup_during_fullscreen smart
 

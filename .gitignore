@@ -2,3 +2,10 @@ vim/.vim
 vimperator/.vimperator
 zsh/.zsh/cache
 zsh/.zsh/zsh_history
+neovim/.config/nvim/autoload
+neovim/.config/nvim/plugged
+neovim/.config/nvim/tmp
+mpd/.config/mpd/mpd.db
+mpd/.config/mpd/mpd.log
+mpd/.config/mpd/mpd.pid
+mpd/.config/mpd/mpdstate

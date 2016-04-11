@@ -30,6 +30,11 @@ if [ -r ~/.zshrc -a -r ~/.zshrc.global -a ! -r ~/.zshrc.local ] ; then
     printf '-!-\n'
 fi
 
+## include personal zsh files
+source .zsh/alias.zsh
+source .zsh/functions.zsh
+
+
 ## Settings for umask
 #if (( EUID == 0 )); then
 #    umask 002
@@ -75,11 +80,11 @@ fi
 #}
 #zle -N mquote && bindkey '^q' mquote
 
-## define word separators (for stuff like backward-word, forward-word, backward-kill-word,..)
-#WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>' # the default
-#WORDCHARS=.
-#WORDCHARS='*?_[]~=&;!#$%^(){}'
-#WORDCHARS='${WORDCHARS:s@/@}'
+# define word separators (for stuff like backward-word, forward-word, backward-kill-word,..)
+WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>' # the default
+WORDCHARS=.
+WORDCHARS='*?_[]~=&;!#$%^(){}'
+WORDCHARS='${WORDCHARS:s@/@}'
 
 # just type '...' to get '../..'
 #rationalise-dot() {
@@ -206,8 +211,8 @@ fi
 
 ## miscellaneous code ##
 
-## Use a default width of 80 for manpages for more convenient reading
-#export MANWIDTH=${MANWIDTH:-80}
+# Use a default width of 80 for manpages for more convenient reading
+export MANWIDTH=${MANWIDTH:-80}
 
 ## Set a search path for the cd builtin
 #cdpath=(.. ~)
