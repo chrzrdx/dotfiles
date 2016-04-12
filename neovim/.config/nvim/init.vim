@@ -6,44 +6,95 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 "}}}
 
-" PLUGINS INSTALLED {{{
+" SET LEADER {{{
+let g:mapleader=" "
+" }}}
+
+" PLUGINS + SETTINGS {{{
 call plug#begin('~/.config/nvim/plugged')
 
-" interface improvements {{{
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
+" vim-plug settings {{{
+let g:plug_timeout=20
 "}}}
-
-" language agnostic plugins {{{
+Plug 'itchyny/lightline.vim' 
+" lightline settings {{{
+let g:lightline = {
+	  \ 'colorscheme': 'gruvbox',
+	  \ 'active': {
+	  \   'left': [ [ 'mode', 'paste' ],
+	  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+	  \ },
+	  \ 'component': {
+	  \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+	  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+	  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+	  \ },
+	  \ 'component_visible_condition': {
+	  \   'readonly': '(&filetype!="help"&& &readonly)',
+	  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+	  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+	  \ },
+	  \ }
+"}}}
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'benekastah/neomake', { 'on': ['Neomake'] }
-Plug 'Shougo/deoplete.nvim'
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
+Plug 'tpope/vim-commentary' ", { 'on': '<Plug>Commentary' } 
+"" vim-commentary settings {{{
+"map  gc  <Plug>Commentary
+"nmap gcc <Plug>CommentaryLine
+"" }}}
+Plug 'benekastah/neomake', { 'on': ['Neomake'] } 
+" neomake settings {{{
+let g:neomake_verbose=0
+let g:neomake_warning_sign = {
+	  \ 'text': '>>',
+	  \ 'texthl': 'WarningMsg',
+	  \ }
+let g:neomake_error_sign = {
+	  \ 'text': '!>',
+	  \ 'texthl': 'ErrorMsg',
+	  \ }
 "}}}
+Plug 'Shougo/deoplete.nvim' 
+" deoplete settings {{{
+let g:deoplete#enable_at_startup=1
+let g:deoplete#enable_refresh_always=1
+let g:deoplete#file#enable_buffer_path=1
+let g:deoplete#auto_completion_start_length=2
+let g:deoplete#disable_auto_complete = 1
 
-" pandoc {{{
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc-after'
+let g:deoplete#sources={}
+let g:deoplete#sources._    = ['buffer', 'file', 'ultisnips']
+let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
+
 "}}}
-
-" text manipulation {{{
+Plug 'vim-pandoc/vim-pandoc' , { 'for': [ 'pandoc', 'markdown' ] }
+" vim-pandoc settings {{{
+let g:pandoc#formatting#mode = "hA"
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
+let g:pandoc#folding#level = 3
+let g:pandoc#folding#mode = "relative"
+let g:pandoc#after#modules#enabled = ["nrrwrgn", "tablemode"]
+let g:pandoc#completion#bib#mode = 'citeproc'
+let g:pandoc#syntax#colorcolumn = 1
+let g:pandoc#modules#disabled = ["folding", "spell"]
+let g:pandoc#syntax#conceal#use = 0
+"}}}
+Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': [ 'pandoc', 'markdown' ] }
+Plug 'vim-pandoc/vim-pandoc-after', { 'for': [ 'pandoc', 'markdown' ] }
 Plug 'tpope/vim-surround'
-"}}}
+Plug 'Shougo/neomru.vim'
+Plug 'morhetz/gruvbox'
+" gruvbox settings {{{
+let g:gruvbox_contrast_dark='hard'
 
-" colorschemes {{{
-Plug 'sjl/badwolf'
-Plug 'w0ng/vim-hybrid'
-Plug 'chriskempson/tomorrow-theme'
-Plug 'chriskempson/base16-vim'
-"}}}
+let g:gruvbox_sign_column='bg1'
+" }}}
 
 call plug#end()
 "}}}
 
-" REGULAR SETTINGS {{{za
+" REGULAR SETTINGS {{{
 
 " neovim defaults {{{
 " https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults
@@ -114,23 +165,14 @@ set splitbelow                              " splitting a window will put the ne
 set splitright                              " splitting a window will put the new window right of the current
 "}}}
 
-" timeout settings {{{
-" time out on key codes but not mappings. basically this makes terminal vim work sanely. (by steve losh)
-set notimeout
-set ttimeout
-set ttimeoutlen=10
-"}}}
-
 " visual, color and highlighting settings {{{
-set background=dark       " let term use brighter colours
-colorscheme hybrid
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast= 1
+set background=dark " let term use brighter colours
+colorscheme gruvbox
 
 hi! link Conceal Operator
 hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
 
-set cursorline
+"set cursorline
 
 "}}}
 
@@ -158,9 +200,9 @@ set expandtab
 
 " folding {{{
 set foldcolumn=2
-set foldmethod=marker
 "}}}
 
+" fix annoyances {{{
 " turn off swap/backup
 set noswapfile                  " new buffers will be loaded without creating a swapfile
 set nobackup
@@ -169,77 +211,11 @@ set nowb
 " no annoying sound on errors
 set noerrorbells
 set novisualbell
-
-
-"}}}
-
-" PLUGIN SETTINGS {{{
-
-" neomake {{{
-let g:neomake_verbose=0
-let g:neomake_warning_sign = {
-      \ 'text': '❯',
-      \ 'texthl': 'WarningMsg',
-      \ }
-let g:neomake_error_sign = {
-      \ 'text': '❯',
-      \ 'texthl': 'ErrorMsg',
-      \ }
-"}}}
-
-" deoplete {{{
-let g:deoplete#enable_at_startup=1
-let g:deoplete#enable_refresh_always=1
-let g:deoplete#file#enable_buffer_path=1
-let g:deoplete#auto_completion_start_length=2
-
-let g:deoplete#sources={}
-let g:deoplete#sources._    = ['buffer', 'file', 'ultisnips']
-let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
-"}}}
-
-" plug {{{
-let g:plug_timeout=20
-"}}}
-
-" lightline {{{
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ }
-"}}}
-
-" vim-pandoc {{{
-let g:pandoc#formatting#mode = "hA"
-let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
-let g:pandoc#folding#level = 3
-let g:pandoc#folding#mode = "relative"
-let g:pandoc#after#modules#enabled = ["nrrwrgn", "tablemode"]
-let g:pandoc#completion#bib#mode = 'citeproc'
-let g:pandoc#syntax#colorcolumn = 1
-let g:pandoc#modules#disabled = ["folding", "spell"]
-let g:pandoc#syntax#conceal#use = 0
-"}}}
+" }}}
 
 "}}}
 
-" REGULAR MAPPINGS {{{
-
-" set leader
-let g:mapleader=","
+" KEY MAPPINGS {{{
 
 " vim hardmode {{{
 nnoremap <up> <NOP>
@@ -273,15 +249,35 @@ vnoremap n nzz
 vnoremap N Nzz
 "}}}
 
-" misc {{{
+" line bubbling {{{
+nnoremap <C-Up>   :<C-u>silent! move-2<CR>==
+nnoremap <C-Down> :<C-u>silent! move+<CR>==
+xnoremap <C-Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
+xnoremap <C-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
+" }}}
+
+" cut/paste {{{
 " more logical y (default was alias for yy)
 nnoremap Y y$
+
+" select text that was just pasted
+noremap gV `[v`]
+
+" keep selection highlighted while shifting text
+xnoremap <  <gv
+xnoremap >  >gv
+
+" paste from system clipboard at current indentation
+map <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+" }}}
+
+" misc {{{
 
 " quick ESC in insert mode
 imap jk <ESC>
 
 " quick fold toggle (suggestion from steve losh)
-nnoremap <space> za
+nnoremap , za
 
 " use Ctrl+n to disable highlighted search terms
 nmap <silent> <C-n> :noh<CR>
@@ -291,9 +287,6 @@ nmap <leader>w :w!<cr>
 
 " :W saves with sudo
 command W w !sudo tee % > /dev/null
-
-" paste from system clipboard at current indentation
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " paste mode toggling
 nnoremap <silent> <F3> :set paste!<CR> :set paste?<CR>
@@ -305,19 +298,4 @@ nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 
 "}}}
 
-" PLUGIN MAPPINGS {{{
-
-" deoplete {{{
-
-" insert <TAB> or select next match
-"inoremap <silent> <expr> <Tab> utils#tabComplete()
-
-" manually trigger tag autocomplete
-"inoremap <silent> <expr> <C-]> utils#manualTagComplete()
-
-" <C-h>, <BS>: close popup and delete backword char
-inoremap <expr><C-h> deolete#mappings#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
-"}}}
-
-"}}}
+" vim: set sw=2 ts=2 et foldlevel=0 foldmethod=marker:
