@@ -33,6 +33,7 @@ fi
 ## include personal zsh files
 source .zsh/alias.zsh
 source .zsh/functions.zsh
+source .zsh/exports.zsh
 
 
 ## Settings for umask
