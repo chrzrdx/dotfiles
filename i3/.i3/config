@@ -94,14 +94,14 @@ bindsym $mod+a focus parent
 workspace_auto_back_and_forth yes
 
 # Name the workspaces
-set $tag1 "1:"
-set $tag2 "2:"
-set $tag3 "3:"
-set $tag4 "4:"
-set $tag5 "5:"
+set $tag1 "1:www"
+set $tag2 "2:term"
+set $tag3 "3:code"
+set $tag4 "4:chat"
+set $tag5 "5:music"
 
-#exec --no-startup-id i3-msg 'workspace $tag1 ; exec firefox' 
-#exec --no-startup-id i3-msg 'workspace $tag4 ; exec urxvt -e irssi' 
+exec --no-startup-id i3-msg 'workspace $tag1 ; exec chromium' 
+exec --no-startup-id i3-msg 'workspace $tag5 ; exec urxvt -e ncmpcpp' 
 #exec --no-startup-id i3-msg 'workspace $tag6 ; exec urxvt -e cmus' 
 
 #exec_always --no-startup-id xrandr --output DP1 --auto
@@ -147,11 +147,10 @@ bindsym $mod+Shift+r restart
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Power menu
-set $sysmenu "  [r]estart - [l]ogout - [s]uspend - re[b]oot - po[w]eroff  "
+set $sysmenu " [l]ogout - [s]uspend - re[b]oot - po[w]eroff  "
 bindsym $mod+Shift+e      mode $sysmenu
 
 mode $sysmenu {
-    bindsym r         restart
     bindsym l         exit
     bindsym w         exec "systemctl poweroff"
     bindsym b         exec "systemctl reboot"
@@ -159,7 +158,6 @@ mode $sysmenu {
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
-
 
 bindsym $mod+$modalt+l exec --no-startup-id i3lock -c 000000 -d
 
