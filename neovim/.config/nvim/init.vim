@@ -87,7 +87,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'morhetz/gruvbox'
 " gruvbox settings {{{
 let g:gruvbox_contrast_dark='hard'
-
+let g:gruvbox_hls_cursor='orange'
 let g:gruvbox_sign_column='bg1'
 " }}}
 
@@ -129,6 +129,10 @@ set ttyfast
 set viminfo+=!
 set wildmenu
 
+" allow for mappings including Esc, while preserving zero timeout after pressing it manually
+set ttimeout
+set ttimeoutlen=100
+
 " Load matchit.vim, if a newer version isn't already installed.
 " Neovim includes matchit.vim as a regular plug-in.
 if !exists("g:loaded_matchit") && findfile("plugin/matchit.vim", &runtimepath) ==# ""
@@ -158,6 +162,13 @@ set nojoinspaces                " no extra space when joining a line which ends 
 set scrolloff=5                 " scroll when closing to top or bottom of the screen
 set updatetime=1000             " update time used to create swap file or other things
 set mouse=a                     " use mouse
+" wildmenu : autocomplete commands {{{
+set wildmode=longest,full       " for wildmenu, autocomplete as much as you can
+set wildignore+=*.o,*.out,*.obj,.git
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*.swp,*~,._*
+" }}}
+
 "}}}
 
 " split settings (more natural) {{{
@@ -298,4 +309,4 @@ nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 
 "}}}
 
-" vim: set sw=2 ts=2 et foldlevel=0 foldmethod=marker:
+" vim: set sw=2 ts=2 et foldlevel=1 foldmethod=marker:

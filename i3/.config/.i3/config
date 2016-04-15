@@ -101,7 +101,7 @@ set $tag4 "4:chat"
 set $tag5 "5:music"
 
 exec --no-startup-id i3-msg 'workspace $tag1 ; exec chromium' 
-exec --no-startup-id i3-msg 'workspace $tag5 ; exec urxvt -e ncmpcpp' 
+exec --no-startup-id i3-msg 'workspace $tag5 ; exec termite -e ncmpcpp' 
 #exec --no-startup-id i3-msg 'workspace $tag6 ; exec urxvt -e cmus' 
 
 #exec_always --no-startup-id xrandr --output DP1 --auto
@@ -159,7 +159,8 @@ mode $sysmenu {
     bindsym Escape    mode "default"
 }
 
-bindsym $mod+$modalt+l exec --no-startup-id i3lock -c 000000 -d
+#bindsym $mod+$modalt+l exec --no-startup-id i3lock -c 000000 -d
+bindsym $mod+$modalt+l exec --no-startup-id i3lock -i ~/.i3/lock.png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
