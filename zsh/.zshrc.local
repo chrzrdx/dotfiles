@@ -31,9 +31,9 @@ if [ -r ~/.zshrc -a -r ~/.zshrc.global -a ! -r ~/.zshrc.local ] ; then
 fi
 
 ## include personal zsh files
-source .zsh/alias.zsh
-source .zsh/functions.zsh
-source .zsh/exports.zsh
+source ~/.zsh/alias.zsh
+source ~/.zsh/functions.zsh
+source ~/.zsh/exports.zsh
 
 
 ## Settings for umask

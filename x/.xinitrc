@@ -18,7 +18,7 @@ fi
 xset -b
 
 # notification
-dunst -config /home/ap/.i3/dunstrc &
+dunst -config /home/ap/.config/i3/dunstrc &
 
 # NetworkManager applet
 >> /dev/null which nm-applet && nm-applet &
