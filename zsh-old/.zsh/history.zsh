@@ -1,3 +1,0 @@
-HISTFILE=~/.zsh/zsh_history
-HISTSIZE=10000
-SAVEHIST=9000
