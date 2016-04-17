@@ -5,6 +5,7 @@ zsh/.zsh/zsh_history
 neovim/.config/nvim/autoload
 neovim/.config/nvim/plugged
 neovim/.config/nvim/tmp
+neovim/.config/nvim/.init.vim-rplugin~
 mpd/.config/mpd/mpd.db
 mpd/.config/mpd/mpd.log
 mpd/.config/mpd/mpd.pid
