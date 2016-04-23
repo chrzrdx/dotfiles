@@ -9,5 +9,5 @@ decoration, decoration:backdrop {
 decoration.csd.popup, headerbar { box-shadow: none; }
 
 vte-terminal {
-    padding: 4px;
+    padding: 0px;
 }
