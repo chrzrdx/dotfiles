@@ -1,14 +1,13 @@
-.window-frame, .window-frame:backdrop {
- box-shadow: 0 0 0 black;
- border-style: none;
- margin: 0;
- border-radius: 0;
+decoration, decoration:backdrop {
+    box-shadow: 0 0 0 black;
+    border-style: none;
+    margin: 0;
+    border-radius: 0;
 }
 
-.titlebar {
- border-radius: 0;
-}
+.titlebar, titlebar { border-radius: 0; }
+decoration.csd.popup, headerbar { box-shadow: none; }
 
-VteTerminal {
-    padding: 7px;
+vte-terminal {
+    padding: 4px;
 }
