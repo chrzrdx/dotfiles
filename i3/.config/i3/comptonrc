@@ -1,0 +1,26 @@
+# shadow
+shadow = false;            # Enabled client-side shadows on windows.
+no-dock-shadow = true;        # Avoid drawing shadows on dock/panel windows.
+no-dnd-shadow = true;        # Don't draw shadows on DND windows.
+clear-shadow = true;        # Zero the part of the shadow's mask behind the window (experimental).
+shadow-exclude = [ "n:e:Notification" ];    # Exclude conditions for shadows.
+shadow-ignore-shaped = true;
+
+# Fading
+fading = false;            # Fade windows during opacity changes.
+no-fading-openclose = true;    # Fade windows in/out when opening/closing.
+
+# Other
+mark-wmwin-focused = true;    # Try to detect WM windows and mark them as active.
+mark-ovredir-focused = true;
+detect-rounded-corners = true;
+
+#Window type settings
+wintypes:
+{
+  tooltip = { fade = true; shadow = false; };
+  menu = { shadow = false; };
+  dropdown_menu = { shadow = false; };
+  popup_menu =  { shadow = false; };
+  utility =  { shadow = false; };
+};

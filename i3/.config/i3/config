@@ -23,12 +23,12 @@ bindsym $mod+q kill
 # set media keys (volume, media player)
 set $update && pkill -USR1 i3status
 
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2+ unmute $update
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 2- unmute $update
-bindsym XF86AudioMute exec amixer -q sset Master toggle $update
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% $update #increase sound
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% $update #decrease sound
-#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
+#bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2+ unmute $update
+#bindsym XF86AudioLowerVolume exec amixer -q sset Master 2- unmute $update
+#bindsym XF86AudioMute exec amixer -q sset Master toggle $update
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% $update #increase sound
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% $update #decrease sound
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
@@ -38,11 +38,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -10
 bindsym XF86MonBrightnessUp exec xbacklight +10
 
 # set media keys (printscr)
-bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/pic/ss'
-
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pic/ss'
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn 'Tamsyn-9'
+bindsym $mod+d exec ~/.config/i3/dmenu_run_recent.sh -fn 'Tamsyn-10'
 
 # change focus
 bindsym $mod+h focus left
@@ -93,7 +92,7 @@ set $tag4 "4:chat"
 set $tag5 "5:music"
 
 #exec --no-startup-id i3-msg 'workspace $tag1 ; exec chromium' 
-exec --no-startup-id i3-msg 'workspace $tag5 ; exec termite -e ncmpcpp' 
+#exec --no-startup-id i3-msg 'workspace $tag5 ; exec termite -e ncmpcpp' 
 
 #exec_always --no-startup-id xrandr --output DP1 --auto
 #exec_always --no-startup-id xrandr --output eDP1 --auto  --right-of DP1
@@ -134,10 +133,9 @@ bindsym $mod+Shift+grave scratchpad show
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# Power menu
+# power menu
 set $sysmenu " [l]ogout - [s]uspend - re[b]oot - po[w]eroff  "
-bindsym $mod+Shift+e      mode $sysmenu
-
+bindsym $mod+Shift+e mode $sysmenu
 mode $sysmenu {
     bindsym l         exit
     bindsym w         exec "systemctl poweroff"
@@ -147,6 +145,7 @@ mode $sysmenu {
     bindsym Escape    mode "default"
 }
 
+# lock screen
 bindsym $mod+$modalt+l exec --no-startup-id i3lock -c 000000 -d
 
 # resize window (you can also use the mouse for that)
@@ -183,7 +182,6 @@ bar {
     status_command i3status -c ~/.config/i3/i3status.conf
 }
 
-
 popup_during_fullscreen smart
 
 # enable floating mode for special apps
@@ -195,14 +193,14 @@ for_window [class="Volumeicon"] [title="Preferences"] floating enable
 
 # border only, no window title bar
 hide_edge_borders both
-new_window normal 1
-new_float normal 1
+new_window normal 4
+new_float normal 4
 
 # allow changing border style
-bindsym $mod+t border normal 1
+bindsym $mod+t border normal 4
 bindsym $mod+y border none 
 
-#colors:          border   backgr.  text     indicator
+#colors:                 border   backgr.  text     indicator
 client.focused           #689d6a  #689d6a  #282828  #282828
 client.focused_inactive  #1d2021  #1d2021  #928374  #282828
 client.unfocused         #32302f  #32302f  #928374  #282828
