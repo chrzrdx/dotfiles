@@ -8,8 +8,8 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 
 !-----Xterm settings-----!
-xterm*faceName:-*-tamsyn-medium-r-*-*-14-*-*-*-*-*-*-*
-
+xterm*faceName:Tamsyn
+xterm*faceSize:10
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
