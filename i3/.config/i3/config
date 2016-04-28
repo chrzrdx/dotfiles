@@ -201,7 +201,7 @@ bindsym $mod+t border normal 6
 bindsym $mod+y border none 
 
 #colors:                 border   backgr.  text     indicator
-client.focused           #b8bb26  #b8bb26  #282828  #b8bb26
+client.focused           #b8bb26  #b8bb26  #ebdbb2  #cc241d
 client.focused_inactive  #504945  #504945  #ebdbb2  #282828
 client.unfocused         #504945  #504945  #ebdbb2  #282828
 client.urgent            #cc241d  #cc241d  #ebdbb2  #282828
