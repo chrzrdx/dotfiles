@@ -9,6 +9,11 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+# add font tamsyn
+xset fp+ /usr/share/fonts/local
+xset +fp /usr/share/fonts/ttf
+xset fp rehash
+
 # disable speaker beep
 xset -b
 
@@ -16,9 +21,10 @@ xset -b
 dunst -config ~/.config/i3/dunstrc &
 
 # NetworkManager applet
-#>> /dev/null which nm-applet && nm-applet &
+>> /dev/null which nm-applet && nm-applet &
 
 # composition manager
+# compton -CGb --backend glx --vsync opengl
 compton -CGb --backend glx --vsync opengl --config ~/.config/i3/comptonrc
 
 # make it easy on the eyes
@@ -30,13 +36,12 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
 # start music server
 #mpd &
 
-# add font tamsyn
-xset fp+ /usr/share/fonts/local
-xset +fp /usr/share/fonts/ttf
-xset fp rehash
+# clipboard
+xsel &
+
+# urxvt daemon
+# urxvtd -q -o -f &
 
 export QT_STYLE_OVERRIDE=GTK+
-
-xsetroot -cursor_name left_ptr &
 
 i3
