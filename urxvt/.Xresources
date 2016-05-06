@@ -1,6 +1,6 @@
 !-- Xft settings -- !
 Xft.dpi:        112
-Xft.autohint:   0
+Xft.autohint:   false
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
@@ -10,6 +10,64 @@ Xft.lcdfilter:  lcddefault
 !-----Xterm settings-----!
 xterm*faceName:Tamsyn
 xterm*faceSize:10
+
+!-----Urxvt settings-----!
+urxvt*loginShell:       true
+urxvt*scrollBar:        false
+urxvt*secondaryScroll:  true
+urxvt*saveLines:        65535
+urxvt*cursorBlink:      false
+urxvt.depth:            32
+urxvt.geometry:         90x30
+urxvt.transparent:      false
+urxvt.fading:           0
+urxvt.urgentOnBell:     false
+urxvt.visualBell:       false
+urxvt.saveLines:        50
+urxvt.internalBorder:   0
+urxvt.externalBorder:   0
+urxvt.lineSpace:        0
+
+! reclaim <Alt-s> and <Ctrl-Shift-*> shortcuts
+urxvt*searchable-scrollback: M-S-s
+urxvt*iso14755        : false
+urxvt*iso14755_52     : false
+
+! make Alt-arrow work
+urxvt.keysym.M-Up     : \033[1;3A
+urxvt.keysym.M-Down   : \033[1;3B
+urxvt.keysym.M-Right  : \033[1;3C
+urxvt.keysym.M-Left   : \033[1;3D
+urxvt.keysym.M-Prior  : \033[5;3~
+urxvt.keysym.M-Next   : \033[6;3~
+urxvt.keysym.M-End    : \033[1;3F
+urxvt.keysym.M-Home   : \033[1;3H
+
+! make Ctrl-arrow work
+urxvt.keysym.C-Up     : \033[1;5A
+urxvt.keysym.C-Down   : \033[1;5B
+urxvt.keysym.C-Right  : \033[1;5C
+urxvt.keysym.C-Left   : \033[1;5D
+urxvt.keysym.C-Prior  : \033[5;5~
+urxvt.keysym.C-Next   : \033[6;5~
+urxvt.keysym.C-End    : \033[1;5F
+urxvt.keysym.C-Home   : \033[1;5H
+
+! extensions (+ disable the selection popup)
+urxvt.perl-ext-common : default,matcher,clipboard,-selection-popup
+
+! extensions -> matcher: open URL with a left click
+urxvt.urlLauncher     : xdg-open
+urxvt*urlLauncher     : /usr/bin/chromium
+urxvt*matcher.button  : 1
+
+! extensions -> copy/paste
+urxvt.keysym.C-C      : perl:clipboard:copy
+urxvt.keysym.C-V      : perl:clipboard:paste
+urxvt.keysym.C-M-v    : perl:clipboard:paste_escaped
+
+urxvt*font            : -*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-* 
+urxvt*boldfont        : -*-tamsyn-bold-*-*-*-14-*-*-*-*-*-*-* 
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
@@ -83,3 +141,4 @@ URxvt.color246: #a89984
 URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
+! vim: set fdm=marker fmr=<<<,>>> fdl=0:
