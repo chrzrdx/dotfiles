@@ -57,7 +57,7 @@ let g:neomake_error_sign = {
 "}}}
 Plug 'Shougo/deoplete.nvim' 
 " deoplete settings {{{
-let g:deoplete#enable_at_startup=1
+let g:deoplete#enable_at_startup=0
 let g:deoplete#enable_refresh_always=1
 let g:deoplete#file#enable_buffer_path=1
 let g:deoplete#auto_completion_start_length=2
@@ -86,9 +86,11 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neomru.vim'
 Plug 'morhetz/gruvbox'
 " gruvbox settings {{{
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_hls_cursor='orange'
-let g:gruvbox_sign_column='bg1'
+let g:gruvbox_sign_column='bg0'
+let g:gruvbox_color_column='bg0'
 " }}}
 
 call plug#end()
@@ -149,7 +151,7 @@ set ffs=unix,dos,mac            " use unix as the standard file type
 set magic                       " for regex
 set shell=/bin/zsh              " setting shell to zsh
 set showcmd                     " show commands as you type them
-set textwidth=120               " text width is 120 characters
+set textwidth=80                " text width is 80 characters
 set cmdheight=1                 " command line height
 set pumheight=10                " completion window max size
 set hidden                      " enables to switch between unsaved buffers and keep undo history

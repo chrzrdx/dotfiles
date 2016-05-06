@@ -680,7 +680,7 @@ grmlcomp() {
     (( ${+_comps} )) || return 1
 
     # allow one error for every three characters typed in approximate completer
-    zstyle ':completion:*:approximate:'    max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )'
+#    zstyle ':completion:*:approximate:'    max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )'
 
     # don't complete backup files as executables
     zstyle ':completion:*:complete:-command-::commands' ignored-patterns '(aptitude-*|*\~)'
@@ -816,26 +816,26 @@ grmlcomp() {
         zstyle ':completion:*:complete:*' cache-path "${GRML_COMP_CACHE_DIR}"
     fi
 
-    # host completion
-    if is42 ; then
-        [[ -r ~/.ssh/config ]] && _ssh_config_hosts=(${${(s: :)${(ps:\t:)${${(@M)${(f)"$(<$HOME/.ssh/config)"}:#Host *}#Host }}}:#*[*?]*}) || _ssh_config_hosts=()
-        [[ -r ~/.ssh/known_hosts ]] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-        [[ -r /etc/hosts ]] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
-    else
-        _ssh_config_hosts=()
-        _ssh_hosts=()
-        _etc_hosts=()
-    fi
-    hosts=(
-        $(hostname)
-        "$_ssh_config_hosts[@]"
-        "$_ssh_hosts[@]"
-        "$_etc_hosts[@]"
-        localhost
-    )
-    zstyle ':completion:*:hosts' hosts $hosts
-    # TODO: so, why is this here?
-    #  zstyle '*' hosts $hosts
+    # # host completion
+    # if is42 ; then
+    #     [[ -r ~/.ssh/config ]] && _ssh_config_hosts=(${${(s: :)${(ps:\t:)${${(@M)${(f)"$(<$HOME/.ssh/config)"}:#Host *}#Host }}}:#*[*?]*}) || _ssh_config_hosts=()
+    #     [[ -r ~/.ssh/known_hosts ]] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+    #     [[ -r /etc/hosts ]] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
+    # else
+    #     _ssh_config_hosts=()
+    #     _ssh_hosts=()
+    #     _etc_hosts=()
+    # fi
+    # hosts=(
+    #     $(hostname)
+    #     "$_ssh_config_hosts[@]"
+    #     "$_ssh_hosts[@]"
+    #     "$_etc_hosts[@]"
+    #     localhost
+    # )
+    # zstyle ':completion:*:hosts' hosts $hosts
+    # # TODO: so, why is this here?
+    # #  zstyle '*' hosts $hosts
 
     # use generic completion system for programs not yet defined; (_gnu_generic works
     # with commands that provide a --help option with "standard" gnu-like output.)

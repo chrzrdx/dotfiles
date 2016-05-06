@@ -166,20 +166,19 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango: Tamsyn 10
+  font pango: Tamsyn 10
     # bar_colors
-    colors {
-		separator           #928374
-		background          #1d2021
-		statusline          #ebdbb2
-
-		focused_workspace   #b8bb26  #b8bb26  #282828
-		active_workspace    #fabd2f  #fabd2f  #ebdbb2
-		inactive_workspace  #32302f  #32302f  #ebdbb2
-		urgent_workspace    #cc241d  #cc241d  #ebdbb2
-    }
     position bottom
     status_command i3status -c ~/.config/i3/i3status.conf
+  colors {
+    separator #928374
+    background #282828
+    statusline #ebdbb2
+    focused_workspace #689d6a #689d6a #282828
+    active_workspace #1d2021 #1d2021 #928374
+    inactive_workspace #32302f #32302f #928374
+    urgent_workspace #cc241d #cc241d #ebdbb2
+  }
 }
 
 popup_during_fullscreen smart
@@ -193,15 +192,16 @@ for_window [class="Volumeicon"] [title="Preferences"] floating enable
 
 # border only, no window title bar
 hide_edge_borders both
-new_window normal 2
-new_float normal 2
+new_window pixel 2
+new_float pixel 2
 
 # allow changing border style
 bindsym $mod+t border normal 6
 bindsym $mod+y border none 
 
 #colors:                 border   backgr.  text     indicator
-client.focused           #b8bb26  #b8bb26  #ebdbb2  #cc241d
-client.focused_inactive  #504945  #504945  #ebdbb2  #282828
-client.unfocused         #504945  #504945  #ebdbb2  #282828
-client.urgent            #cc241d  #cc241d  #ebdbb2  #282828
+
+client.focused #689d6a #689d6a #282828 #282828
+client.focused_inactive #1d2021 #1d2021 #928374 #282828
+client.unfocused #32302f #32302f #928374 #282828
+client.urgent #cc241d #cc241d #ebdbb2 #282828
