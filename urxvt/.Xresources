@@ -7,10 +7,6 @@ Xft.hinting:    true
 Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 
-!-----Xterm settings-----!
-xterm*faceName:Tamsyn
-xterm*faceSize:10
-
 !-----Urxvt settings-----!
 urxvt*loginShell:       true
 urxvt*scrollBar:        false

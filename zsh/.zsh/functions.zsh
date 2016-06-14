@@ -104,3 +104,8 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+make-webm () {
+    convert -delay 24 -loop 0 *.png output.gif && ffmpeg -i output.gif -c:v libvpx -crf 4 -b:v 500K `basename $PWD`.webm
+}
+

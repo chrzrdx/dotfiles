@@ -86,7 +86,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neomru.vim'
 Plug 'morhetz/gruvbox'
 " gruvbox settings {{{
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_hls_cursor='orange'
 let g:gruvbox_sign_column='bg0'
@@ -164,6 +164,7 @@ set nojoinspaces                " no extra space when joining a line which ends 
 set scrolloff=5                 " scroll when closing to top or bottom of the screen
 set updatetime=1000             " update time used to create swap file or other things
 set mouse=a                     " use mouse
+set formatoptions-=t            " turn off auto wrap
 " wildmenu : autocomplete commands {{{
 set wildmode=longest,full       " for wildmenu, autocomplete as much as you can
 set wildignore+=*.o,*.out,*.obj,.git

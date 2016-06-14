@@ -15,7 +15,8 @@ exec_always --no-startup-id feh --bg-fill "$(find ~/.wallpapers/* -type f | shuf
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/termite
+bindsym $mod+Return exec /usr/bin/urxvtc
+# bindsym $modalt+Return exec dmenu_run
 
 # kill focused window
 bindsym $mod+q kill
@@ -38,7 +39,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -10
 bindsym XF86MonBrightnessUp exec xbacklight +10
 
 # set media keys (printscr)
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pic/ss'
+bindsym Print exec --no-startup-id maim ~/pic/ss/$(date +%F-%T).png
+#bindsym Shift+Print exec --no-startup-id maim -s -c 1,0,0,0.6 -p 10 ~/pic/ss/$(date +%F-%T).png
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec ~/.config/i3/dmenu_run_recent.sh -fn 'Tamsyn-10'
@@ -163,26 +165,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  font pango: Tamsyn 10
-    # bar_colors
-    position bottom
-    status_command i3status -c ~/.config/i3/i3status.conf
-  colors {
-    separator #928374
-    background #282828
-    statusline #ebdbb2
-    focused_workspace #689d6a #689d6a #282828
-    active_workspace #1d2021 #1d2021 #928374
-    inactive_workspace #32302f #32302f #928374
-    urgent_workspace #cc241d #cc241d #ebdbb2
-  }
-}
-
-popup_during_fullscreen smart
-
 # enable floating mode for special apps
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task dialog"] floating enable
@@ -199,9 +181,27 @@ new_float pixel 2
 bindsym $mod+t border normal 6
 bindsym $mod+y border none 
 
-#colors:                 border   backgr.  text     indicator
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    font pango: Tamsyn 10
+    position bottom
+    status_command i3status -c ~/.config/i3/i3status.conf
+    # bar_colors
+    colors {
+            separator  #928374
+            background #1d2021
+            statusline #ebdbb2
 
-client.focused #689d6a #689d6a #282828 #282828
+            focused_workspace  #689d6a #689d6a #282828
+            active_workspace   #1d2021 #1d2021 #928374
+            inactive_workspace #32302f #32302f #928374
+            urgent_workspace   #cc241d #cc241d #ebdbb2
+    }
+}
+
+#colors:                border  backgr. text    indicator
+client.focused          #689d6a #689d6a #282828 #282828
 client.focused_inactive #1d2021 #1d2021 #928374 #282828
-client.unfocused #32302f #32302f #928374 #282828
-client.urgent #cc241d #cc241d #ebdbb2 #282828
+client.unfocused        #32302f #32302f #928374 #282828
+client.urgent           #cc241d #cc241d #ebdbb2 #282828

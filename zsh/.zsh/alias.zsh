@@ -20,7 +20,7 @@ alias lsd='ls --color=auto -aFhlG'
 alias l='ls --color=auto -GFhl'
 alias ls='ls --color=auto -GFh' # Colorize output, add file type indicator, and put sizes in human readable format
 alias ll='ls --color=auto -al' # Same as above, but in long listing format
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+#alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
 alias wordy='wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
 alias filecount='find . -type f | wc -l' # number of files (not directories) 
@@ -116,3 +116,6 @@ alias kthxbai='halt'
 # other aliases
 alias vim='nvim'
 #alias setdate ='sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"'
+
+#pyclean : to remove __pycache__folders and .pyc files
+alias pyclean='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'

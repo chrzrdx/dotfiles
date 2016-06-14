@@ -40,8 +40,9 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
 xsel &
 
 # urxvt daemon
-# urxvtd -q -o -f &
+urxvtd -q -o -f &
 
 export QT_STYLE_OVERRIDE=GTK+
 
+# startxfce4
 i3
