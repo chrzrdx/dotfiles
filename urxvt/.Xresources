@@ -1,28 +1,30 @@
 !-- Xft settings -- !
-Xft.dpi:        112
-Xft.autohint:   false
 Xft.antialias:  true
-Xft.rgba:       rgb
+Xft.autohint:   false
+Xft.dpi:        112
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
 
 !-----Urxvt settings-----!
-urxvt*loginShell:       true
-urxvt*scrollBar:        false
-urxvt*secondaryScroll:  true
-urxvt*saveLines:        65535
-urxvt*cursorBlink:      false
+urxvt.buffered:         true            ! double buffer for xtf
+urxvt.cursorBlink:      false
 urxvt.depth:            32
-urxvt.geometry:         90x30
-urxvt.transparent:      false
+urxvt.externalBorder:   0
 urxvt.fading:           0
+urxvt.geometry:         90x30
+urxvt.hold:             false           ! kill window on shell exit
+urxvt.internalBorder:   2
+urxvt.lineSpace:        4
+urxvt.loginShell:       true
+urxvt.print-pipe:       cat > $HOME/tmp/$(echo urxvt.dump.$(date +'%s'))
+urxvt.saveLines:        65535
+urxvt.scrollBar:        false
+urxvt.secondaryScroll:  true
+urxvt.transparent:      false
 urxvt.urgentOnBell:     false
 urxvt.visualBell:       false
-urxvt.saveLines:        50
-urxvt.internalBorder:   0
-urxvt.externalBorder:   0
-urxvt.lineSpace:        0
 
 ! reclaim <Alt-s> and <Ctrl-Shift-*> shortcuts
 urxvt*searchable-scrollback: M-S-s
@@ -49,6 +51,45 @@ urxvt.keysym.C-Next   : \033[6;5~
 urxvt.keysym.C-End    : \033[1;5F
 urxvt.keysym.C-Home   : \033[1;5H
 
+! fix other keybindings
+! emulate XTerm for proper recognition of key combinations in Vim
+urxvt.keysym.M-Page_Up        : \033[5;3~
+urxvt.keysym.M-Page_Down      : \033[6;3~
+urxvt.keysym.C-Page_Up        : \033[5;5~
+urxvt.keysym.C-Page_Down      : \033[6;5~
+urxvt.keysym.S-Up             : \033[1;2A
+urxvt.keysym.S-Down           : \033[1;2B
+urxvt.keysym.S-Right          : \033[1;2C
+urxvt.keysym.S-Left           : \033[1;2D
+urxvt.keysym.S-Home           : \033[1;2H
+urxvt.keysym.S-End            : \033[1;2F
+urxvt.keysym.M-S-Up           : \033[1;4A
+urxvt.keysym.M-S-Down         : \033[1;4B
+urxvt.keysym.M-S-Right        : \033[1;4C
+urxvt.keysym.M-S-Left         : \033[1;4D
+urxvt.keysym.M-S-Home         : \033[1;4H
+urxvt.keysym.M-S-End          : \033[1;4F
+urxvt.keysym.C-S-Up           : \033[1;6A
+urxvt.keysym.C-S-Down         : \033[1;6B
+urxvt.keysym.C-S-Right        : \033[1;6C
+urxvt.keysym.C-S-Left         : \033[1;6D
+urxvt.keysym.C-S-Home         : \033[1;6H
+urxvt.keysym.C-S-End          : \033[1;6F
+urxvt.keysym.M-C-Up           : \033[1;7A
+urxvt.keysym.M-C-Down         : \033[1;7B
+urxvt.keysym.M-C-Right        : \033[1;7C
+urxvt.keysym.M-C-Left         : \033[1;7D
+urxvt.keysym.M-C-Page_Up      : \033[5;7~
+urxvt.keysym.M-C-Page_Down    : \033[6;7~
+urxvt.keysym.M-C-Home         : \033[1;7H
+urxvt.keysym.M-C-End          : \033[1;7F
+urxvt.keysym.M-C-S-Up         : \033[1;8A
+urxvt.keysym.M-C-S-Down       : \033[1;8B
+urxvt.keysym.M-C-S-Right      : \033[1;8C
+urxvt.keysym.M-C-S-Left       : \033[1;8D
+urxvt.keysym.M-C-S-Home       : \033[1;8H
+urxvt.keysym.M-C-S-End        : \033[1;8F
+
 ! extensions (+ disable the selection popup)
 urxvt.perl-ext-common : default,matcher,clipboard,-selection-popup
 
@@ -56,6 +97,7 @@ urxvt.perl-ext-common : default,matcher,clipboard,-selection-popup
 urxvt.urlLauncher     : xdg-open
 urxvt*urlLauncher     : /usr/bin/chromium
 urxvt*matcher.button  : 1
+
 
 ! extensions -> copy/paste
 urxvt.keysym.C-C      : perl:clipboard:copy
@@ -71,7 +113,8 @@ urxvt*boldfont        : -*-tamsyn-bold-*-*-*-14-*-*-*-*-*-*-*
 ! Author: morhetz <morhetz@gmail.com>
 ! Source: https://github.com/morhetz/gruvbox-generalized
 ! Last Modified: 6 Sep 2014
-!! -----------------------------------------------------------------------------
+! -----------------------------------------------------------------------------
+*cursorColor:  #ebdbb2
 *background: #1d2021
 *foreground: #ebdbb2
 ! Black + DarkGrey
@@ -106,35 +149,35 @@ urxvt*boldfont        : -*-tamsyn-bold-*-*-*-14-*-*-*-*-*-*-*
 ! Source: https://github.com/morhetz/gruvbox-generalized
 ! Last Modified: 13 Dec 2013
 ! -----------------------------------------------------------------------------
-URxvt.color24:  #076678
-URxvt.color66:  #427b58
-URxvt.color88:  #9d0006
-URxvt.color96:  #8f3f71
-URxvt.color100: #79740e
-URxvt.color108: #8ec07c
-URxvt.color109: #83a598
-URxvt.color130: #af3a03
-URxvt.color136: #b57614
-URxvt.color142: #b8bb26
-URxvt.color167: #fb4934
-URxvt.color175: #d3869b
-URxvt.color208: #fe8019
-URxvt.color214: #fabd2f
-URxvt.color223: #ebdbb2
-URxvt.color228: #f2e5bc
-URxvt.color229: #fbf1c7
-URxvt.color230: #f9f5d7
-URxvt.color234: #1d2021
-URxvt.color235: #282828
-URxvt.color236: #32302f
-URxvt.color237: #3c3836
-URxvt.color239: #504945
-URxvt.color241: #665c54
-URxvt.color243: #7c6f64
-URxvt.color244: #928374
-URxvt.color245: #928374
-URxvt.color246: #a89984
-URxvt.color248: #bdae93
-URxvt.color250: #d5c4a1
+urxvt.color24:  #076678
+urxvt.color66:  #427b58
+urxvt.color88:  #9d0006
+urxvt.color96:  #8f3f71
+urxvt.color100: #79740e
+urxvt.color108: #8ec07c
+urxvt.color109: #83a598
+urxvt.color130: #af3a03
+urxvt.color136: #b57614
+urxvt.color142: #b8bb26
+urxvt.color167: #fb4934
+urxvt.color175: #d3869b
+urxvt.color208: #fe8019
+urxvt.color214: #fabd2f
+urxvt.color223: #ebdbb2
+urxvt.color228: #f2e5bc
+urxvt.color229: #fbf1c7
+urxvt.color230: #f9f5d7
+urxvt.color234: #1d2021
+urxvt.color235: #282828
+urxvt.color236: #32302f
+urxvt.color237: #3c3836
+urxvt.color239: #504945
+urxvt.color241: #665c54
+urxvt.color243: #7c6f64
+urxvt.color244: #928374
+urxvt.color245: #928374
+urxvt.color246: #a89984
+urxvt.color248: #bdae93
+urxvt.color250: #d5c4a1
 
 ! vim: set fdm=marker fmr=<<<,>>> fdl=0:

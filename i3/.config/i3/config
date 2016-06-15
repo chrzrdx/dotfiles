@@ -16,14 +16,12 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec /usr/bin/urxvtc
-# bindsym $modalt+Return exec dmenu_run
 
 # kill focused window
 bindsym $mod+q kill
 
 # set media keys (volume, media player)
 set $update && pkill -USR1 i3status
-
 #bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2+ unmute $update
 #bindsym XF86AudioLowerVolume exec amixer -q sset Master 2- unmute $update
 #bindsym XF86AudioMute exec amixer -q sset Master toggle $update
