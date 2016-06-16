@@ -5,8 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Tamsyn:pixelsize=14";
+static char font[] = "Tamsyn:pixelsize=16";
 static int borderpx = 2;
+#define histsize 65000
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -66,7 +67,6 @@ static int bellvolume = 0;
 static char termname[] = "st-256color";
 
 static unsigned int tabspaces = 4;
-
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -128,8 +128,14 @@ static unsigned int defaultunderline = 7;
  */
 static MouseShortcut mshortcuts[] = {
 	/* button               mask            string */
-	{ Button4,              XK_ANY_MOD,     "\031" },
-	{ Button5,              XK_ANY_MOD,     "\005" },
+	{ Button4,              XK_NO_MOD,      "\031" },
+	{ Button5,              XK_NO_MOD,      "\005" },
+};
+
+static MouseKey mkeys[] = {
+	/* button               mask            function        argument */
+	{ Button4,              ShiftMask,      kscrollup,      {.i =  1} },
+	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
 };
 
 /* Internal keyboard shortcuts. */
@@ -148,6 +154,8 @@ static Shortcut shortcuts[] = {
 	{ MODKEY|ShiftMask,     XK_C,           clipcopy,       {.i =  0} },
 	{ MODKEY|ShiftMask,     XK_V,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
@@ -191,7 +199,7 @@ static uint ignoremod = Mod2Mask|XK_SWITCH_MOD;
  * Override mouse-select while mask is active (when MODE_MOUSE is set).
  * Note that if you want to use ShiftMask with selmasks, set this to an other
  * modifier, set to 0 to not use it.
-*/
+ */
 static uint forceselmod = ShiftMask;
 
 /*
@@ -409,7 +417,7 @@ static uint selmasks[] = {
 };
 
 /*
- * printable characters in ascii, used to estimate the advance width
+ * Printable characters in ASCII, used to estimate the advance width
  * of single wide characters.
  */
 static char ascii_printable[] =

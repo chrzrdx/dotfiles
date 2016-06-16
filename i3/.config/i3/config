@@ -15,7 +15,8 @@ exec_always --no-startup-id feh --bg-fill "$(find ~/.wallpapers/* -type f | shuf
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/urxvtc
+bindsym $mod+Return exec /usr/bin/st
+bindsym $mod+$modalt+Return exec /usr/bin/urxvtc
 
 # kill focused window
 bindsym $mod+q kill

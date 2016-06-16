@@ -17,10 +17,19 @@ depends=('libxft')
 makedepends=('ncurses' 'libxext' 'git')
 source=('git://git.suckless.org/st'
         'config.h'
-        'st-delkey-0.6.diff')
+        'st-scrollback-git-20160616.diff'
+        'st-scrollback-mouse-git-20160616.diff'
+        'st-scrollback-mouse-altscreen-git-20160616.diff'
+        'st-delkey-0.6.diff'
+       )
+
 md5sums=('SKIP'
         'SKIP'
-        'a980eef9a13549e945af8e148ea43320')
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        )
 
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
@@ -54,6 +63,7 @@ prepare() {
 		elif [[ "$file" == *.diff ]]; then
 			# add all patches present in source array
 			patch -Np1 <"$srcdir/$file"
+            echo "THIS THIS THIS :::: " "$file"
 		fi
 	done
 }
