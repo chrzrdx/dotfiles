@@ -6,7 +6,13 @@ neovim/.config/nvim/autoload
 neovim/.config/nvim/plugged
 neovim/.config/nvim/tmp
 neovim/.config/nvim/.init.vim-rplugin~
+neovim/.config/nvim/.netrwhist
 mpd/.config/mpd/mpd.db
 mpd/.config/mpd/mpd.log
 mpd/.config/mpd/mpd.pid
 mpd/.config/mpd/mpdstate
+mpv/.config/mpv/watch_later/
+st-git/*
+!st-git/PKGBUILD
+!st-git/st-delkey-0.6.diff
+!st-git/config.h

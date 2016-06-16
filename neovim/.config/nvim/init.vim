@@ -86,7 +86,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neomru.vim'
 Plug 'morhetz/gruvbox'
 " gruvbox settings {{{
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let g:gruvbox_contrast_dark='hard'
 " let g:gruvbox_hls_cursor='orange'
 " let g:gruvbox_sign_column='bg0'
