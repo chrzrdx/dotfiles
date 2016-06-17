@@ -13,6 +13,10 @@ let g:mapleader=" "
 " PLUGINS + SETTINGS {{{
 call plug#begin('~/.config/nvim/plugged')
 
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+
 " vim-plug settings {{{
 let g:plug_timeout=20
 "}}}
@@ -39,12 +43,11 @@ let g:lightline = {
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary' ", { 'on': '<Plug>Commentary' } 
-"" vim-commentary settings {{{
-"map  gc  <Plug>Commentary
-"nmap gcc <Plug>CommentaryLine
-"" }}}
 Plug 'benekastah/neomake', { 'on': ['Neomake'] } 
 " neomake settings {{{
+autocmd! BufWritePost * Neomake
+let g:neomake_cpp_enable_markers=['clang']
+let g:neomake_cpp_clang_args = ["-std=c++14", "-Wextra", "-Wall", "-fsanitize=undefined","-g"]
 let g:neomake_verbose=0
 let g:neomake_warning_sign = {
 	  \ 'text': '>>',
@@ -55,18 +58,17 @@ let g:neomake_error_sign = {
 	  \ 'texthl': 'ErrorMsg',
 	  \ }
 "}}}
-Plug 'Shougo/deoplete.nvim' 
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 " deoplete settings {{{
-let g:deoplete#enable_at_startup=0
+let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_refresh_always=1
 let g:deoplete#file#enable_buffer_path=1
 let g:deoplete#auto_completion_start_length=2
-let g:deoplete#disable_auto_complete = 1
+let g:deoplete#disable_auto_complete=1
 
 let g:deoplete#sources={}
 let g:deoplete#sources._    = ['buffer', 'file', 'ultisnips']
 let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
-
 "}}}
 Plug 'vim-pandoc/vim-pandoc' , { 'for': [ 'pandoc', 'markdown' ] }
 " vim-pandoc settings {{{
@@ -87,28 +89,22 @@ Plug 'Shougo/neomru.vim'
 Plug 'morhetz/gruvbox'
 " gruvbox settings {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" let g:gruvbox_contrast_dark='hard'
-" let g:gruvbox_hls_cursor='orange'
-" let g:gruvbox_sign_column='bg0'
-" let g:gruvbox_color_column='bg0'
-	let g:gruvbox_bold=1
-	" let g:gruvbox_italic=1
-	" let g:gruvbox_underline=1
-	" let g:gruvbox_undercurl=1
-	let g:gruvbox_termcolors=256
-	let g:gruvbox_contrast_dark="hard"
-	let g:gruvbox_contrast_light="hard"
-	" let g:gruvbox_hls_cursor="orange"
-	let g:gruvbox_sign_column="dark0"
-	let g:gruvbox_color_column="dark0"
-	let g:gruvbox_vert_split="dark0"
-	let g:gruvbox_italicize_comments=1
-	let g:gruvbox_italicize_strings=1
-	let g:gruvbox_invert_selection=0
-	let g:gruvbox_invert_signs=0
-	let g:gruvbox_invert_indent_guides=0
-	let g:gruvbox_invert_tabline=0
-	let g:gruvbox_improved_warnings=1
+let g:gruvbox_sign_column='bg1'
+let g:gruvbox_color_column='bg1'
+let g:gruvbox_bold=1
+" let g:gruvbox_italic=1
+" let g:gruvbox_underline=1
+" let g:gruvbox_undercurl=1
+" let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_light="hard"
+" let g:gruvbox_hls_cursor="orange"
+let g:gruvbox_vert_split="dark0"
+let g:gruvbox_invert_selection=0
+let g:gruvbox_invert_signs=0
+let g:gruvbox_invert_indent_guides=0
+let g:gruvbox_invert_tabline=0
+let g:gruvbox_improved_warnings=1
 " }}}
 
 call plug#end()
@@ -173,7 +169,7 @@ set textwidth=80                " text width is 80 characters
 set cmdheight=1                 " command line height
 set pumheight=10                " completion window max size
 set hidden                      " enables to switch between unsaved buffers and keep undo history
-set clipboard+=unnamed          " allow to use system clipboard
+set clipboard+=unnamedplus          " allow to use system clipboard
 set lazyredraw                  " don't redraw while executing macros (better performance)
 set matchtime=2                 " How many tenths of a second to blink when matching brackets
 set showmatch                   " show matching brackets when text indicator is over them
@@ -199,12 +195,12 @@ set splitright                              " splitting a window will put the ne
 
 " visual, color and highlighting settings {{{
 set background=dark " let term use brighter colours
-colorscheme gruvbox
+silent! colorscheme gruvbox
 
 hi! link Conceal Operator
-hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
+" hi MatchParen cterm=bold ctermbg=none ctermfg=Yellow
 
-"set cursorline
+" set cursorline
 
 "}}}
 
@@ -231,7 +227,7 @@ set expandtab
 "}}}
 
 " folding {{{
-set foldcolumn=2
+" set foldcolumn=2
 "}}}
 
 " fix annoyances {{{
