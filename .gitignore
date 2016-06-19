@@ -14,7 +14,7 @@ st-git/*
 
 vim/.vim
 
-vimperator/.vimperator
+vimperator/.vimperator/info
 
 zsh/.zsh/cache
 zsh/.zsh/zsh_history

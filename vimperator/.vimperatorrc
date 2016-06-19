@@ -1,0 +1,269 @@
+"3.14.0 (created: 2016/06/07 23:58:16)
+
+set runtimepath=~/.vimperator
+source! /home/chr/.vimperatorrc.local
+
+let g:plugin_loader_roots       = '~/.vimperator/plugins'
+let g:plugin_loader_plugins     = 'goo.gl,'
+let g:plugin_loader_plugins     .= 'proxy_command'
+
+source! ~/.vimperator/plugins/_libly.js
+source! ~/.vimperator/plugins/plugin_loader.js
+
+" general settings {{{
+
+" ui
+colorscheme indigo-fx3
+set gui=none,tabs
+set maxitems=20
+"set status=input,ssl,location,bookmark
+set showstatuslinks=1
+set animations=false
+set titlestring="Firefox"
+
+" search
+set ignorecase
+set smartcase
+
+set complete=slt 
+set messagetimeout=2000 
+set hintchars=fdasjkl;rcexunim
+set hintinputs=label,name,value
+set defsearch=duckduckgo
+set focuscontent 
+set newtab=all
+
+" ignorekeys
+ignorekeys clear
+ignorekeys add github\\.com -except=:,f,F,b,t,j,k,r,H,L,/,<Esc>
+ignorekeys add inbox\\.google\\.com -except=w,W,;,:,b,B,d,u,f,F,t,T,o,O,J,K,g,q,y,Y
+ignorekeys add mail\\.google\\.com -except=w,W,;,:,b,B,d,u,f,F,t,T,o,O,J,K,z
+
+style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+map <C-b> :bmarks!
+map <C-h> :history!
+
+" next link
+set nextpattern=\bnext\b,\bmore\b,^next$,^次(の)?ページ,\b次.*,^次へ$,→\b,^>$,^(>>|≫)$,^(>|≫),(>|≫)$
+set previouspattern=\bprev|previous\b,^prev$,^前(の)?ページ,\b前.*,^前へ$,\b←,^<$,^(<<|≪)$,^(<|≪),(<|≪)$
+
+" remappings
+nnoremap j 5j
+nnoremap k 10k
+nnoremap H h
+nnoremap L l
+nnoremap J gT
+nnoremap K gt
+nnoremap <BS> <C-^>
+nnoremap x :tabclose<cr>
+nnoremap I <S-Esc>
+nnoremap ~ <Nop>
+map d <C-w>
+
+" commands
+command! pin :set apptab
+command! unpin :set noapptab
+command! ss :js toggle_proxy()
+command! short :js getShortUrl()
+command! sg :proxy manual -socks 127.0.0.1:6024
+"command! chrome :openwith chromium
+
+" to add pocket support
+command! -nargs=0 -description="Add to Pocket" pocket open javascript:(function(){var%20e=function(t,n,r,i,s){var%20o=[3197045,2784815,4346706,4885664,5884607,6832299,3656440,4386835,3933708,9953454];var%20i=i||0,u=0,n=n||[],r=r||0,s=s||0;var%20a={'a':97,'b':98,'c':99,'d':100,'e':101,'f':102,'g':103,'h':104,'i':105,'j':106,'k':107,'l':108,'m':109,'n':110,'o':111,'p':112,'q':113,'r':114,'s':115,'t':116,'u':117,'v':118,'w':119,'x':120,'y':121,'z':122,'A':65,'B':66,'C':67,'D':68,'E':69,'F':70,'G':71,'H':72,'I':73,'J':74,'K':75,'L':76,'M':77,'N':78,'O':79,'P':80,'Q':81,'R':82,'S':83,'T':84,'U':85,'V':86,'W':87,'X':88,'Y':89,'Z':90,'0':48,'1':49,'2':50,'3':51,'4':52,'5':53,'6':54,'7':55,'8':56,'9':57,'\/':47,':':58,'?':63,'=':61,'-':45,'_':95,'&':38,'$':36,'!':33,'.':46};if(!s||s==0){t=o[0]+t}for(var%20f=0;f<t.length;f++){var%20l=function(e,t){return%20a[e[t]]?a[e[t]]:e.charCodeAt(t)}(t,f);if(!l*1)l=3;var%20c=l*(o[i]+l*o[u%o.length]);n[r]=(n[r]?n[r]+c:c)+s+u;var%20p=c%(50*1);if(n[p]){var%20d=n[r];n[r]=n[p];n[p]=d}u+=c;r=r==50?0:r+1;i=i==o.length-1?0:i+1}if(s==313){var%20v='';for(var%20f=0;f<n.length;f++){v+=String.fromCharCode(n[f]%(25*1)+97)}o=function(){};return%20v+'40c753c09d'}else{return%20e(u+'',n,r,i,s+1)}};var%20t=document,n=t.location.href,r=t.title;var%20i=e(n);var%20s=t.createElement('script');s.type='text/javascript';s.src='https://getpocket.com/b/r4.js?h='+i+'&u='+encodeURIComponent(n)+'&t='+encodeURIComponent(r);e=i=function(){};var%20o=t.getElementsByTagName('head')[0]||t.documentElement;o.appendChild(s)})()
+
+"}}}
+
+" functions {{{
+
+javascript <<EOM
+function toggle_proxy() {
+  var pxtype = options.getPref('network.proxy.type');
+  if (pxtype != 2)
+    liberator.execute('proxy pac -reload http://proxy.iiit.ac.in/proxy.pac');
+  else
+    liberator.execute('proxy direct');
+}
+EOM
+
+javascript <<EOM
+liberator.globalVariables.copy_templates = [
+  {
+    label: 'goo.gl',
+    value: 'copy url with goo.gl',
+    custom: function() {
+      return getShortUrl();
+    }
+  },
+  {
+    label: 'goo.gl with title',
+    value: 'copy title&url with goo.gl',
+    custom: function() {
+      var title = content.document.title;
+      return title + "\n" + getShortUrl();
+    }
+  },
+  {
+    label: 'goo.gl4hatena',
+    value: 'copy title&url with goo.gl for hatena syntax',
+    custom: function() {
+      var title = content.document.title;
+      return "[" + getShortUrl() + ":title=" + title + "]";
+    }
+  }
+];
+
+var getShortUrl = function() {
+  var longUrl = content.document.location.href;
+
+  var googl = {
+    'url' : 'https://www.googleapis.com/urlshortener/v1/url?key=',
+    'key' : 'AIzaSyCPPUQyYh3RHqptvGm0NjWIt29LFtJ7pNo',
+    'method' : 'POST',
+    'contentType' : 'application/json',
+    'longJson' : '{ "longUrl" : "' + longUrl + '" }'
+  };
+
+  var request = new XMLHttpRequest();
+  request.open(googl.method, googl.url + googl.key, false);
+  request.setRequestHeader('Content-Type', googl.contentType);
+  request.send(googl.longJson);
+
+  return JSON.parse(request.responseText).id;
+};
+EOM
+
+"}}}
+
+" Firefox settings {{{
+" --------------------
+
+" DuckDuckGo
+set! browser.startup.homepage=https://duckduckgo.com/?kae=d&kak=-1&kad=en_US&kl=us-en&kj=443333
+set! browser.search.selectedEngine=DuckDuckGo
+set! browser.search.defaultenginename=DuckDuckGo
+set! keyword.URL=https://duckduckgo.com/?kae=d&kak=-1&kad=en_US&kl=us-en&kj=443333&q=
+set! browser.search.suggest.enabled=false
+set! browser.search.update=true
+
+" full URLs don't scare me
+set! browser.urlbar.trimURLs=false 
+
+set! browser.newtabpage.enabled=false
+set! browser.newtab.url=about:blank 
+
+" enable pipelining
+set! network.http.pipelining=true
+set! network.http.pipelining.abtest=false
+set! network.http.pipelining.aggressive=true
+set! network.http.pipelining.max-optimistic-requests=3
+set! network.http.pipelining.maxrequests=12
+set! network.http.pipelining.maxsize=300000
+set! network.http.pipelining.read-timeout=60000
+set! network.http.pipelining.reschedule-on-timeout=true
+set! network.http.pipelining.reschedule-timeout=15000
+set! network.http.max-connections=256
+set! network.http.max-connections-per-server=6
+
+" tabs on bottom; slightly more space
+set! browser.tabs.onTop=true 
+
+" hide audio playing icon
+set! browser.tabs.showAudioPlayingIcon=false 
+
+" no warnings
+set! browser.tabs.warnOnClose=false
+set! browser.tabs.warnOnCloseOtherTabs=false
+set! browser.tabs.warnOnOpen=false
+set! general.warnOnAboutConfig=false
+
+" open tabs to the right of the current
+set! browser.tabs.insertRelatedAfterCurrent=true
+set! browser.tabs.insertRelatedAfterCurrent.override=true
+
+" " what to clear after shutdown?
+" set! privacy.clearOnShutdown.cache=false
+" set! privacy.clearOnShutdown.cookies=true
+" set! privacy.clearOnShutdown.downloads=true
+" set! privacy.clearOnShutdown.formdata=true
+" set! privacy.clearOnShutdown.history=false
+" set! privacy.clearOnShutdown.offlineApps=true
+" set! privacy.clearOnShutdown.passwords=true
+" set! privacy.clearOnShutdown.sessions=true
+" set! privacy.clearOnShutdown.siteSettings=true
+
+" clear cookies on close or in a day
+set! network.cookie.lifetimePolicy=2
+set! network.cookie.lifetime.days=1
+
+set! browser.download.lastDir="" 
+" clear last download location when we run this file
+
+" sup NSA
+set! privacy.donottrackheader.enabled=true
+set! privacy.donottrackheader.value=1
+set! privacy.trackingprotection.enabled=true
+
+" private browsing settings
+set! browser.privatebrowsing.autostart=false
+set! browser.privatebrowsing.dont_prompt_on_enter=true
+
+" don't wait to install extensions
+set! security.dialog_enable_delay=0 
+
+set! security.csp.enable=true 
+set! browser.rights.3.shown=true 
+set! browser.shell.checkDefaultBrowser=false 
+
+" spellcheck in <inputs> too
+set! layout.spellcheckDefault=2 
+
+" view that source
+set! view_source.syntax_highlight=true
+set! view_source.wrap_long_lines=true
+
+set! browser.fullscreen.animate=false 
+
+" don't steal my right-click
+set! dom.event.contetxmenu.enabled=false 
+
+" Security (also see NoScript stuff below)
+" ----------------------------------------
+
+" only cookies from origins
+set! network.cookie.cookieBehavior=1
+
+" what if Google...couldn't see everything I downloaded?
+set! breakpad.reportURL=""
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.appRepURL=""
+set! browser.safebrowsing.debug=false
+set! browser.safebrowsing.downloads.enabled=false
+set! browser.safebrowsing.downloads.remote.enabled=false
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.gethashURL=""
+set! browser.safebrowsing.malware.enabled=false
+set! browser.safebrowsing.malware.reportURL=""
+set! browser.safebrowsing.reportErrorURL=""
+set! browser.safebrowsing.reportGenericURL=""
+set! browser.safebrowsing.reportMalwareErrorURL=""
+set! browser.safebrowsing.reportMalwareURL=""
+set! browser.safebrowsing.reportPhishURL=""
+set! browser.safebrowsing.reportURL=""
+set! browser.safebrowsing.updateURL=""
+set! browser.send_pings.require_same_host=true
+set! browser.send_pings=false
+
+" send referrer headers only to the same domain
+set! network.http.sendRefererHeader=1
+set! network.http.sendSecureXSiteReferrer=false
+set! network.http.referer.XOriginPolicy=1
+set! network.http.referer.spoofSource=true
+set! network.http.referer.trimmingPolicy=2
+
+" disable some TLS stuff
+set! security.ssl3.dhe_rsa_aes_128_sha=false
+set! security.ssl3.dhe_rsa_aes_256_sha=false
+
+"}}}
+
+" vim: set ft=vimperator:

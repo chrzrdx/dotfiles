@@ -88,7 +88,13 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neomru.vim'
 Plug 'morhetz/gruvbox'
 " gruvbox settings {{{
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if $TERM=='st-256color' 
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+elseif $TERM=='xterm-termite' 
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" else
+"   let $NVIM_TUI_ENABLE_TRUE_COLOR=0
+endif 
 let g:gruvbox_sign_column='bg1'
 let g:gruvbox_color_column='bg1'
 let g:gruvbox_bold=1
@@ -106,6 +112,8 @@ let g:gruvbox_invert_indent_guides=0
 let g:gruvbox_invert_tabline=0
 let g:gruvbox_improved_warnings=1
 " }}}
+Plug 'noah/vim256-color'
+Plug 'godlygeek/csapprox'
 
 call plug#end()
 "}}}

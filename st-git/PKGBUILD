@@ -15,10 +15,13 @@ depends=('libxft')
 makedepends=('ncurses' 'libxext' 'git')
 source=('git://git.suckless.org/st'
         # 'st-no_bold_colors-git-20160616.diff'
-        'st-gruvbox-dark-git-20160616.diff'
-        'st-scrollback-git-20160616.diff'
-        'st-scrollback-mouse-git-20160616.diff'
-        'st-scrollback-mouse-altscreen-git-20160616.diff'
+        'st-gruvbox-dark-git-20160617.diff'
+        'st-scrollback-git-20160617.diff'
+        'st-scrollback-mouse-git-20160617.diff'
+        'st-scrollback-mouse-altscreen-git-20160617.diff'
+        'st-clipboard-git-20160617.diff'
+        'st-spoiler-git-20160617.diff'
+        # 'st-delkey-git-20160617.diff'
        )
 
 md5sums=('SKIP'
@@ -27,6 +30,9 @@ md5sums=('SKIP'
         'SKIP'
         'SKIP'
         'SKIP'
+        'SKIP'
+        'SKIP'
+        # 'SKIP'
         )
 
 provides=("${_pkgname}")
@@ -57,7 +63,7 @@ prepare() {
 		-e '/char worddelimiters/s/= .*/= " '"'"'`\\\"()[]{}<>|";/' \
 		-e '/int tabspaces/s/= .*/= 4;/' \
 		-i config.def.h
-    sed -e 's/define histsize.*$/define histsize 65000/g' -i config.def.h
+    # sed -e 's/define histsize.*$/define histsize 65000/g' -i config.def.h
 	sed \
 		-e 's/CPPFLAGS =/CPPFLAGS +=/g' \
 		-e 's/CFLAGS =/CFLAGS +=/g' \
