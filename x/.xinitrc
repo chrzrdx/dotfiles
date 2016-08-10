@@ -14,14 +14,17 @@ xset fp+ /usr/share/fonts/local
 xset +fp /usr/share/fonts/ttf
 xset fp rehash
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 # disable speaker beep
 xset -b
 
 # notification
 dunst -config ~/.config/i3/dunstrc &
 
-# NetworkManager applet
->> /dev/null which nm-applet && nm-applet &
+# # NetworkManager applet
+# >> /dev/null which nm-applet && nm-applet &
 
 # composition manager
 # compton -CGb --backend glx --vsync opengl
@@ -37,7 +40,7 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
 #mpd &
 
 # clipboard
-xsel &
+# xsel &
 
 # urxvt daemon
 urxvtd -q -o -f &

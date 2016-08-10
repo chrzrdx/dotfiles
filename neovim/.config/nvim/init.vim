@@ -177,7 +177,7 @@ set textwidth=80                " text width is 80 characters
 set cmdheight=1                 " command line height
 set pumheight=10                " completion window max size
 set hidden                      " enables to switch between unsaved buffers and keep undo history
-set clipboard+=unnamedplus          " allow to use system clipboard
+set clipboard+=unnamed          " allow to use system clipboard
 set lazyredraw                  " don't redraw while executing macros (better performance)
 set matchtime=2                 " How many tenths of a second to blink when matching brackets
 set showmatch                   " show matching brackets when text indicator is over them
@@ -333,5 +333,8 @@ nnoremap <silent> <F5> :source $MYNVIMRC<CR>
 "}}}
 
 "}}}
+
+map <F1> <del>
+map! <F1> <del>
 
 " vim: set sw=2 ts=2 et foldlevel=1 foldmethod=marker:
