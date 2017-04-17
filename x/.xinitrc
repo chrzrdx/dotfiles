@@ -41,11 +41,14 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
 
 # clipboard
 # xsel &
+xfce4-clipman &
 
 # urxvt daemon
-urxvtd -q -o -f &
+# urxvtd -q -o -f &
+
+alsactl init
 
 export QT_STYLE_OVERRIDE=GTK+
 
 # startxfce4
-i3
+exec i3

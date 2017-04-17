@@ -1,6 +1,6 @@
 [options]
 
-font = Tamsyn 9
+font = Terminus 10
 audible_bell = false
 mouse_autohide = false
 allow_bold = true

@@ -1,0 +1,1 @@
+/home/chr/.config/fisherman/pure.fish/fish_prompt.fish

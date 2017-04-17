@@ -1,0 +1,1 @@
+/home/chr/.config/fisherman/z/conf.d/z.fish

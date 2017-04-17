@@ -15,8 +15,8 @@ exec_always --no-startup-id feh --bg-fill "$(find ~/.wallpapers/* -type f | shuf
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/urxvtc
-bindsym $mod+$modalt+Return exec /usr/bin/st
+bindsym $mod+Return exec /usr/bin/termite
+bindsym $mod+$modalt+Return exec /usr/bin/urxvtc
 
 # kill focused window
 bindsym $mod+q kill
@@ -26,9 +26,9 @@ set $update && pkill -USR1 i3status
 #bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2+ unmute $update
 #bindsym XF86AudioLowerVolume exec amixer -q sset Master 2- unmute $update
 #bindsym XF86AudioMute exec amixer -q sset Master toggle $update
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% $update #increase sound
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% $update #decrease sound
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle $update
+bindsym XF86AudioRaiseVolume exec /usr/bin/pulseaudio-ctl up $update #increase sound
+bindsym XF86AudioLowerVolume exec /usr/bin/pulseaudio-ctl down $update #decrease sound
+bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute $update
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
@@ -42,7 +42,8 @@ bindsym Print exec --no-startup-id maim ~/pic/ss/$(date +%F-%T).png
 #bindsym Shift+Print exec --no-startup-id maim -s -c 1,0,0,0.6 -p 10 ~/pic/ss/$(date +%F-%T).png
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec ~/.config/i3/dmenu_run_recent.sh -fn 'Tamsyn-10'
+bindsym $mod+d exec ~/.config/i3/dmenu_run_recent.sh -fn 'Terminus-8'
+bindsym $mod+$modalt+c exec chromium --incognito
 
 # change focus
 bindsym $mod+h focus left
@@ -183,7 +184,7 @@ bindsym $mod+y border none
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango: Tamsyn 10
+    font pango: Terminus 9
     position bottom
     status_command i3status -c ~/.config/i3/i3status.conf
     # bar_colors

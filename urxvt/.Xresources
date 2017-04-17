@@ -1,14 +1,14 @@
 !-- Xft settings -- !
 Xft.antialias:  true
 Xft.autohint:   false
-Xft.dpi:        112
+Xft.dpi:        96
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
 !-----Urxvt settings-----!
-urxvt.buffered:         true            ! double buffer for xtf
+urxvt.buffered:         false            ! double buffer for xtf
 urxvt.cursorBlink:      false
 urxvt.depth:            32
 urxvt.externalBorder:   0
@@ -16,7 +16,7 @@ urxvt.fading:           0
 urxvt.geometry:         90x30
 urxvt.hold:             false           ! kill window on shell exit
 urxvt.internalBorder:   2
-urxvt.lineSpace:        4
+urxvt.lineSpace:        2
 urxvt.loginShell:       true
 urxvt.print-pipe:       cat > $HOME/tmp/$(echo urxvt.dump.$(date +'%s'))
 urxvt.saveLines:        65535
@@ -98,14 +98,13 @@ urxvt.urlLauncher     : xdg-open
 urxvt*urlLauncher     : /usr/bin/chromium
 urxvt*matcher.button  : 1
 
-
 ! extensions -> copy/paste
 urxvt.keysym.C-C      : perl:clipboard:copy
 urxvt.keysym.C-V      : perl:clipboard:paste
 urxvt.keysym.C-M-v    : perl:clipboard:paste_escaped
 
-urxvt*font            : -*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-* 
-urxvt*boldfont        : -*-tamsyn-bold-*-*-*-14-*-*-*-*-*-*-* 
+urxvt*font            : -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-* 
+urxvt*boldfont        : -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-* 
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources

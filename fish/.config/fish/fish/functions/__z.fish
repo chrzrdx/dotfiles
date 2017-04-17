@@ -1,0 +1,1 @@
+/home/chr/.config/fisherman/z/functions/__z.fish

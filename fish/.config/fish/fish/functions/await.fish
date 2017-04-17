@@ -1,0 +1,1 @@
+/home/chr/.config/fisherman/await/functions/await.fish
