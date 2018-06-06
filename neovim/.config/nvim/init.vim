@@ -58,7 +58,7 @@ let g:neomake_error_sign = {
 	  \ 'texthl': 'ErrorMsg',
 	  \ }
 "}}}
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " deoplete settings {{{
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_refresh_always=1
@@ -112,7 +112,6 @@ let g:gruvbox_invert_indent_guides=0
 let g:gruvbox_invert_tabline=0
 let g:gruvbox_improved_warnings=1
 " }}}
-Plug 'noah/vim256-color'
 Plug 'godlygeek/csapprox'
 
 call plug#end()

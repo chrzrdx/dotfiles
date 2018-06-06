@@ -2,6 +2,9 @@
 	email = chrzrdx@gmail.com
 	name = Abhinandan Panigrahi
 [http]
-	proxy = 
 [https]
-	proxy = 
+	proxy = http://proxy.iiit.ac.in:8080
+[core]
+	autocrlf = false
+[http]
+	proxy = http://proxy.iiit.ac.in:8080

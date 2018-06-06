@@ -1,0 +1,36 @@
+#if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+#    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+#fi
+#
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
+lxpolkit &
+
+# Environment variables
+export SSH_AUTH_SOCK
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export QT_STYLE_OVERRIDE=GTK+
+
+# disable speaker beep
+xset -b &
+
+# notification
+dunst -config ~/.config/sway/dunstrc &
+
+# NetworkManager applet
+>> /dev/null which nm-applet && nm-applet &
+
+# power manager
+xfce4-power-manager &
+
+# clipboard manager
+xfce4-clipman &
+
+# make it easy on the eyes
+redshift -O 3200 -l 17:78 -t 4500:3500 -g 0.95:1.0:0.90 &
+
+# urxvt daemon
+urxvtd -q -o -f &
+
+# compton for compositing in i3
+compton -CGb &

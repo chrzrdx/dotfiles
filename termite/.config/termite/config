@@ -1,6 +1,6 @@
 [options]
 
-font = Terminus 10
+font = Dina 10
 audible_bell = false
 mouse_autohide = false
 allow_bold = true

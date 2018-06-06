@@ -91,7 +91,7 @@ urxvt.keysym.M-C-S-Home       : \033[1;8H
 urxvt.keysym.M-C-S-End        : \033[1;8F
 
 ! extensions (+ disable the selection popup)
-urxvt.perl-ext-common : default,matcher,clipboard,-selection-popup
+!urxvt.perl-ext-common : default,matcher,clipboard,-selection-popup
 
 ! extensions -> matcher: open URL with a left click
 urxvt.urlLauncher     : xdg-open
@@ -103,8 +103,9 @@ urxvt.keysym.C-C      : perl:clipboard:copy
 urxvt.keysym.C-V      : perl:clipboard:paste
 urxvt.keysym.C-M-v    : perl:clipboard:paste_escaped
 
-urxvt*font            : -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-* 
-urxvt*boldfont        : -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-* 
+urxvt*font: xft:Dina:size=10
+/* urxvt*font            : -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-* */ 
+/* urxvt*boldfont        : -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-* */ 
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
